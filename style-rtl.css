@@ -1,13 +1,13 @@
 /*!
-Theme Name: miss-albin
-Theme URI: http://underscores.me/
-Author: Igor Stojanovski
-Author URI: https://www.github.com/cableclark
-Description: A theme made for a macedonian sex workers NGO \'s web site
+Theme Name: STAR-STAR
+Theme URI: https://underscores.me/
+Author: Automattic
+Author URI: https://automattic.com/
+Description: Hi. I'm a starter theme called <code>STAR-STAR</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: star-star
+Text Domain: STAR-STAR
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -19,6 +19,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -40,18 +41,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-/**
- * Use min-width
- */
-/**
- * Use min-width
- */
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 /* Document
 	 ========================================================================== */
+
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -63,6 +62,7 @@ html {
 
 /* Sections
 	 ========================================================================== */
+
 /**
  * Remove the margin in all browsers.
  */
@@ -88,6 +88,7 @@ h1 {
 
 /* Grouping content
 	 ========================================================================== */
+
 /**
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
@@ -109,6 +110,7 @@ pre {
 
 /* Text-level semantics
 	 ========================================================================== */
+
 /**
  * Remove the gray background on active links in IE 10.
  */
@@ -174,6 +176,7 @@ sup {
 
 /* Embedded content
 	 ========================================================================== */
+
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -183,6 +186,7 @@ img {
 
 /* Forms
 	 ========================================================================== */
+
 /**
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
@@ -328,6 +332,7 @@ textarea {
 
 /* Interactive
 	 ========================================================================== */
+
 /*
  * Add the correct display in Edge, IE 10+, and Firefox.
  */
@@ -344,6 +349,7 @@ summary {
 
 /* Misc
 	 ========================================================================== */
+
 /**
  * Add the correct display in IE 10+.
  */
@@ -368,19 +374,9 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: "Didact Gothic", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
 	line-height: 1.5;
-}
-
-@media screen and (min-width: 700px) {
-	body,
-	button,
-	input,
-	select,
-	optgroup,
-	textarea {
-		font-size: 1.6rem;
-	}
 }
 
 h1,
@@ -390,37 +386,10 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: "Vollkorn", serif;
-}
-
-h1 {
-	font-size: 1em;
-}
-
-h2 {
-	font-size: 1.2em;
-}
-
-h3 {
-	font-size: 1.5em;
-}
-
-h4 {
-	font-size: 1.3em;
-}
-
-h5 {
-	font-size: 1.1em;
 }
 
 p {
-	margin-bottom: 1em;
-}
-
-@media screen and (min-width: 992px) {
-	p {
-		font-size: 1.4em;
-	}
+	margin-bottom: 1.5em;
 }
 
 dfn,
@@ -476,6 +445,7 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+
 /* Inherit box-sizing to more easily change it's value on a component level.
 @link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 *,
@@ -489,7 +459,7 @@ html {
 }
 
 body {
-	background: white;
+	background: #fff;
 }
 
 hr {
@@ -501,7 +471,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ul {
@@ -515,7 +485,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -541,111 +511,6 @@ table {
 }
 
 /*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-.site-header {
-	z-index: 10000000;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-direction: row;
-	    flex-direction: row;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
-	height: 70px;
-	width: 100%;
-	top: 0;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	background-color: white;
-	position: fixed;
-}
-
-@media screen and (min-width: 992px) {
-	.site-header {
-		height: 150px;
-	}
-}
-
-.site-branding {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-line-pack: center;
-	    align-content: center;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-}
-
-@media screen and (min-width: 992px) {
-	.site-branding {
-		-ms-flex-pack: center;
-		    justify-content: center;
-	}
-}
-
-.site-description,
-.site-title,
-.main-navigation {
-	margin: auto 1rem;
-	font-size: 1rem;
-}
-
-.site-description {
-	font-size: 0.7rem;
-}
-
-.site-title a {
-	font-size: 1.3rem;
-	font-family: "Vollkorn", serif;
-	font-weight: bold;
-}
-
-@media screen and (min-width: 992px) {
-	.site-title a {
-		font-size: 2rem;
-	}
-}
-
-.nav-menu {
-	display: -ms-flexbox;
-	display: flex;
-}
-
-.page_item {
-	padding: 1em;
-}
-
-.custom-logo {
-	height: 40px;
-	width: 40px;
-	margin: 5px;
-}
-
-.sub-menu {
-	display: none;
-}
-
-.toggler {
-	padding: auto 10px;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-direction: column;
-	    flex-direction: column;
-	margin: 5px 5px;
-}
-
-@media screen and (min-width: 992px) {
-	.toggler {
-		display: none;
-	}
-}
-
-.toggler div {
-	height: 2px;
-	width: 30px;
-	margin: 4px 0;
-	background-color: black;
-}
-
-/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 button,
@@ -653,7 +518,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #e41313 #ccc #bbb;
+	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
@@ -669,7 +534,8 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:active, button:focus,
+button:active,
+button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -731,19 +597,21 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #3c30a3;
-	text-decoration: none;
+	color: #4169e1;
 }
 
 a:visited {
-	color: #3c30a3;
+	color: #800080;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
 	color: #191970;
 }
 
@@ -751,7 +619,8 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
@@ -759,40 +628,35 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-line-pack: center;
-	    align-content: center;
+	display: block;
+	width: 100%;
 }
 
 .main-navigation ul {
 	display: none;
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
-}
-
-@media screen and (min-width: 992px) {
-	.main-navigation ul {
-		display: -ms-flexbox;
-		display: flex;
-	}
+	padding-right: 0;
 }
 
 .main-navigation ul ul {
-	display: -ms-flexbox;
-	display: flex;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: right;
+	position: absolute;
+	top: 100%;
+	right: -999em;
+	z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	right: -999em;
 	top: 0;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	right: auto;
 }
 
 .main-navigation ul ul a {
@@ -801,12 +665,11 @@ a:hover, a:active {
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	right: auto;
 }
 
 .main-navigation li {
 	position: relative;
-	margin: 1rem;
 }
 
 .main-navigation a {
@@ -820,8 +683,21 @@ a:hover, a:active {
 	display: block;
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
 .post-navigation {
 	margin: 0 0 1.5em;
 }
@@ -829,61 +705,31 @@ a:hover, a:active {
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-	display: -ms-flexbox;
 	display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	-ms-flex: 1 0 50%;
-	    flex: 1 0 50%;
+	flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
 	text-align: end;
-	-ms-flex: 1 0 50%;
-	    flex: 1 0 50%;
-}
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-.container {
-	margin: 1rem;
-	margin-top: 100px;
-}
-
-@media screen and (min-width: 992px) {
-	.container {
-		margin-top: 200px;
-	}
-}
-
-.entry-title {
-	margin: 0 1rem;
-}
-
-.entry-footer span {
-	margin-right: 1rem;
-	font-size: 0.7rem;
-}
-
-.entry-meta {
-	font-size: 0.8rem;
+	flex: 1 0 50%;
 }
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	        clip-path: inset(50%);
+	clip-path: inset(50%);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -898,14 +744,13 @@ a:hover, a:active {
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	-webkit-clip-path: none;
-	        clip-path: none;
-	color: #1a1b1b;
+	clip-path: none;
+	color: #21759b;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -923,22 +768,22 @@ a:hover, a:active {
 # Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 	margin-bottom: 1.5em;
 }
 
@@ -956,53 +801,17 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky,
-article {
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-rows: 250px, 250px, auto, auto;
-	    grid-template-rows: 250px, 250px, auto, auto;
-}
-
-.entry-header {
-	grid-row: 2/2;
-	-ms-grid-column: 1;
-	    grid-column: 1;
-	z-index: 10000;
-	background-color: rgba(255, 255, 255, 0.7);
-	padding: 1em 0;
-}
-
-.post-thumbnail {
-	grid-row: 1/3;
-	-ms-grid-column: 1;
-	    grid-column: 1;
-}
-
-.post-thumbnail img {
-	object-fit: cover;
-	width: 100%;
-}
-
-.entry-content {
-	grid-row: 3/4;
-	-ms-grid-column: 1;
-	    grid-column: 1;
-}
-
-.entry-footer {
-	grid-row: 4/5;
-	-ms-grid-column: 1;
-	    grid-column: 1;
+.sticky {
+	display: block;
 }
 
 .post,
 .page {
 	margin: 0 0 1.5em;
-	box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.7);
 }
 
 .updated:not(.published) {
@@ -1011,9 +820,8 @@ article {
 
 .page-content,
 .entry-content,
-.entry-summary,
-.entry-footer {
-	margin: 0 1rem;
+.entry-summary {
+	margin: 1.5em 0 0;
 }
 
 .page-links {
@@ -1035,6 +843,7 @@ article {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
+
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
@@ -1066,6 +875,10 @@ object {
 }
 
 /* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -1076,8 +889,8 @@ object {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .wp-caption .wp-caption-text {
@@ -1093,59 +906,47 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
-	display: -ms-grid;
-	display: grid;
-	grid-gap: 1.5em;
 }
 
 .gallery-item {
 	display: inline-block;
 	text-align: center;
+	vertical-align: top;
 	width: 100%;
 }
 
-.gallery-columns-2 {
-	-ms-grid-columns: (1fr)[2];
-	    grid-template-columns: repeat(2, 1fr);
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
 }
 
-.gallery-columns-3 {
-	-ms-grid-columns: (1fr)[3];
-	    grid-template-columns: repeat(3, 1fr);
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
 }
 
-.gallery-columns-4 {
-	-ms-grid-columns: (1fr)[4];
-	    grid-template-columns: repeat(4, 1fr);
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
 }
 
-.gallery-columns-5 {
-	-ms-grid-columns: (1fr)[5];
-	    grid-template-columns: repeat(5, 1fr);
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
 }
 
-.gallery-columns-6 {
-	-ms-grid-columns: (1fr)[6];
-	    grid-template-columns: repeat(6, 1fr);
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
 }
 
-.gallery-columns-7 {
-	-ms-grid-columns: (1fr)[7];
-	    grid-template-columns: repeat(7, 1fr);
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
 }
 
-.gallery-columns-8 {
-	-ms-grid-columns: (1fr)[8];
-	    grid-template-columns: repeat(8, 1fr);
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
 }
 
-.gallery-columns-9 {
-	-ms-grid-columns: (1fr)[9];
-	    grid-template-columns: repeat(9, 1fr);
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
 }
 
 .gallery-caption {
 	display: block;
 }
-
-/*# sourceMappingURL=../miss-albini/sass/maps/style.css.map */

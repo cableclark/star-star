@@ -1,0 +1,28 @@
+.container {
+    margin: 1rem;
+    margin-top: 100px;   
+    @media screen and (min-width: $large_screen) {
+        margin-top: 200px;
+    }    
+    
+}
+
+.entry-title {
+    margin: 0 1rem;	
+}
+
+// .entry-content {
+  
+// }
+
+
+.entry-footer {
+    span {
+        margin-right:1rem;
+        font-size: 0.7rem;
+    }
+}
+
+.entry-meta {
+    font-size: 0.8rem;;
+}
