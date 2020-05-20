@@ -831,6 +831,7 @@ a:hover, a:active {
 .post-navigation .nav-links {
 	display: -ms-flexbox;
 	display: flex;
+	font-size: 3rem;
 }
 
 .comment-navigation .nav-previous,
@@ -853,17 +854,13 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .container {
 	margin: 1rem;
-	margin-top: 100px;
+	margin-top: 90px;
 }
 
 @media screen and (min-width: 992px) {
 	.container {
 		margin-top: 200px;
 	}
-}
-
-.entry-title {
-	margin: 0 1rem;
 }
 
 .entry-footer span {
@@ -939,7 +936,6 @@ a:hover, a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -965,6 +961,7 @@ article {
 	display: grid;
 	-ms-grid-rows: 250px, 250px, auto, auto;
 	    grid-template-rows: 250px, 250px, auto, auto;
+	padding: 0.4em;
 }
 
 .entry-header {
@@ -973,11 +970,22 @@ article {
 	    grid-column: 1;
 	z-index: 10000;
 	background-color: rgba(255, 255, 255, 0.7);
-	padding: 1em 0;
+	margin-bottom: 1rem;
+}
+
+.entry-title {
+	margin: unset;
+	font-size: 1.8em;
+}
+
+.cat-links a {
+	color: #0369ad;
+	text-transform: uppercase;
+	font-size: 0.8em;
 }
 
 .post-thumbnail {
-	grid-row: 1/3;
+	grid-row: 1/2;
 	-ms-grid-column: 1;
 	    grid-column: 1;
 }
@@ -993,6 +1001,11 @@ article {
 	    grid-column: 1;
 }
 
+.entry-content p {
+	margin: 0.5em 0;
+	margin-bottom: 1.5rem;
+}
+
 .entry-footer {
 	grid-row: 4/5;
 	-ms-grid-column: 1;
@@ -1002,18 +1015,10 @@ article {
 .post,
 .page {
 	margin: 0 0 1.5em;
-	box-shadow: 1px 1px 5px rgba(5, 5, 5, 0.7);
 }
 
 .updated:not(.published) {
 	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary,
-.entry-footer {
-	margin: 0 1rem;
 }
 
 .page-links {
@@ -1069,19 +1074,30 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-.wp-caption {
+.wp-caption,
+figcaption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
+	font-size: 0.8em;
+	font-weight: lighter;
+	font-style: italic;
+	text-align: center;
 }
 
-.wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*="wp-image-"],
+figcaption img[class*="wp-image-"] {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+.wp-caption .wp-caption-text,
+figcaption .wp-caption-text {
+	margin: 0 0;
+}
+
+.aligncenter figcaption {
+	margin-bottom: 0;
 }
 
 .wp-caption-text {

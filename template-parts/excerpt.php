@@ -48,7 +48,11 @@
 				'after'  => '</div>',
 			)
 		);
+
+		
+
 		?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
@@ -61,6 +65,8 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+
+		<?php star_star_get_tags(); ?> 
 		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

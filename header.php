@@ -55,6 +55,13 @@
 					'menu_id'        => 'primary-menu',
 				)
 			);
+
+			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+				return;
+			}
+			
+			 dynamic_sidebar( 'sidebar-2' );
+
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

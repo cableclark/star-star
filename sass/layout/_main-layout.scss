@@ -1,19 +1,12 @@
 .container {
     margin: 1rem;
-    margin-top: 100px;   
+    margin-top: 90px;   
     @media screen and (min-width: $large_screen) {
         margin-top: 200px;
     }    
     
 }
 
-.entry-title {
-    margin: 0 1rem;	
-}
-
-// .entry-content {
-  
-// }
 
 
 .entry-footer {

@@ -17,9 +17,7 @@
 .site-branding {
     display:flex;
     align-content:center;   
-   
     flex-wrap: wrap;
-
     @media screen and (min-width: $large_screen) {
         justify-content: center;
         
@@ -30,8 +28,7 @@
 .site-title,
 .main-navigation
  {
-    margin: auto 1rem;
-    font-size: 1rem;
+    margin: auto 1rem; font-size: 1rem;
    
 }
 
@@ -40,7 +37,7 @@
 }
 
 .site-title {
-
+    
     a {
         font-size: 1.3rem;
         font-family: $font-headings; 
