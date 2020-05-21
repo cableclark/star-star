@@ -158,7 +158,7 @@ add_action( 'widgets_init', 'MissAlbini_widgets_init' );
 function MissAlbini_scripts() {
 
 	//Enqueue Google fonts
-	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Vollkorn&display=swap');
+	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@800&display=swap');
  
 
 	wp_enqueue_style( 'MissAlbini-style', get_stylesheet_uri(), array(), _S_VERSION );
