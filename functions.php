@@ -140,7 +140,7 @@ function MissAlbini_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'star-star' ),
+			'name'          => esc_html__( 'Sidebar-2', 'star-star' ),
 			'id'            => 'sidebar-2',
 			'description'   => esc_html__( 'Add widgets here.', 'star-star' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -159,8 +159,7 @@ function MissAlbini_scripts() {
 
 	//Enqueue Google fonts
 	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Vollkorn&display=swap');
-
-	wp_enqueue_script('vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js', [], '2.5.17'); 
+ 
 
 	wp_enqueue_style( 'MissAlbini-style', get_stylesheet_uri(), array(), _S_VERSION );
 

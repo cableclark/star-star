@@ -10,7 +10,7 @@
     background-color: white;
     position:fixed; 
     @media screen and (min-width: $large_screen) {
-        height: 150px;
+        height: 100px;
     }    
 }
 
@@ -34,6 +34,9 @@
 
 .site-description {
     font-size: 0.7rem;
+    @media screen and(min-width: $large_screen) {
+        font-size: 1rem;
+    }
 }
 
 .site-title {
@@ -55,10 +58,6 @@
     display:flex; 
 }
 
-.page_item {
-    padding:1em;
-} 
-
 .custom-logo {
     height:40px;
     width:40px;
@@ -69,20 +68,3 @@
     display:none;
 }
 
-.toggler {
-    padding:auto 10px;
-    display: flex;
-    flex-direction:column;
-    margin: 5px 5px;
-    @media screen and (min-width: $large_screen) {
-
-        display: none;
-    }    
-    div {
-        height: 2px;
-        width: 30px;
-        margin: 4px 0;
-        background-color: black;
-    }  
-     
-}  

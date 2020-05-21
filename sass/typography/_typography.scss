@@ -9,8 +9,8 @@ textarea {
 	//  font-size: 1rem;
 	line-height: $font__line-height-body;
 
-	@media screen and (min-width: 700px) {
-		font-size: 1.6rem;
+	@media screen and (min-width: $large_screen) {
+		font-size: 1.4rem;
 
 	}
 }
