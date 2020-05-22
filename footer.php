@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package STAR-STAR
+ * @package Miss Albini
  */
 
 ?>
@@ -15,11 +15,9 @@
 </div> <!-- Container ends -->
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-
-			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'star-star' ), 'star-star', '<a href="https://www.github.com/cableclark">Igor Stojanovski</a>' );
+				printf( esc_html__( '%1$s, %2$s  by %3$s.', 'Miss Albini' ), 'Miss Albini', date('Y'), '<a href="https://www.github.com/cableclark">Igor Stojanovski</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

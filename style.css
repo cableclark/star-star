@@ -1,13 +1,12 @@
 /*!
-Theme Name: miss-albin
+Theme Name: miss-albini
 Theme URI: http://underscores.me/
 Author: Igor Stojanovski
 Author URI: https://www.github.com/cableclark
-Description: A theme made for a macedonian sex workers NGO \'s web site
-Version: 1.0.0
+Description: A theme made for a macedonian music blogger
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: star-star
+Text Domain: Miss-Albini
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -587,7 +586,7 @@ table {
 	font-size: 0.7rem;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 380px) {
 	.site-description {
 		display: none;
 	}
@@ -606,7 +605,7 @@ table {
 	font-weight: bold;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 380px) {
 	.site-title a {
 		font-size: 1rem;
 	}
@@ -618,19 +617,10 @@ table {
 	}
 }
 
-.nav-menu {
-	display: -ms-flexbox;
-	display: flex;
-}
-
 .custom-logo {
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	margin: 5px;
-}
-
-.sub-menu {
-	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -750,8 +740,8 @@ a:hover, a:active {
 .primary-menu {
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-line-pack: center;
-	    align-content: center;
+	-ms-flex-pack: start;
+	    justify-content: flex-start;
 }
 
 .main-navigation ul,
@@ -772,8 +762,9 @@ a:hover, a:active {
 		-ms-flex-direction: row;
 		    flex-direction: row;
 		height: 100px;
-		background-color: white;
-		position: relative;
+		position: static;
+		background-color: unset;
+		color: #3c30a3;
 	}
 }
 
@@ -819,8 +810,8 @@ a:hover, a:active {
 .primary-menu a {
 	display: block;
 	text-decoration: none;
-	color: white;
 	font-size: 0.8rem;
+	color: white;
 }
 
 @media screen and (min-width: 1600px) {
@@ -833,7 +824,7 @@ a:hover, a:active {
 @media screen and (min-width: 1600px) {
 	.main-navigation a:hover,
 	.primary-menu a:hover {
-		color: #4d4d4d;
+		color: #191970;
 	}
 }
 
@@ -892,31 +883,64 @@ a:hover, a:active {
 }
 
 .menu {
-	display: none;
 	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: -ms-flexbox;
+	display: flex;
 	-ms-flex-direction: column;
 	    flex-direction: column;
-	top: 0;
-	left: 0;
-	height: 94vh;
-	width: 100%;
+	height: 100vh;
+	width: 350px;
 	background-color: #3c30a3;
 	-ms-flex-pack: center;
 	    justify-content: center;
 	-ms-flex-align: center;
 	    align-items: center;
+	transform: translateX(-350px);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s ease-in;
+}
+
+@media screen and (min-width: 1600px) {
+	.menu {
+		box-shadow: unset;
+		position: static;
+		transform: translateX(0px);
+		transform: translateY(2px);
+	}
 }
 
 .menu-active {
 	display: -ms-flexbox;
 	display: flex;
+	transform: translateX(0px);
+}
+
+@media screen and (min-width: 1600px) {
+	.menu-active {
+		position: unset;
+	}
+}
+
+.nav-menu {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.sub-menu {
+	display: none;
 }
 
 /*--------------------------------------------------------------
 ## Search form
 --------------------------------------------------------------*/
-#search-3 {
-	display: none;
+.widget_search {
+	display: -ms-flexbox;
+	display: flex;
+	left: 0px;
+	top: 0px;
+	width: 100%;
 	-ms-flex-pack: center;
 	    justify-content: center;
 	-ms-flex-line-pack: center;
@@ -930,13 +954,26 @@ a:hover, a:active {
 	left: 0;
 	width: 100vw;
 	background-color: white;
-	transform: translateY(70px);
-	transition: trasnform 0.2s ease-in;
+	transform: translateY(-200px);
+	opacity: 0;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease-in;
+	z-index: 15000;
 }
 
 @media screen and (min-width: 1024px) {
-	#search-3 {
+	.widget_search {
 		height: 100px;
+	}
+}
+
+.search-active {
+	transform: translateY(80px);
+	opacity: 1;
+}
+
+@media screen and (min-width: 1024px) {
+	.search-active {
 		transform: translateY(100px);
 	}
 }
@@ -984,9 +1021,14 @@ a:hover, a:active {
 	}
 }
 
-.search-active {
-	display: block;
-	transform: translateY(0px);
+.search-icon {
+	margin-left: 20px;
+	height: 25px;
+	width: 25px;
+	cursor: pointer;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
 }
 
 /*--------------------------------------------------------------
@@ -1189,6 +1231,10 @@ article {
 	font-family: "Playfair Display", serif;
 }
 
+.site-info {
+	font-size: 0.9rem;
+}
+
 .site-footer {
 	background-color: #3c30a3;
 	height: 200px;
@@ -1314,10 +1360,6 @@ article {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.site-footer {
-	background-color: #3c30a3;
-}
-
 .widget {
 	margin: 0 0 1.5em;
 }
