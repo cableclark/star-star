@@ -8,6 +8,7 @@
 
 html {
 	box-sizing: border-box;
+	overflow-x: hidden;
 }
 
 body {
@@ -28,10 +29,16 @@ img {
 	max-width: 100%; // Adhere to container width.
 }
 
-.attachment-post-thumbnail  {
+.wp-block-cover	 {
+
+	max-width:initial;
+	max-height: 300px;
+}
+
+// .attachment-post-thumbnail  {
     
 
-}
+// }
 
 figure {
 	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.

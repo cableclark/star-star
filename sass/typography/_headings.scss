@@ -10,12 +10,21 @@ h6 {
 
 h1 {
 	font-size: 1em;
+
+	@include gradient;
+
+	a {
+		@include gradient;
+	}
 	
 }
 
 
 h2 {
 	font-size: 1.2em;
+	a {
+		@include gradient;
+	}
 	
 }
 
@@ -32,3 +41,5 @@ h4 {
 h5 {
 	font-size:1.1em;
 }
+
+

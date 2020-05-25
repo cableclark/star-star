@@ -158,13 +158,17 @@ add_action( 'widgets_init', 'MissAlbini_widgets_init' );
 function MissAlbini_scripts() {
 
 	//Enqueue Google fonts
-	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Playfair+Display:wght@800&display=swap');
- 
+
+	wp_enqueue_style( 'MissAlbini-fonts2', 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?&family=Playfair+Display:wght@800&display=swap');
+	
+	wp_enqueue_style( 'MissAlbini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+	
 
 	wp_enqueue_style( 'MissAlbini-style', get_stylesheet_uri(), array(), _S_VERSION );
 
 	wp_style_add_data( 'MissAlbini-style', 'rtl', 'replace' );
-
 
 
 	wp_enqueue_script( 'MissAlbini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -196,7 +200,9 @@ function MissAlbini_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
+
 add_filter( 'wp_resource_hints', 'MissAlbini_resource_hints', 10, 2 );
+
 
 /**
  * Filter the excerpt "read more" string.
@@ -211,6 +217,45 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
 
+function wpforo_search_form( $html ) {
+
+	$html = str_replace( 'placeholder="Search ', 'placeholder=""', $html );
+
+
+	return $html;
+}
+add_filter( 'get_search_form', 'wpforo_search_form' );
+
+
+
+ 
+function my_search_form_text($text) {
+
+	 $text = str_replace('value="Search"', 'value="Барај"', $text); //set as value the text you want
+	 
+     return $text . '<svg 
+	 xmlns="http://www.w3.org/2000/svg" 
+	 viewBox="0 0 57.93 56.87" 
+	 class="search-x"
+ >
+	 <defs>
+		 <style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4px;}</style>
+	 </defs>
+	 <title>Ex</title>
+	 <g id="Layer_2" data-name="Layer 2">
+		 <g id="Layer_1-2" data-name="Layer 1">
+			 <line class="cls-1" x1="3.06" y1="2" x2="55.93" y2="54.87"/>
+			 <line class="cls-1" x1="54.87" y1="2" x2="2" y2="54.87"/>
+		 </g>
+	 </g>
+ </svg>';
+}
+
+add_filter('get_search_form', 'my_search_form_text');
+
+
+
+
 /**
  * Custom template tags for this theme.
  */
@@ -220,6 +265,12 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Loads a customized Archives widget
+ */
+
+require get_template_directory() . '/classes/class-my-archives.php';
 
 /**
  * Customizer additions.

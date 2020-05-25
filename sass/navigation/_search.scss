@@ -9,9 +9,7 @@
     height: 80px;
     margin: 0;
     padding-left: 0;
-    position: absolute;
-    top:0;
-    left:0;
+    position: fixed;
     width: 100vw;
     background-color: $color__background-body;
     transform: translateY(-200px);
@@ -29,7 +27,8 @@
 }
 
 .search-active {
-    transform: translateY(80px);
+    
+    transform: translateY(70px);
     opacity:1;
 
     @media screen and (min-width: $large_screen) {
@@ -37,6 +36,17 @@
         transform: translateY(100px);
         
     } 
+
+}
+
+.search-active-scrolled {
+    transform: translateY(70px);
+    opacity:1;
+
+    @media screen and (min-width: $large_screen) {
+        
+        transform: translateY(80px);
+    }
 
 
 }
@@ -67,13 +77,13 @@
     text-align: center; 
 
 }
+
 .search-form  {
     input[type="submit"] {
         background-color:$color__link;
         border: 1px solid white;
         color:white;   
         border-radius: 0; 
-
 
         @media screen and (min-width: $large_screen) {
             width: 200px
@@ -82,12 +92,22 @@
 }
 
 
-
-
 .search-icon {
-    margin-left: 20px;
+    margin-left: 30px;
     height:25px;
     width: 25px;
     cursor: pointer;
     align-self: center;
+    @media screen and (min-width: $extra_large_screen) {
+        margin-left: 50px;
+    }  
+}
+
+.search-x {
+    align-self: center;
+    width:25px;
+    height:25px;
+    margin: 0 15px;
+    cursor: pointer;
+
 }

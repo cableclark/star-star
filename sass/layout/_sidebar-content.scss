@@ -17,6 +17,8 @@
 // }
 
 .widget-area {
+
+	background-color: $color__link;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -25,13 +27,16 @@
 		list-style-type: none;
 	}
 
-	@media screen and (min-width: $large_screen) {
-		 display: flex;
-		 justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 2em;
 
-
-       
-    }   
+	a,
+	h2 
+	{
+		color: $color__background-body;
+	}
+      
 }
 
 // .site-footer {

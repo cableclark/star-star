@@ -9,3 +9,10 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+
+@mixin gradient {
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
