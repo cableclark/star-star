@@ -7,8 +7,6 @@ Template Name: Page Single
 get_header();
 ?>
 
-<p> Hello from the static page </p>
-
 <?php
 
 $post = new WP_Query('type=posts&post_per+page=1');

@@ -2,8 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package STAR-STAR
- */
+ * @package Miss Albini
 
 /**
  * Adds custom classes to the array of body classes.

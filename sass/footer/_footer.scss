@@ -1,0 +1,13 @@
+.site-footer {
+    background-color: $color__link;
+    height: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: white; 
+    }
+    
+}

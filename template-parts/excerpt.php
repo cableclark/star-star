@@ -9,23 +9,26 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="excerpt-<?php the_ID(); ?>" class="excerpt">
+	<?php star_star_post_thumbnail('full'); ?>
+	<header class="excerpt-header">
+
 		<?php
 		star_star_entry_footer(); 
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="excerpt-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="excerpt-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		 ?>
-
+		?>
+		<div class="excerpt-meta">
+				<?php
+				star_star_posted_on();
+				?>
+		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-
-	<?php star_star_post_thumbnail('full'); ?>
-
-	<div class="entry-content">
+	
+	<div class="excerpt-content">
 		<?php
 		the_excerpt(
 			sprintf(
@@ -48,25 +51,11 @@
 				'after'  => '</div>',
 			)
 		);
-
-		
-
 		?>
+	<footer class="excerpt-footer">
+		<?php star_star_get_tags(); ?> 
+	</footer><!-- .entry-footer -->	
 
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-	<?php
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				star_star_posted_on();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-
-		<?php star_star_get_tags(); ?> 
-		
-	</footer><!-- .entry-footer -->
+	
 </article><!-- #post-<?php the_ID(); ?> -->

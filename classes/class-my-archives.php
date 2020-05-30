@@ -1,6 +1,6 @@
 <?php
 
-Class My_Categories_Widget extends WP_Widget_Categories {
+Class My_Archives_Widget extends WP_Widget_Archives {
     function widget( $args, $instance ) {
         static $first_dropdown = true;
  
@@ -17,19 +17,7 @@ Class My_Categories_Widget extends WP_Widget_Categories {
         echo $args['before_widget'];
 
 
-        echo '<svg
-                class="search-icon"
-                version="1.1"
-                baseProfile="full"
-                
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 150.66 140.33">
-                <defs><style>.cls-1{fill:#231f20;}</style></defs>
-                <title>Search Icon</title>
-                <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M145.84,135,96.12,89.41a54.37,54.37,0,1,0-3.38,3.68l49.73,45.59a2.5,2.5,0,0,0,3.37-3.69Zm-91.4-29.11a51.44,51.44,0,1,1,51.44-51.44A51.5,51.5,0,0,1,54.44,105.88Z"/></g>
-                </g>
-            </svg>';
+        echo recent_posts_icon_svg ();
 
         if ( $title ) {
             echo $args['before_title'] . $title . $args['after_title'];
@@ -112,10 +100,3 @@ Class My_Categories_Widget extends WP_Widget_Categories {
 }
 
 
-
-function my_categories_widget_register() {
-    unregister_widget( 'WP_Widget_Categories' );
-    register_widget( 'My_Categories_Widget' );
-}
-
-add_action( 'widgets_init', 'my_categories_widget_register' );

@@ -20,14 +20,14 @@ if ( ! function_exists( 'star_star_posted_on' ) ) :
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
+			esc_html( get_the_date('j. F, Y') ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
+			esc_html( get_the_modified_date('j m, Y') )
 		);
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x('Објавено на  %s', 'post date', 'star-star' ),
+			esc_html_x('%s', 'post date', 'star-star' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 

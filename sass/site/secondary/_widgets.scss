@@ -1,9 +1,32 @@
 .widget {
 	margin: 0 0 1.5em;
-
-
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: center;
+	min-width: 100px;
+	
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
 	}
+
 }
+
+
+.widget_search {
+	flex-direction: row;
+	justify-content: center;
+
+}
+
+.svg-icons {
+	height: 40px;
+
+	@media screen and (min-width: $large_screen) {
+		align-self: center;
+		height: 80px;
+	} 
+}
+
+

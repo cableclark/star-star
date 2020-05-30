@@ -15,6 +15,9 @@
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     position:fixed; 
     @media screen and (min-width: $large_screen) {
+        justify-content: space-around;
+    }    
+    @media screen and (min-width: $extra_large_screen) {
         height: 100px;
         @include header-transition;
         justify-content: center;
@@ -24,10 +27,7 @@
 
 .smaller-header {
     @media screen and (min-width: $large_screen) {
-
         height: 80px;
-       
-       
     }   
 
 }
@@ -37,70 +37,53 @@
     align-content:center;   
     flex-wrap: wrap;
 
-    @media screen and (min-width: $large_screen) {
-        justify-content: center;
-        
-    } 
 }
 
 .site-description,
 .site-title,
 .main-navigation
  {
-    
     margin: auto 1rem; 
     font-size: 1rem;
-   
 }
 
 .site-description {
     @media screen and(max-width: 380px) {
         display: none;
     }
-
     font-size: 0.7rem;
-
     @media screen and(min-width: $medium_screen) {
         font-size: 0.9rem;
     }
 }
 
 .site-title {
-    
     a {
         font-size: 1.3rem;
         font-family: $font-headings; 
         font-weight: bold;
-        
         @include gradient;
        
         @media screen and(max-width: 380px) {
             font-size: 1rem;
         }
-
         @media screen and (min-width: $large_screen) {
             display: block;
-            font-size: 2rem; 
-            
+            font-size: 2rem;   
         } 
-    
         @media screen and (min-width: $extra_large_screen) {
     
             @include header-transition; 
         } 
     }
-
  }
 
  .smaller-navbar {
-     
     @media screen and (min-width: $extra_large_screen) {
         a {    
             font-size:1.8rem;
-        }   
-            
+        }         
     }
-
  }
 
 

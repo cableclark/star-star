@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package MissAlbini
+ * @package Miss Albini
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -50,8 +50,8 @@ if ( ! function_exists( 'star_star_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'star-star' ),
-				'menu-2' => esc_html__( 'Social', 'star-star' ),
+				'menu-1' => esc_html__( 'Primary', 'miss_albini' ),
+				'social' => esc_html__( 'Social', 'miss_albini' ),
 			)
 		);
 
@@ -128,9 +128,9 @@ add_action( 'after_setup_theme', 'MissAlbini_content_width', 0 );
 function MissAlbini_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'star-star' ),
+			'name'          => esc_html__( 'Sidebar', 'miss_albini' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'star-star' ),
+			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -140,9 +140,9 @@ function MissAlbini_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar-2', 'star-star' ),
+			'name'          => esc_html__( 'Sidebar-2', 'miss_albini' ),
 			'id'            => 'sidebar-2',
-			'description'   => esc_html__( 'Add widgets here.', 'star-star' ),
+			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -165,11 +165,9 @@ function MissAlbini_scripts() {
 	
 	wp_enqueue_style( 'MissAlbini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
 	
-
 	wp_enqueue_style( 'MissAlbini-style', get_stylesheet_uri(), array(), _S_VERSION );
 
 	wp_style_add_data( 'MissAlbini-style', 'rtl', 'replace' );
-
 
 	wp_enqueue_script( 'MissAlbini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -219,7 +217,7 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 function wpforo_search_form( $html ) {
 
-	$html = str_replace( 'placeholder="Search ', 'placeholder=""', $html );
+	$html = str_replace( 'placeholder="Пребарувај', 'placeholder=""', $html );
 
 
 	return $html;
@@ -227,28 +225,19 @@ function wpforo_search_form( $html ) {
 add_filter( 'get_search_form', 'wpforo_search_form' );
 
 
+/**
+ * Load svg icons variables
+ */
+require get_template_directory() . '/inc/svg-icons.php';
+
+
 
  
 function my_search_form_text($text) {
 
-	 $text = str_replace('value="Search"', 'value="Барај"', $text); //set as value the text you want
+	 $text = str_replace('value="Пребарувај"', 'value="Барај"', $text); //set as value the text you want
 	 
-     return $text . '<svg 
-	 xmlns="http://www.w3.org/2000/svg" 
-	 viewBox="0 0 57.93 56.87" 
-	 class="search-x"
- >
-	 <defs>
-		 <style>.cls-1{fill:none;stroke:#231f20;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4px;}</style>
-	 </defs>
-	 <title>Ex</title>
-	 <g id="Layer_2" data-name="Layer 2">
-		 <g id="Layer_1-2" data-name="Layer 1">
-			 <line class="cls-1" x1="3.06" y1="2" x2="55.93" y2="54.87"/>
-			 <line class="cls-1" x1="54.87" y1="2" x2="2" y2="54.87"/>
-		 </g>
-	 </g>
- </svg>';
+     return $text . close_icon_svg ();
 }
 
 add_filter('get_search_form', 'my_search_form_text');
@@ -266,11 +255,35 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
+
+
 /**
  * Loads a customized Archives widget
  */
 
 require get_template_directory() . '/classes/class-my-archives.php';
+
+
+function my_archives_widget_register() {
+    unregister_widget( 'WP_Widget_Archives' );
+    register_widget( 'My_Archives_Widget' );
+}
+
+add_action( 'widgets_init', 'my_archives_widget_register' );
+
+/**
+ * Loads a customized Recent Posts widget
+ */
+
+require get_template_directory() . '/classes/class-my-recent-posts.php';
+
+
+function my_recent_posts_widget_register() {
+    unregister_widget( 'WP_Widget_Recent_Posts' );
+    register_widget( 'My_Custom_Recent_Posts_Widget' );
+}
+
+add_action( 'widgets_init', 'my_recent_posts_widget_register' );
 
 /**
  * Customizer additions.
