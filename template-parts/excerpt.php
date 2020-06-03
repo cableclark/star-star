@@ -4,9 +4,8 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package STAR-STAR
+ * @package Miss Albini
  */
-
 ?>
 
 <article id="excerpt-<?php the_ID(); ?>" class="excerpt">

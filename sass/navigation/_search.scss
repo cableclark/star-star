@@ -17,37 +17,25 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease-in;
     z-index: 15000;
-    
     @media screen and (min-width: $large_screen) {
-        
         height: 100px;
-        
-    } 
-
+    }
 }
 
 .search-active {
-    
     transform: translateY(70px);
     opacity:1;
-
     @media screen and (min-width: $large_screen) {
-        
         transform: translateY(100px);
-        
     } 
-
 }
 
 .search-active-scrolled {
     transform: translateY(70px);
     opacity:1;
-
     @media screen and (min-width: $large_screen) {
-        
         transform: translateY(80px);
     }
-
 
 }
 
@@ -56,13 +44,13 @@
     display: flex;
     max-height: 2rem;
     justify-content: center;
-
     label {
         height: 100%;
         display:flex;
-        width: 70vw;
         justify-content: center;
-      
+        @media screen and (min-width: $large_screen) {
+            width: 500px;
+        }
     }
 }		
 
@@ -71,36 +59,33 @@
     height: 30px;
     font-family:$font__main;
     flex-grow: 3;
-    border: 1px solid white;
     color:white;
     border-radius: 0;  	
     text-align: center; 
-
 }
 
 .search-form  {
     input[type="submit"] {
-        background-color:$color__link;
-        border: 1px solid white;
+        @include background;
         color:white;   
         border-radius: 0; 
-
+        transition: all 0.1s ease-in;
         @media screen and (min-width: $large_screen) {
             width: 200px
-        }   
+        }  
+    }
+    input[type="submit"]:hover {
+        cursor: pointer;
+        transform: scale(0.98);
     }
 }
 
-
 .search-icon {
     margin-left: 30px;
-    height:25px;
-    width: 25px;
+    height:35px;
+    width: 35px;
     cursor: pointer;
     align-self: center;
-    @media screen and (min-width: $extra_large_screen) {
-        margin-left: 50px;
-    }  
 }
 
 .search-x {
@@ -109,5 +94,8 @@
     height:25px;
     margin: 0 15px;
     cursor: pointer;
+}
 
+.cat-title {
+    font-size: 1.6em;
 }

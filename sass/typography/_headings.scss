@@ -6,20 +6,13 @@ h5,
 h6 {
 	clear: both;
 	font-family: $font-headings;
+	line-height: 1.3em;	
 }
 
 h1 {
 	font-size: 2rem;
-
-	@include gradient;
-
-	a {
-		@include gradient;
-	}
-
 	@media screen and (min-width: $extra_large_screen) {
-		font-size: 3.2rem;
-		
+		font-size: 3rem;
     } 
 	
 }
@@ -30,12 +23,9 @@ h2 {
         font-size: 2rem;
 	} 
 	@media screen and (min-width: $extra_large_screen) {
-		font-size: 3.2rem;
+		font-size: 3rem;
 		line-height: 3rem;
     }         
-	a {
-		@include gradient;
-	}
 	
 }
 
@@ -53,4 +43,13 @@ h5 {
 	font-size:1.1em;
 }
 
+.widget-title {
+	background: unset;
+	-webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
+
+.search-title {
+	font-size: 1.2em;
+}
 

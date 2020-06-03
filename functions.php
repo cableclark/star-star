@@ -133,8 +133,8 @@ function MissAlbini_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 
@@ -145,8 +145,8 @@ function MissAlbini_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 }

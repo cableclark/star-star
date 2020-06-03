@@ -21,19 +21,77 @@ function close_icon_svg () {
 }                
 
 function search_icon_svg () {
-    return   '<svg
-                class="search-icon"
-                version="1.1"
-                baseProfile="full"
-                
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 150.66 140.33">
-                
-                <title>Search Icon</title>
-                <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1"><path  d="M145.84,135,96.12,89.41a54.37,54.37,0,1,0-3.38,3.68l49.73,45.59a2.5,2.5,0,0,0,3.37-3.69Zm-91.4-29.11a51.44,51.44,0,1,1,51.44-51.44A51.5,51.5,0,0,1,54.44,105.88Z"/></g>
-                </g>
-            </svg>';
+    return   '<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <svg
+       xmlns:dc="http://purl.org/dc/elements/1.1/"
+       xmlns:cc="http://creativecommons.org/ns#"
+       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+       xmlns:svg="http://www.w3.org/2000/svg"
+       xmlns="http://www.w3.org/2000/svg"
+       xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+       xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+       inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+       sodipodi:docname="Search Icon.svg"
+       id="svg8"
+       viewBox="0 0 160.66 150.33"
+       version="1.1"
+       class="search-icon">
+      <metadata
+         id="metadata14">
+        <rdf:RDF>
+          <cc:Work
+             rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type
+               rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+          </cc:Work>
+        </rdf:RDF>
+      </metadata>
+      <defs
+         id="defs12" />
+      <sodipodi:namedview
+         inkscape:current-layer="Layer_2"
+         inkscape:window-maximized="1"
+         inkscape:window-y="37"
+         inkscape:window-x="0"
+         inkscape:cy="75.165001"
+         inkscape:cx="80.330002"
+         inkscape:zoom="5.4393527"
+         showgrid="false"
+         id="namedview10"
+         inkscape:window-height="1011"
+         inkscape:window-width="1920"
+         inkscape:pageshadow="2"
+         inkscape:pageopacity="0"
+         guidetolerance="10"
+         gridtolerance="10"
+         objecttolerance="10"
+         borderopacity="1"
+         bordercolor="#666666"
+         pagecolor="#ffffff" />
+      <title
+         id="title2">Search Icon</title>
+      <g
+         transform="matrix(0.95450003,0,0,0.95095233,11.397964,8.2185484)"
+         data-name="Layer 2"
+         id="Layer_2">
+        <g
+           data-name="Layer 1"
+           id="Layer_1-2">
+          <path
+             id="path4"
+             d="M 145.84,135 96.12,89.41 a 54.37,54.37 0 1 0 -3.38,3.68 l 49.73,45.59 a 2.5,2.5 0 0 0 3.37,-3.69 z m -91.4,-29.11 a 51.44,51.44 0 1 1 51.44,-51.44 51.5,51.5 0 0 1 -51.44,51.43 z" />
+        </g>
+        <ellipse
+           ry="52.196182"
+           rx="52.002178"
+           cy="53.840672"
+           cx="54.696373"
+           id="path16"
+           style="fill:none;stroke-width:5.87788;stroke:#000000" />
+      </g>
+    </svg>
+    ';
 }     
 
 

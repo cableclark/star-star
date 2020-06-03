@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Ништо не беше пронајдено', 'star-star' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Резултати:', 'star-star' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -35,12 +35,9 @@
 			?>
 
 			<p><?php esc_html_e( 'Ништо не беше пронајдено.', 'star-star' ); ?></p>
-			<?php
+		<?php
 
-		else :
-			?>
-
-			
+		
 
 		endif;
 		?>

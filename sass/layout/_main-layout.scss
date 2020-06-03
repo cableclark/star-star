@@ -1,25 +1,36 @@
 .container {
-    padding: 0 1em; 
+    margin-top: 100px;
     @media screen and (min-width: $large_screen) {
         padding: unset; 
         margin: 0 auto;
     }    
 }
 
-.site-container {
+.site-container
+ {
     margin: 5rem auto;
     padding: 0 1rem;
     max-width: 600px;
     @media screen and (min-width: $large_screen) {
-        margin: 100px auto;
-        max-width: 700px;
-        
+        margin: 130px auto;
+        max-width: 600px; 
     } 
     @media screen and (min-width: $extra_large_screen) {
-        margin: 200px auto;
+        margin: 120px auto;
         max-width: 700px;
-        
     } 
+}
+
+#primary {
+    @media screen and (max-width: $large_screen) {
+        max-width: 600px; 
+        margin: 0 auto;
+        margin-top: 60px;
+    } 
+
+}
+article {
+    margin-top: 30px;
 }
 
 .excerpt     
@@ -27,14 +38,18 @@
     margin: 0 0.5em;
     @media screen and (min-width: $large_screen) {
         display: grid;
-        grid-template-rows: min-max(200px, 350px) min-max(200px, 350px);
-        grid-template-columns: minmax(350px, 400px) minmax(350px, 600px);
+        grid-template-rows: 200px 200px;
+        grid-template-columns: 400px 400px;
+        align-content: center;
+        justify-content: center;
         column-gap: 2rem;  
-        margin: 8rem 10rem;
+        margin: 12rem auto;
+        
     }
     @media screen and (min-width: $extra_large_screen) {
-        grid-template-columns: minmax(350px, 600px) minmax(350px, 700px);
-        margin: 9rem 20rem;
+        grid-template-rows: minmax(200px, 400px) 300px; 
+        grid-template-columns: minmax(400px, 700px) minmax(400px, 700px);
+        margin: 10rem auto;
     }  
 }
 
@@ -43,11 +58,11 @@
     border-left: 1px solid $color__link;
     padding-left: 1rem;
     margin-top:  1rem;
-    line-height: 2.5rem;
     z-index: 10000;
 	background-color:rgba(255,255,255, 0.7);
     margin-bottom: 1rem;    
     @media screen and (min-width: $large_screen) {
+        line-height: 2.5rem;
         grid-row:1/2;
         grid-column:2/3;
     }
@@ -73,6 +88,7 @@
 .excerpt-content,
 .excerpt-summary {
     padding-left: 1rem;
+    padding-right: 1rem;
     p {
         font-size: 1rem;
         margin-bottom: 1rem;
@@ -99,13 +115,20 @@
 .entry-title {
 	margin: unset;
     @media screen and (min-width: $extra_large_screen) {
+        line-height: 1.3em;
+        margin: unset;
         margin-bottom: 1rem;
+        font-size: 2.6em;
     }
+}
+
+.page-content {
+    padding-left: 2rem;
 }
 
 .cat-links {
 	a {
-		color: rgb(3, 105, 173);
+		color:$color__link-hover;
 		text-transform: uppercase;
         font-size: 0.6rem;
         @media screen and (min-width: $large_screen) {
@@ -117,7 +140,6 @@
 .updated:not(.published) {
 	display: none;
 }
-
 
 .page-links {
 	clear: both;
@@ -143,6 +165,7 @@
     margin: 0 auto;
     margin-top: 6em;
     padding-left: 2rem;
+    border-left: 1px solid #111;
 }
 
 .edit-link {
@@ -162,4 +185,7 @@
 .site-info {
     font-size: 0.9rem;
 }
+
+
+
 
