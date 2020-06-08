@@ -8,7 +8,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package MissAlbini
+ * @package Miss Albini
  */
 
 /**
@@ -16,7 +16,7 @@
  *
  * @uses star_star_header_style()
  */
-function MissAlbini_custom_header_setup() {
+function miss_albini_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
@@ -32,15 +32,15 @@ function MissAlbini_custom_header_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'MissAlbini_custom_header_setup' );
+add_action( 'after_setup_theme', 'miss_albini_custom_header_setup' );
 
-if ( ! function_exists( 'MissAlbini_header_style' ) ) :
+if ( ! function_exists( 'miss_albini_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see MissAlbini_custom_header_setup().
+	 * @see miss_albini_custom_header_setup().
 	 */
-	function MissAlbini_header_style() {
+	function miss_albini_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

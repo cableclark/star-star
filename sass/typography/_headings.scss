@@ -7,14 +7,19 @@ h6 {
 	clear: both;
 	font-family: $font-headings;
 	line-height: 1.3em;	
+	margin: unset;
 }
 
 h1 {
 	font-size: 2rem;
 	@media screen and (min-width: $extra_large_screen) {
 		font-size: 3rem;
-    } 
+	} 
 	
+	@media screen and(max-width: 425px) {
+		font-size: 1.2em;
+	}
+
 }
 
 h2 {

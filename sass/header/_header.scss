@@ -34,28 +34,29 @@
     @media screen and (min-width: $large_screen) {
         height: 80px;
     }   
-
-   
-
 }
 
 .site-branding {
     display:flex;
     align-content:center;   
     flex-wrap: wrap;
-
 }
 
 .site-description,
 .site-title,
 .main-navigation
  {
-    margin: auto 1rem; 
-    font-size: 1rem;
+    margin: auto 1rem;
+     
+}
+
+.site-title {
+    position:relative;
+    top:-3px;
 }
 
 .site-description {
-    @media screen and(max-width: 380px) {
+    @media screen and(max-width: 558px) {
         display: none;
     }
     font-size: 0.7rem;
@@ -70,16 +71,14 @@
         font-family: $font-headings; 
         font-weight: bold;
         @include gradient;
-       
-        @media screen and(max-width: 380px) {
-            font-size: 1rem;
+        @media screen and(max-width: 425px) {
+            font-size: 0.9rem;
         }
         @media screen and (min-width: $large_screen) {
             display: block;
             font-size: 2rem;   
         } 
         @media screen and (min-width: $extra_large_screen) {
-    
             @include header-transition; 
         } 
     }
@@ -92,7 +91,6 @@
         }         
     }
  }
-
 
 .custom-logo {
     height:30px;

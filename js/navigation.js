@@ -3,7 +3,6 @@
  *
  */
 
-
 function toggleClass (item, searchElement, className) {
     
     item.addEventListener('click', function () {
@@ -15,7 +14,7 @@ function toggleClass (item, searchElement, className) {
 
 const toggler = document.querySelector('.toggler');
 
-const menuElement = document.querySelector('#primary-menu');
+const menuElement = document.querySelector('.main-menu');
 
 const search = document.querySelector('.search-icon');
 
@@ -50,7 +49,7 @@ function toggleSearchBar (item, searchElement, className, classNameScrolled, foc
     });
 }
 
-const searchElement = document.querySelector('#search-3');
+const searchElement = document.querySelector('.widget_search');
 
 const inputField = document.querySelector('.search-field');
 

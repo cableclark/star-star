@@ -27,11 +27,11 @@
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/блог' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/блог' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php
 			endif;
 			$miss_albini_description = get_bloginfo( 'description', 'display' );
@@ -41,21 +41,23 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 		<nav id="site-navigation" class="main-navigation">
-			<div class="toggler" aria-controls="primary-menu" aria-expanded="false"> <div> </div> <div> </div> <div> </div>  </div>
+			<div class="main-menu">
 			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-				return;
-			}
-			echo search_icon_svg();
+				wp_nav_menu(
+					array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					)
+				);
+				if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+					return;
+				}
+				echo search_icon_svg();
 			?>
 			</div>
-	
+			<div class="toggler" aria-controls="primary-menu" aria-expanded="false"> 
+				<div> </div> <div> </div> <div> </div>
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	

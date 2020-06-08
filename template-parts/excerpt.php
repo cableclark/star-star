@@ -9,11 +9,10 @@
 ?>
 
 <article id="excerpt-<?php the_ID(); ?>" class="excerpt">
-	<?php star_star_post_thumbnail('full'); ?>
+	<?php miss_albini_post_thumbnail('full'); ?>
 	<header class="excerpt-header">
-
 		<?php
-		star_star_entry_footer(); 
+		miss_albini_entry_footer(); 
 		if ( is_singular() ) :
 			the_title( '<h1 class="excerpt-title">', '</h1>' );
 		else :
@@ -22,7 +21,7 @@
 		?>
 		<div class="excerpt-meta">
 				<?php
-				star_star_posted_on();
+				miss_albini_posted_on();
 				?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
@@ -51,9 +50,11 @@
 			)
 		);
 		?>
-	<footer class="excerpt-footer">
-		<?php star_star_get_tags(); ?> 
-	</footer><!-- .entry-footer -->	
+		<footer class="excerpt-footer">
+			<?php miss_albini_get_tags(); ?> 
+		</footer><!-- .entry-footer -->	
+		<a href="<?php esc_url( the_permalink()) ?>">
+		<button class="read-more"> Прочитај</button></a>
 
 	</div><!-- .entry-content -->
 	

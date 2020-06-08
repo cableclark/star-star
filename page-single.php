@@ -1,14 +1,10 @@
 <?php 
-
 /* 
 Template Name: Page Single
 */
-
 get_header();
 ?>
-
 <?php
-
 $post = new WP_Query('type=posts&post_per+page=1');
 
 if ($post->have_posts()):
@@ -22,10 +18,5 @@ if ($post->have_posts()):
 <?php endwhile;
 endif;    
 wp_reset_postdata();
-
-
-
-
 ?>
-
 <?php get_footer(); ?>

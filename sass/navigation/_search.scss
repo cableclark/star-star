@@ -6,6 +6,7 @@
     justify-content: center ;
     align-content: center;
     list-style: none;
+    flex-wrap: wrap;
     height: 80px;
     margin: 0;
     padding-left: 0;
@@ -42,16 +43,18 @@
 .search-form {
     margin: auto 0;
     display: flex;
-    max-height: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
     label {
         height: 100%;
         display:flex;
         justify-content: center;
-        @media screen and (min-width: $large_screen) {
-            width: 500px;
-        }
+        flex-wrap: wrap;
     }
+    @media screen and (min-width: $large_screen) {
+        width: unset;
+    }
+
 }		
 
 .search-field {
@@ -62,6 +65,12 @@
     color:white;
     border-radius: 0;  	
     text-align: center; 
+    @media screen and(max-width: 425px) {
+         max-width: 160px; 
+    }
+    @media screen and (min-width: $large_screen) {
+        width: 600px;
+    } 
 }
 
 .search-form  {
@@ -70,9 +79,6 @@
         color:white;   
         border-radius: 0; 
         transition: all 0.1s ease-in;
-        @media screen and (min-width: $large_screen) {
-            width: 200px
-        }  
     }
     input[type="submit"]:hover {
         cursor: pointer;
@@ -81,18 +87,24 @@
 }
 
 .search-icon {
-    margin-left: 30px;
     height:35px;
     width: 35px;
     cursor: pointer;
     align-self: center;
+    stroke: black;
+    margin-top: 15px;
+    @media screen and (min-width: $extra_large_screen) {
+        margin-left: 30px;
+        margin-top: 0;
+    } 
 }
 
 .search-x {
     align-self: center;
-    width:25px;
-    height:25px;
-    margin: 0 15px;
+    width:20px;
+    stroke: black;
+    height:20px;
+    margin: 10px 15px;
     cursor: pointer;
 }
 

@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package STAR-STAR
+ * @package Miss Albini
  */
 
 /*
@@ -19,17 +19,15 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
 			<?php
-			$star_star_comment_count = get_comments_number();
-			if ( '1' === $star_star_comment_count ) {
+			$miss_albini_comment_count = get_comments_number();
+			if ( '1' === $miss_albini_comment_count ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'star-star' ),
@@ -38,14 +36,13 @@ if ( post_password_required() ) {
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $star_star_comment_count, 'comments title', 'star-star' ) ),
-					number_format_i18n( $star_star_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $miss_albini_comment_count, 'comments title', 'star-star' ) ),
+					number_format_i18n( $miss_albini_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
 			?>
 		</h2><!-- .comments-title -->
-
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
@@ -58,7 +55,6 @@ if ( post_password_required() ) {
 			);
 			?>
 		</ol><!-- .comment-list -->
-
 		<?php
 		the_comments_navigation();
 
@@ -68,10 +64,7 @@ if ( post_password_required() ) {
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'star-star' ); ?></p>
 			<?php
 		endif;
-
 	endif; // Check for have_comments().
-
 	comment_form();
 	?>
-
 </div><!-- #comments -->

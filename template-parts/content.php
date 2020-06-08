@@ -21,7 +21,7 @@
 			?>
 			<div class="entry-meta">
 					<?php
-					star_star_posted_on();
+					miss_albini_posted_on();
 					?>
 			</div><!-- .entry-meta -->
 		
@@ -60,7 +60,7 @@
 			?>
 				
 			<?php endif; ?>
-			<?php star_star_entry_footer(); ?>
+			<?php miss_albini_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 

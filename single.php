@@ -6,35 +6,27 @@
  *
  * @package Miss Albini
  */
-
 get_header();
 ?>
-
-	<main id="primary" class="site-main site-container">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( '', 'miss_albini' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( '', 'miss_albini' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			// if ( comments_open() || get_comments_number() ) :
-			// 	comments_template();
-			// endif;
-
-		endwhile; // End of the loop.
-		?>
-
+	<div class="thumb-container"><?php the_post_thumbnail();?></div>	
+	<main id="primary" class="site-main white-bg">
+		<div class="site-container">
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				get_template_part( 'template-parts/content', get_post_type() );
+				?>
+				<?php
+				the_post_navigation(
+					array(
+						'prev_text' => '<p class="nav-text"> ' . esc_html__( 'Претходно:', 'miss_albini' ) . '</p> <span class="nav-title">%title</span>',
+						'next_text' => '<p class="nav-text">'  . esc_html__( 'Следно:', 'miss_albini' ) . '</p> <span class="nav-title">%title</span>',
+					)
+				);
+			endwhile; // End of the loop.
+			?>
+		</div>	
 	</main><!-- #main -->
-
 <?php
 get_sidebar();
 get_footer();

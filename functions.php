@@ -12,7 +12,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'star_star_setup' ) ) :
+if ( ! function_exists( 'miss_albini_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +20,14 @@ if ( ! function_exists( 'star_star_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function MissAlbini_setup() {
+	function miss_albini_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on MissAlbini, use a find and replace
+		 * If you're building a theme based on miss_albini, use a find and replace
 		 * to change 'Miss-Albini' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'MissAlbini', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'miss_albini', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -103,7 +103,7 @@ if ( ! function_exists( 'star_star_setup' ) ) :
 		);
 	}
 endif;
-add_action( 'after_setup_theme', 'MissAlbini_setup' );
+add_action( 'after_setup_theme', 'miss_albini_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -112,20 +112,20 @@ add_action( 'after_setup_theme', 'MissAlbini_setup' );
  *
  * @global int $content_width
  */
-function MissAlbini_content_width() {
+function miss_albini_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'MissAlbini__content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'miss_albini_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'MissAlbini_content_width', 0 );
+add_action( 'after_setup_theme', 'miss_albini_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function MissAlbini_widgets_init() {
+function miss_albini_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'miss_albini' ),
@@ -150,34 +150,34 @@ function MissAlbini_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'MissAlbini_widgets_init' );
+add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function MissAlbini_scripts() {
+function miss_albini_scripts() {
 
 	//Enqueue Google fonts
 
-	wp_enqueue_style( 'MissAlbini-fonts2', 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
-	wp_enqueue_style( 'MissAlbini-fonts', 'https://fonts.googleapis.com/css2?&family=Playfair+Display:wght@800&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts', 'https://fonts.googleapis.com/css2?&family=Playfair+Display:wght@800&display=swap');
 	
-	wp_enqueue_style( 'MissAlbini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
 	
-	wp_enqueue_style( 'MissAlbini-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'miss_albini-style', get_stylesheet_uri(), array(), _S_VERSION );
 
-	wp_style_add_data( 'MissAlbini-style', 'rtl', 'replace' );
+	wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'MissAlbini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'MissAlbini-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'miss_albini-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'MissAlbini_scripts' );
+add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
 
 
 /**
@@ -188,8 +188,8 @@ add_action( 'wp_enqueue_scripts', 'MissAlbini_scripts' );
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
  */
-function MissAlbini_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'MissAlbini-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+function miss_albini_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'miss_albini-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
@@ -199,7 +199,7 @@ function MissAlbini_resource_hints( $urls, $relation_type ) {
 	return $urls;
 }
 
-add_filter( 'wp_resource_hints', 'MissAlbini_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'miss_albini_resource_hints', 10, 2 );
 
 
 /**
@@ -211,6 +211,7 @@ add_filter( 'wp_resource_hints', 'MissAlbini_resource_hints', 10, 2 );
 function wpdocs_excerpt_more( $more ) {
     return '...';
 }
+
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 
@@ -231,8 +232,6 @@ add_filter( 'get_search_form', 'wpforo_search_form' );
 require get_template_directory() . '/inc/svg-icons.php';
 
 
-
- 
 function my_search_form_text($text) {
 
 	 $text = str_replace('value="Пребарувај"', 'value="Барај"', $text); //set as value the text you want
@@ -241,8 +240,6 @@ function my_search_form_text($text) {
 }
 
 add_filter('get_search_form', 'my_search_form_text');
-
-
 
 
 /**
@@ -254,7 +251,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
 
 
 /**
@@ -271,12 +267,12 @@ function my_archives_widget_register() {
 
 add_action( 'widgets_init', 'my_archives_widget_register' );
 
+
 /**
  * Loads a customized Recent Posts widget
  */
 
 require get_template_directory() . '/classes/class-my-recent-posts.php';
-
 
 function my_recent_posts_widget_register() {
     unregister_widget( 'WP_Widget_Recent_Posts' );

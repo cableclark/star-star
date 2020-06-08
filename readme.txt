@@ -1,4 +1,4 @@
-=== STAR-STAR ===
+=== Miss Albini ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called STAR-STAR.
+A starter theme called Miss Albini.
 
 == Description ==
 
-A theme made for a macedonian sex workers NGO \'s web site
+A theme made for a music blogger
 
 == Installation ==
 
@@ -26,7 +26,7 @@ A theme made for a macedonian sex workers NGO \'s web site
 
 = Does this theme support any plugins? =
 
-STAR-STAR includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Miss Albini includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
