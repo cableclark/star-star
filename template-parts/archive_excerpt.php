@@ -21,7 +21,7 @@
 			?>
 			<div class="entry-meta">
 					<?php
-					star_star_posted_on();
+					miss_albini_posted_on();
 					?>
 			</div><!-- .entry-meta -->
 		
@@ -34,7 +34,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'star-star' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'miss_albini' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -47,7 +47,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'star-star' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'miss_albini' ),
 					'after'  => '</div>',
 				)
 			);
@@ -60,7 +60,7 @@
 			?>
 				
 			<?php endif; ?>
-			<?php star_star_entry_footer(); ?>
+			<?php miss_albini_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 
