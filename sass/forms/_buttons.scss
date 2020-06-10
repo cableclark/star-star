@@ -2,16 +2,17 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid white;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 1rem;
-	line-height: 1;
-	padding:  0.4em;
-	transition: all 0.2s ease-in;
+		border: none;
+		@include background;
+		color: $color__background-body;
+		height: 45px;
+		width: 200px;
+		cursor: pointer;
+		@include box-shadow-normal;
+		transition: all 0.2s ease-in;
+		font-size: 1rem;
 	&:hover {
-		border: 1px solid $color__link-visited;
+		@include box-shadow-hover;
 	}
 	&:active,
 	&:focus {

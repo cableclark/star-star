@@ -62,11 +62,9 @@ Class My_Custom_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 }
                 ?>
                 <li class="recent-posts">
-                    <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>>
-                        <div class="recent-post-image"> 
-                            <?php  echo get_the_post_thumbnail($recent_post->ID);?> 
-                        </div>
-                    </a>
+                    <div class="recent-post-image"> 
+                        <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>> <?php  echo get_the_post_thumbnail($recent_post->ID);?> </a>
+                    </div>
                     <div class="recent-posts__data">
                         <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>>
                         <?php echo $title; ?></a>

@@ -47,10 +47,12 @@ figure {
 
 .read-more {
 	display: none;
+	
 	@media screen and (min-width: 558px) {
 		display: block;
 		@include background;
 		color: white;
+		height: 45px;
 		width: 200px;
 		cursor: pointer;
 		margin-top: 20px;
@@ -58,8 +60,13 @@ figure {
 	} 
 	@media screen and (min-width: $extra_large_screen) {
 		margin-top: 50px;
+		height: 50px;
 	}
 	
+}
+
+.read-more:active {
+	transform: scale(0.99);
 }
 
 @import "tables";

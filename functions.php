@@ -152,6 +152,7 @@ function miss_albini_widgets_init() {
 }
 add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -179,7 +180,19 @@ function miss_albini_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
 
+/**
+ * Force HTTPS for loading scripts
+ */
+function wp_secure_page_force_ssl( $force_ssl, $post_id = 0 ) {
+    $force_ssl_on_these_posts = array(4729, 5547, 2493, 4679, 5454, 4192, 4750, 5473, 5344, 5183, 4222, 5135, 5492);
 
+    if(in_array($post_id, $force_ssl_on_these_posts )) {
+        return true;
+    }
+
+    return $force_ssl;
+}
+add_filter('force_ssl' , 'wp_secure_page_force_ssl', 1, 3);
 /**
  * Add preconnect for Google Fonts.
  *

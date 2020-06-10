@@ -395,7 +395,7 @@ h1 {
 
 @media screen and (max-width: 425px) {
 	h1 {
-		font-size: 1.2em;
+		font-size: 1.4em;
 	}
 }
 
@@ -405,7 +405,7 @@ h2 {
 
 @media screen and (min-width: 1024px) {
 	h2 {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 }
 
@@ -510,7 +510,7 @@ html {
 }
 
 body {
-	background: white;
+	background: #f8f8f8;
 }
 
 hr {
@@ -574,6 +574,7 @@ figure {
 		/* Chrome 10-25, Safari 5.1-6 */
 		background: linear-gradient(to right, #F48668, #FF5A5F, #E94057, #DA344D);
 		color: white;
+		height: 45px;
 		width: 200px;
 		cursor: pointer;
 		margin-top: 20px;
@@ -584,7 +585,12 @@ figure {
 @media screen and (min-width: 1600px) {
 	.read-more {
 		margin-top: 50px;
+		height: 50px;
 	}
+}
+
+.read-more:active {
+	transform: scale(0.99);
 }
 
 table {
@@ -603,10 +609,11 @@ table {
 	    flex-direction: row;
 	-ms-flex-pack: justify;
 	    justify-content: space-between;
-	height: 70px;
+	height: 60px;
 	width: 100%;
 	top: 0;
-	background-color: white;
+	background-color: #f8f8f8;
+	transition: all 0.2s ease-out;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	position: fixed;
 }
@@ -615,13 +622,7 @@ table {
 	.site-header {
 		-ms-flex-pack: distribute;
 		    justify-content: space-around;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.site-header {
 		height: 100px;
-		transition: all 0.2s ease-out;
 	}
 }
 
@@ -635,6 +636,12 @@ table {
 @media screen and (min-width: 1024px) {
 	.smaller-header {
 		height: 80px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.smaller-header {
+		height: 50px;
 	}
 }
 
@@ -653,9 +660,11 @@ table {
 	margin: auto 1rem;
 }
 
-.site-title {
-	position: relative;
-	top: -3px;
+@media screen and (min-width: 425px) {
+	.site-title {
+		position: relative;
+		top: -3px;
+	}
 }
 
 .site-description {
@@ -689,7 +698,7 @@ table {
 
 @media screen and (max-width: 425px) {
 	.site-title a {
-		font-size: 0.9rem;
+		font-size: 16px;
 	}
 }
 
@@ -725,21 +734,25 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid white;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 1rem;
-	line-height: 1;
-	padding: 0.4em;
+	border: none;
+	background: #8A2387;
+	/* fallback for old browsers */
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F48668, #FF5A5F, #E94057, #DA344D);
+	color: #f8f8f8;
+	height: 45px;
+	width: 200px;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	transition: all 0.2s ease-in;
+	font-size: 1rem;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border: 1px solid #E94057;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 button:active, button:focus,
@@ -818,7 +831,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	color: #111;
+	color: #e41313;
 }
 
 a:focus {
@@ -842,8 +855,6 @@ a:hover, a:active {
 	display: flex;
 	-ms-flex-direction: column;
 	    flex-direction: column;
-	-ms-flex-align: center;
-	    align-items: center;
 }
 
 @media screen and (min-width: 1600px) {
@@ -869,22 +880,23 @@ a:hover, a:active {
 @media screen and (min-width: 1600px) {
 	.menu li:hover > a,
 	.menu li.focus > a {
-		border-bottom: 1px solid #111;
-		color: #111;
-		border-bottom: 1px solid #111;
+		border-bottom: 1px solid #e41313;
+		color: #e41313;
+		border-bottom: 1px solid #e41313;
 	}
 }
 
 .menu li a {
 	display: block;
 	color: white;
+	font-size: 14px;
 }
 
 @media screen and (min-width: 1600px) {
 	.menu li a {
 		box-sizing: border-box;
 		color: black;
-		border-bottom: 1px solid white;
+		border-bottom: 1px solid #f8f8f8;
 		border-width: 1;
 		padding: 0.4em 1em;
 		border-width: 1px;
@@ -994,6 +1006,13 @@ a:hover, a:active {
 	background-color: black;
 }
 
+@media screen and (max-width: 576px) {
+	.toggler div {
+		width: 23px;
+		margin: 3px 0;
+	}
+}
+
 .nav-menu {
 	display: -ms-flexbox;
 	display: flex;
@@ -1021,40 +1040,43 @@ a:hover, a:active {
 ## Search form
 --------------------------------------------------------------*/
 .widget_search {
-	display: -ms-flexbox;
-	display: flex;
 	left: 0px;
 	top: 0px;
+	position: fixed;
 	width: 100%;
-	-ms-flex-pack: center;
-	    justify-content: center;
-	-ms-flex-line-pack: center;
-	    align-content: center;
 	list-style: none;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	height: 80px;
+	height: 100vh;
 	margin: 0;
 	padding-left: 0;
-	position: fixed;
 	width: 100vw;
-	background-color: white;
+	background-color: #f8f8f8;
 	transform: translateY(-200px);
 	opacity: 0;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease-in;
-	z-index: 15000;
+	transition: all 0.2s ease-in;
+	z-index: -150000;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	transform: translateY(0px);
+	-ms-flex-line-pack: center;
+	    align-content: center;
 }
 
 @media screen and (min-width: 1024px) {
 	.widget_search {
+		display: -ms-flexbox;
+		display: flex;
 		height: 100px;
+		-ms-flex-pack: center;
+		    justify-content: center;
+		-ms-flex-line-pack: center;
+		    align-content: center;
 	}
 }
 
 .search-active {
-	transform: translateY(70px);
-	opacity: 1;
+	opacity: 0.95;
+	z-index: 150000;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1064,13 +1086,32 @@ a:hover, a:active {
 }
 
 .search-active-scrolled {
-	transform: translateY(70px);
-	opacity: 1;
+	transform: translateY(0px);
+	z-index: 150000;
+	opacity: 0.95;
+}
+
+@media screen and (min-width: 576px) {
+	.search-active-scrolled {
+		transform: translateY(70px);
+	}
 }
 
 @media screen and (min-width: 1024px) {
 	.search-active-scrolled {
 		transform: translateY(80px);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.menu-scroller {
+		transform: translateY(80px);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.menu-scroller2 {
+		transform: translateY(100px);
 	}
 }
 
@@ -1082,16 +1123,13 @@ a:hover, a:active {
 	    justify-content: center;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
+	padding: 2px;
 }
 
-.search-form label {
-	height: 100%;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-pack: center;
-	    justify-content: center;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+@media screen and (max-width: 425px) {
+	.search-form {
+		display: block;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -1102,18 +1140,19 @@ a:hover, a:active {
 
 .search-field {
 	font-size: 1em;
-	height: 30px;
+	height: 45px;
 	font-family: "Alegreya Sans", sans-serif;
 	-ms-flex-positive: 3;
 	    flex-grow: 3;
-	color: white;
+	color: #f8f8f8;
 	border-radius: 0;
 	text-align: center;
 }
 
 @media screen and (max-width: 425px) {
 	.search-field {
-		max-width: 160px;
+		height: 35px;
+		width: 100%;
 	}
 }
 
@@ -1130,29 +1169,47 @@ a:hover, a:active {
 	background: linear-gradient(to right, #F48668, #FF5A5F, #E94057, #DA344D);
 	color: white;
 	border-radius: 0;
-	transition: all 0.1s ease-in;
+	width: 100%;
+	height: 35px;
+	margin-top: 10px;
+}
+
+@media screen and (min-width: 425px) {
+	.search-form input[type="submit"] {
+		margin-top: 0px;
+		width: 100px;
+		height: 45px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.search-form input[type="submit"] {
+		width: 200px;
+	}
 }
 
 .search-form input[type="submit"]:hover {
 	cursor: pointer;
-	transform: scale(0.98);
 }
 
 .search-icon {
-	height: 35px;
-	width: 35px;
+	height: 44px;
+	width: 90px;
 	cursor: pointer;
 	-ms-flex-item-align: center;
 	    -ms-grid-row-align: center;
 	    align-self: center;
 	stroke: black;
 	margin-top: 15px;
+	border: 1px solid white;
+	padding: 10px;
 }
 
 @media screen and (min-width: 1600px) {
 	.search-icon {
 		margin-left: 30px;
 		margin-top: 0;
+		border: none;
 	}
 }
 
@@ -1165,10 +1222,13 @@ a:hover, a:active {
 	height: 20px;
 	margin: 10px 15px;
 	cursor: pointer;
+	display: none;
 }
 
-.cat-title {
-	font-size: 1.6em;
+@media screen and (min-width: 425px) {
+	.search-x {
+		display: block;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1183,7 +1243,7 @@ a:hover, a:active {
 
 .site-container {
 	margin: 0rem auto;
-	padding: 2rem 2rem;
+	padding: 1.5rem 1rem;
 	max-width: 700px;
 }
 
@@ -1219,6 +1279,7 @@ article {
 
 .excerpt {
 	margin: 0 0.5em;
+	margin-top: 50px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1240,20 +1301,18 @@ article {
 
 @media screen and (min-width: 1600px) {
 	.excerpt {
-		-ms-grid-rows: minmax(200px, auto) 300px;
-		    grid-template-rows: minmax(200px, auto) 300px;
-		-ms-grid-columns: minmax(400px, 700px) minmax(400px, 700px);
-		    grid-template-columns: minmax(400px, 700px) minmax(400px, 700px);
-		margin: 10rem auto;
+		-ms-grid-rows: 400px 300px;
+		    grid-template-rows: 400px 300px;
+		-ms-grid-columns: 700px 700px;
+		    grid-template-columns: 700px 700px;
 	}
 }
 
 .excerpt-header {
-	border-left: 1px solid #111;
+	border-left: 1px solid #e41313;
 	padding-left: 1rem;
 	margin-top: 1rem;
 	z-index: 10000;
-	background-color: rgba(255, 255, 255, 0.7);
 	margin-bottom: 1rem;
 }
 
@@ -1303,23 +1362,20 @@ article {
 }
 
 .thumb-container img {
-	width: 100vw;
-	object-fit: fill;
+	object-fit: cover;
 	position: fixed;
 	z-index: -10000;
+	height: 350px;
 	filter: grayscale(1);
 }
 
 @media screen and (min-width: 1024px) {
 	.thumb-container img {
 		margin: 0;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.thumb-container img {
-		position: relative;
-		top: -300px;
+		height: 500px;
+		width: 100vw;
+		margin-top: 20px;
+		margin-bottom: 30px;
 	}
 }
 
@@ -1327,19 +1383,20 @@ article {
 .excerpt-summary {
 	padding-left: 1rem;
 	padding-right: 1rem;
+	line-height: 1.6;
 }
 
 .excerpt-content p,
 .excerpt-summary p {
 	font-size: 1rem;
 	margin-bottom: 1rem;
-	color: black;
 }
 
 @media screen and (min-width: 1600px) {
 	.excerpt-content p,
 	.excerpt-summary p {
 		font-size: 1rem;
+		line-height: 1.7;
 	}
 }
 
@@ -1381,6 +1438,16 @@ article {
 	}
 }
 
+.excerpt-title a,
+.entry-title a {
+	color: black;
+}
+
+.excerpt-title a:hover,
+.entry-title a:hover {
+	color: #E94057;
+}
+
 .page-content {
 	padding-left: 2rem;
 }
@@ -1388,7 +1455,13 @@ article {
 .cat-links a {
 	text-transform: uppercase;
 	color: #E94057;
-	font-size: 0.8rem;
+	font-size: 0.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+	.cat-links a {
+		font-size: 0.7rem;
+	}
 }
 
 .updated:not(.published) {
@@ -1409,7 +1482,7 @@ article {
 .entry-meta {
 	padding: 0.5rem 0;
 	font-family: "Playfair Display", serif;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 }
 
 @media screen and (min-width: 1600px) {
@@ -1423,9 +1496,17 @@ article {
 	min-width: 250px;
 	max-width: 900px;
 	margin: 0 auto;
-	margin-top: 6em;
+	margin-top: 4em;
+	font-size: 0.8rem;
 	padding-left: 2rem;
 	border-left: 1px solid #111;
+}
+
+@media screen and (min-width: 1024px) {
+	.page-header {
+		margin-top: 6em;
+		font-size: 1rem;
+	}
 }
 
 .edit-link {
@@ -1453,13 +1534,17 @@ article {
 }
 
 .white-bg {
-	background-color: white;
+	background-color: #f8f8f8;
 }
 
 .nav-previous p,
 .nav-next p {
 	color: #1a1b1b;
 	font-size: 0.8em;
+}
+
+.cat-title {
+	font-size: 1.6em;
 }
 
 /*--------------------------------------------------------------
@@ -1582,7 +1667,7 @@ article {
 
 .widget-area a,
 .widget-area h2 {
-	color: white;
+	color: #f8f8f8;
 }
 
 .widget {
@@ -1625,23 +1710,32 @@ article {
 	}
 }
 
-.recent-post-image {
+.recent-post-image a {
+	display: block;
 	margin-right: 1rem;
-	object-fit: cover;
-	width: 160px;
-	height: 160px;
+	width: 130px;
+	height: 130px;
 }
 
-.recent-post-image img {
+.recent-post-image a img {
 	margin-top: 0;
-	filter: grayscale(100%);
-	border-radius: 0.1rem;
+	filter: grayscale(80%);
+	object-fit: cover;
+	min-height: 100%;
+	min-width: 100%;
+	transition: all 0.1s ease-in;
+}
+
+.recent-post-image a img:hover {
+	filter: grayscale(0%);
+	box-shadow: 0px 0px 2px 0px #111;
 }
 
 .recent-posts {
 	display: -ms-flexbox;
 	display: flex;
 	max-width: 360px;
+	margin-bottom: 1rem;
 }
 
 .recent-posts__data {
@@ -1743,7 +1837,7 @@ figcaption .wp-caption-text {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-	background-color: #111;
+	background-color: #1a1b1b;
 	height: 300px;
 	color: white;
 	display: -ms-flexbox;
@@ -1817,7 +1911,7 @@ figcaption .wp-caption-text {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-	background-color: #111;
+	background-color: #1a1b1b;
 	height: 300px;
 	color: white;
 	display: -ms-flexbox;

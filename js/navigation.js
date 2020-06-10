@@ -16,9 +16,6 @@ const toggler = document.querySelector('.toggler');
 
 const menuElement = document.querySelector('.main-menu');
 
-const search = document.querySelector('.search-icon');
-
-
 toggleClass(toggler, menuElement, 'menu-active');
 
 toggleClass(menuElement, menuElement, 'menu-active');
@@ -29,7 +26,6 @@ toggleClass(menuElement, menuElement, 'menu-active');
  *
  */
 
-
 function toggleSearchBar (item, searchElement, className, classNameScrolled, focusInput) {
   
     item.addEventListener('click', function () {
@@ -39,20 +35,19 @@ function toggleSearchBar (item, searchElement, className, classNameScrolled, foc
             searchElement.classList.add(classNameScrolled);
            
         } else {   
-            searchElement.classList.add(className);
-            
+            searchElement.classList.add(className);   
         }
-        
-        focusInput.focus();
-            
+
+        focusInput.focus();       
 
     });
 }
 
+const search = document.querySelector('.search-icon');
+
 const searchElement = document.querySelector('.widget_search');
 
 const inputField = document.querySelector('.search-field');
-
 
 toggleSearchBar(search, searchElement, 'search-active', 'search-active-scrolled', inputField);
 
@@ -60,31 +55,40 @@ toggleSearchBar(search, searchElement, 'search-active', 'search-active-scrolled'
  *  A function to remove a class on a click event 
  *
  */
-
-function removeClass (item, searchElement, className) {
+function removeClassOnTarget (item, searchElement, className) {
     
-    item.addEventListener('click', function () {
+    item.addEventListener('click', function (event) {
+        if (event.target === searchElement) {
+            searchElement.classList.remove(className);
+        }
+        return false; 
+    });
+}
 
-        searchElement.classList.remove(className);
-        
+function removeClass (item, targetElement, className) {
+    
+    item.addEventListener('click', function (event) {
+
+            targetElement.classList.remove(className);
     });
 }
 
 
 const searchX = document.querySelector('.search-x');
 
+removeClassOnTarget(searchElement, searchElement, "search-active-scrolled");
+
+removeClassOnTarget(searchElement, searchElement, "search-active");
+
 removeClass(searchX, searchElement, "search-active-scrolled")
 
 removeClass(searchX, searchElement, "search-active")
 
 
-
 /**
- *  A function that increases adn reduces the size of the navbar
+ *  A function that increases and reduces the size of the navbar
  *
  */
-
-
 const title = document.querySelector(".site-title ")
 const navbar = document.querySelector(".site-header")
 
@@ -92,12 +96,15 @@ function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     title.classList.add("smaller-navbar");
     navbar.classList.add("smaller-header");
-    searchElement.classList.remove('search-active-scrolled');
-
+    searchElement.classList.add("menu-scroller");  
+    searchElement.classList.remove("menu-scroller2"); 
   } else {
     title.classList.remove("smaller-navbar");
     navbar.classList.remove("smaller-header");
-    searchElement.classList.remove('search-active');
+    searchElement.classList.remove("menu-scroller"); 
+    searchElement.classList.add("menu-scroller2"); 
+    
+    
   }
 } 
 
