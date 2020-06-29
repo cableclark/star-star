@@ -44,10 +44,11 @@ Class My_Custom_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
 
         <?php 
         echo $args['before_widget']; 
-        echo recent_posts_icon_svg ();
+        echo '<div class="widget_title_container">';
         if ( $title ) {
             echo $args['before_title'] . $title . $args['after_title'];
         }
+        echo '</div>';
         ?>
         <ul>
             <?php 
@@ -63,7 +64,7 @@ Class My_Custom_Recent_Posts_Widget extends WP_Widget_Recent_Posts {
                 ?>
                 <li class="recent-posts">
                     <div class="recent-post-image"> 
-                        <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>> <?php  echo get_the_post_thumbnail($recent_post->ID);?> </a>
+                        <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>> <?php  echo get_the_post_thumbnail($recent_post->ID, 'thumbnail');?> </a>
                     </div>
                     <div class="recent-posts__data">
                         <a href="<?php the_permalink( $recent_post->ID ); ?>"<?php echo $aria_current; ?>>

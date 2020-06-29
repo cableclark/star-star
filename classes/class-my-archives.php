@@ -19,11 +19,12 @@ Class My_Archives_Widget extends WP_Widget_Archives {
        $dropdown = ! empty( $instance['dropdown'] ) ? '1' : '0';
 
        echo $args['before_widget'];
+       echo '<div class="widget_title_container">';
        echo archives_svg_icon();    
        if ( $title ) {
            echo $args['before_title'] . $title . $args['after_title'];
        }
-
+       echo "</div>";
        if ( $dropdown ) {
            $dropdown_id = "{$this->id_base}-dropdown-{$this->number}";
            ?>

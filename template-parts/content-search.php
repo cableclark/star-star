@@ -17,7 +17,6 @@
 		<div class="entry-meta">
 			<?php
 			miss_albini_posted_on();
-			miss_albini_posted_by();
 			?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>

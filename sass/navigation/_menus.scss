@@ -40,12 +40,9 @@
 				border-width: 1px;
 				transition: all 0.3s ease-in;
 			}
-
 		}
-
 	}	
 }
-
 
 .main-menu{
 	position: absolute;
@@ -73,19 +70,16 @@
 		transition: unset;
 		transform: translateX(0px);
 		top:0;
-
     }    
-
 }
+
 
 .menu-active {
 	display: flex;
 	transform: translateX(0px);
 	@media screen and (min-width: $extra_large_screen) {
 		position: unset;
-
     }    
-
 }
 
 .comment-navigation,
@@ -97,7 +91,6 @@
 	.nav-links {
 		display: flex;
 		margin: 0 auto;
-		font-size: 1.2rem;
 	}
 
 	.nav-previous {
@@ -110,6 +103,10 @@
 	}	
 }
 
+.nav-links {
+	font-size: 1rem;
+}
+
 .toggler {
     padding:auto 10px;
     display: flex;
@@ -117,7 +114,6 @@
 	margin: 5px 5px;
 	cursor: pointer;
     @media screen and (min-width: $extra_large_screen) {
-
         display: none;
     }    
     div {
@@ -131,8 +127,6 @@
         background-color: black;
     }  
 }  
-
-
 
 .nav-menu
  {
@@ -156,5 +150,48 @@
 		}
 } 
 
+.menu-hider {
+	z-index: -10000000000;
+	display: none;
+}
+
+.menu-hider-active {
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100vw;
+	height: 100vh;
+}
 
 
+//Menu stagered animnation 
+
+.open-menu-items {
+	li {
+	animation: 0.4s ease pulse;
+	animation-fill-mode: both; 
+	}
+}
+
+@for $i from 1 through 9 {
+	.open-menu-items {
+	  // :nth-child(1-9) 
+	  li {
+		&:nth-child(#{$i}) {
+			// Delay the animation. Delay increases as items loop.
+			animation-delay: $i * (1.5s / 18);
+			}
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: translateX(-100px);
+	}
+	
+	100% {
+	  ttransform: translateX(0px);
+	}
+  }

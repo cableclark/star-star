@@ -11,7 +11,7 @@
 <div id="app" class="container">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			
+			<?php miss_albini_entry_footer(); ?>
 			<?php
 			if ( is_singular() ) :
 				the_title( '<h1 class="content-title">', '</h1>' );
@@ -24,17 +24,14 @@
 					miss_albini_posted_on();
 					?>
 			</div><!-- .entry-meta -->
-		
 		</header><!-- .entry-header -->
-
-
 		<div class="entry-content">
 			<?php
 			the_content(
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Продолжи да читаш<span class="screen-reader-text"> "%s"</span>', 'star-star' ),
+						__( 'Продолжи да читаш<span class="screen-reader-text"> "%s"</span>', 'miss-albini' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -47,7 +44,7 @@
 
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'star-star' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'miss-albini' ),
 					'after'  => '</div>',
 				)
 			);
@@ -55,12 +52,8 @@
 		</div><!-- .entry-content -->
 
 		<footer class="entry-footer">
-			<?php
-				if ( 'post' === get_post_type() ) :
-			?>
-				
-			<?php endif; ?>
-			<?php miss_albini_entry_footer(); ?>
+			<?php miss_albini_get_tags(); ?>		
+		
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 

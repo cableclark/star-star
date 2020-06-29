@@ -162,7 +162,7 @@ function miss_albini_scripts() {
 
 	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
-	wp_enqueue_style( 'miss_albini-fonts', 'https://fonts.googleapis.com/css2?&family=Playfair+Display:wght@800&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts', 'ttps://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 	
 	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
 	
@@ -171,6 +171,8 @@ function miss_albini_scripts() {
 	wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'miss_albini-animations', get_template_directory_uri() . '/js/animations.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'miss_albini-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
 

@@ -26,5 +26,7 @@ get_header();
 		?>
 	</main><!-- #main -->
 <?php
+
 get_sidebar();
+get_sidebar( 'singlebar' );
 get_footer();

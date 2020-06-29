@@ -11,20 +11,20 @@
 
 @mixin gradient {
 	background: #8A2387;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #F48668, #FF5A5F, #E94057, #DA344D);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #F48668,#FF5A5F, #E94057, #DA344D ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to right, #F48668,   #da1b5b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F48668,  #da1b5b ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @mixin background {
 	background: #8A2387;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #F48668,#FF5A5F, #E94057, #DA344D);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #F48668, #FF5A5F, #E94057, #DA344D);
+	background: -webkit-linear-gradient(to right, #bf1e2d,  #da1b5b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #bf1e2d, #da1b5b);
 }
 
 @mixin border {
-	border: 1px solid  -webkit-linear-gradient(to right, #F48668,#FF5A5F, #E94057, #DA344D); 
+	border: 1px solid  -webkit-linear-gradient(to right, #bf1e2d,#E94057,  #da1b5b); 
 }
 
 @mixin box-shadow-normal {

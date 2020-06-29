@@ -11,9 +11,7 @@
 
 ?>
 	<footer id="colophon" class="site-footer">
-		<?php
-			dynamic_sidebar( 'sidebar-2' );
-		?>
+		
 		<div class="site-info">
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */

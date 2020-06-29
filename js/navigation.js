@@ -16,9 +16,18 @@ const toggler = document.querySelector('.toggler');
 
 const menuElement = document.querySelector('.main-menu');
 
+const menuUL = document.querySelector('.menu');
+
+const menuHider = document.querySelector('.menu-hider');
+
+
 toggleClass(toggler, menuElement, 'menu-active');
 
 toggleClass(menuElement, menuElement, 'menu-active');
+
+toggleClass(toggler, menuUL, 'open-menu-items');
+
+toggleClass(toggler, menuHider, 'menu-hider-active');
 
 
 /**
@@ -51,19 +60,42 @@ const inputField = document.querySelector('.search-field');
 
 toggleSearchBar(search, searchElement, 'search-active', 'search-active-scrolled', inputField);
 
+
+
 /**
- *  A function to remove a class on a click event 
+ *  A function to remove a class on a click event on target
  *
  */
+
 function removeClassOnTarget (item, searchElement, className) {
     
     item.addEventListener('click', function (event) {
         if (event.target === searchElement) {
             searchElement.classList.remove(className);
+            console.log(event.target);
         }
         return false; 
     });
 }
+
+
+
+const searchX = document.querySelector('.search-x');
+
+const menuHiderActive = document.querySelector('.menu-hider');
+
+
+removeClassOnTarget(searchElement, searchElement, "search-active-scrolled");
+
+removeClassOnTarget(searchElement, searchElement, "search-active");
+
+removeClassOnTarget(menuHiderActive, menuHiderActive, "menu-hider-active");
+
+
+/**
+ *  A function to remove a class on a click event 
+ *
+ */
 
 function removeClass (item, targetElement, className) {
     
@@ -73,24 +105,22 @@ function removeClass (item, targetElement, className) {
     });
 }
 
+removeClass(searchX, searchElement, "search-active-scrolled");
 
-const searchX = document.querySelector('.search-x');
+removeClass(searchX, searchElement, "search-active");
 
-removeClassOnTarget(searchElement, searchElement, "search-active-scrolled");
+removeClass(search, menuHiderActive, "menu-hider-active");
 
-removeClassOnTarget(searchElement, searchElement, "search-active");
+removeClass(menuHiderActive, menuElement, "menu-active");
 
-removeClass(searchX, searchElement, "search-active-scrolled")
-
-removeClass(searchX, searchElement, "search-active")
+removeClass(menuHiderActive, menuUL, 'open-menu-items');
 
 
 /**
  *  A function that increases and reduces the size of the navbar
  *
  */
-const title = document.querySelector(".site-title ")
-const navbar = document.querySelector(".site-header")
+
 
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -108,4 +138,10 @@ function scrollFunction() {
   }
 } 
 
-window.onscroll = function() {scrollFunction()};
+const title = document.querySelector(".site-title");
+
+const navbar = document.querySelector(".site-header");
+
+window.onscroll = function() {scrollFunction();};
+
+

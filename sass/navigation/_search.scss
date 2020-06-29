@@ -7,36 +7,37 @@
     height: 100vh;
     margin: 0;
     padding-left: 0;
-    width: 100vw;
     background-color: $color__background-body;
     transform: translateY(-200px);
     opacity:0;
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
     z-index: -150000;
     flex-wrap: wrap;
     transform: translateY(0px);
     align-content: center;
+    margin-bottom: 2rem;
     @media screen and (min-width: $large_screen) {
         display: flex;
         height: 100px;
+        width: 100vw;
         justify-content: center ;
         align-content: center; 
     }
 }
 
 .search-active {
-    opacity:0.95; 
     z-index: 150000;
+    opacity:1; 
     @media screen and (min-width: $large_screen) {
         transform: translateY(100px);
     } 
 }
 
 .search-active-scrolled {
-    transform: translateY(0px);
     z-index: 150000;
-    opacity:0.95;
+    transform: translateY(0px);
+    opacity:1;
     @media screen and (min-width: $small_screen) {
         transform: translateY(70px);
     }  
@@ -69,7 +70,6 @@
     @media screen and (min-width: $large_screen) {
         width: unset;
     }
-
 }		
 
 .search-field {
@@ -97,17 +97,20 @@
         width: 100%; 
         height: 35px;
         margin-top:10px;
+        border-radius: 0 3px 3px 0;
+        opacity: 1;
         @media screen and(min-width: 425px) {
             margin-top:0px;
+            transform: translateX(-3px);
             width: 100px;
             height: 45px;
-       }    
+        }    
         @media screen and (min-width: $large_screen) {
             width: 200px;
         } 
     }
     input[type="submit"]:hover {
-        cursor: pointer;
+        cursor: pointer; 
     }
 }
 
@@ -116,14 +119,17 @@
     width: 90px;
     cursor: pointer;
     align-self: center;
-    stroke: black;
+    stroke: white;
+    fill: white;
     margin-top: 15px;
     border: 1px solid white;
     padding: 10px;
     @media screen and (min-width: $extra_large_screen) {
         margin-left: 30px;
         margin-top: 0;
-        border: none;   
+        border: none;  
+        stroke: black; 
+        fill: black;
     } 
 }
 
