@@ -91,6 +91,13 @@
 	.nav-links {
 		display: flex;
 		margin: 0 auto;
+		font-size: 1rem;
+		@media screen and (min-width: $large_screen) { 
+			font-size: 1.2rem;
+		}
+		@media screen and (min-width: $extra_large_screen) {  
+			font-size: 1.3rem;
+		}
 	}
 
 	.nav-previous {
@@ -103,9 +110,6 @@
 	}	
 }
 
-.nav-links {
-	font-size: 1rem;
-}
 
 .toggler {
     padding:auto 10px;
@@ -180,7 +184,7 @@
 	  li {
 		&:nth-child(#{$i}) {
 			// Delay the animation. Delay increases as items loop.
-			animation-delay: $i * (1.5s / 18);
+			animation-delay: $i * (1.2s / 18);
 			}
 		}
 	}
@@ -188,7 +192,7 @@
 
 @keyframes pulse {
 	0% {
-		transform: translateX(-100px);
+		transform: translateX(-75px);
 	}
 	
 	100% {

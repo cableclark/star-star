@@ -9,7 +9,7 @@
 ?>
 
 <article id="excerpt-<?php the_ID(); ?>" class="excerpt">
-	<?php miss_albini_post_thumbnail('full'); ?>
+	<?php miss_albini_post_thumbnail('large'); ?>
 	<div class="excerpt-text">
 		<header class="excerpt-header">
 			<?php
@@ -28,7 +28,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'star-star' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'Miss Albini' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -40,14 +40,14 @@
 			);
 			wp_link_pages(
 				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'star-star' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Miss Albini' ),
 					'after'  => '</div>',
 				)
 			);
 			?>
 		
 			<a href="<?php esc_url( the_permalink()) ?>">
-			<button class="read-more"> Прочитај</button></a>
+			<button class="read-more"> Read more...</button></a>
 			
 		</div><!-- .entry-content -->
 	</div>	

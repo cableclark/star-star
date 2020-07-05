@@ -68,6 +68,7 @@
 .widget_title_container {
 	display: flex;
 	margin: 2rem 0;
+	letter-spacing: 0.1rem;
 	word-break: break-all;
 	@media screen and(min-width: $large_screen)  {
 		margin: unset;
@@ -113,9 +114,10 @@
 .recent-posts {
 	display: flex;
 	max-width: 360px;
-	margin-bottom: 2.5rem;	
+	margin-bottom: 1rem;	
 	@media screen and(min-width: $large_screen)  {
 		max-width: unset;
+		margin-bottom: 2.5rem;
 	}
 }
 

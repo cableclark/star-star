@@ -16,13 +16,13 @@
     } 
     @media screen and (min-width: $extra_large_screen) {
         margin: Opx auto;
-        max-width: 700px;
+        max-width: 800px;
     } 
 }
 
 .center {
     @media screen and (min-width: $large_screen) {
-        max-width: 700px; 
+        max-width: 800px; 
         margin: 0 auto;
     } 
 }
@@ -37,12 +37,12 @@ article {
 
 .excerpt     
  {
-    margin: 0 0.5em;
+    margin: 1rem 0.5em;
     margin-top: 50px;
     @media screen and (min-width: $large_screen) {
         display: grid;
-        grid-template-rows: 460px;
-        grid-template-columns:  460px  460px;
+        grid-template-rows: 480px;
+        grid-template-columns:  480px  480px;
         align-content: center;
         justify-content: center;
         column-gap: 2rem;  
@@ -55,14 +55,12 @@ article {
     }  
 }
 
-
 .excerpt-text {
     grid-row:1/2;
     grid-column:2/3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center; 
 } 
 
 .excerpt-header {
@@ -71,7 +69,6 @@ article {
     margin-top:  1rem;
     z-index: 10000;  
     @media screen and (min-width: $large_screen) {
-        line-height: 2.5rem;
         margin-top: 0;
         margin-bottom: 1rem; 
     }
@@ -81,6 +78,18 @@ article {
 }
 
 .post-thumbnail {
+    .overlay-filter {
+        background-color:$color__link;
+        opacity:0.3;
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        transition:opacity 0.2s ease-in;
+    }
+    .overlay-filter:hover {
+        opacity:0.1;
+    }
     @media screen and (min-width: $large_screen) {
         grid-row:1/3;
         grid-column:1/2;
@@ -92,7 +101,8 @@ article {
         height: 300px;
         @media screen and (min-width: $large_screen) {
             margin: 0;  
-        }
+            @include box-shadow-normal;
+        } 
     }
 }
 
@@ -124,20 +134,15 @@ article {
     padding-right: 1rem;
     line-height: 1.6;
     p {
-        font-size: 1rem;
         margin-bottom: 1rem;
         @media screen and (min-width: $large_screen) {  
             margin: 0;
-            font-size: 0.9rem;
         }
         @media screen and (min-width: $extra_large_screen) {  
-            font-size: 1rem;
             line-height: 1.7;
         }
     }
-    @media screen and (min-width: $large_screen) {
-        font-size: 1.2rem;  
-    }
+  
     @media screen and (min-width: $extra_large_screen) {
         margin-left: 1rem;  
     }
@@ -151,7 +156,7 @@ article {
 .entry-title {
     margin: unset;
     @media screen and (min-width: $large_screen) {
-        line-height: 2rem;
+        line-height: 2.4rem;
         font-size: 2rem;
     }
     @media screen and (min-width: $extra_large_screen) {
@@ -166,14 +171,15 @@ article {
 .entry-title {
     margin-right: 1rem;
     a {
-        color:black;
+        color: #E94057;
+        font-weight: bold;
         
     }
     a:hover {
-        color: #E94057;
+        color: #bf1e2d;
     }
-
 }
+
 
 .page-content {
     padding-left: 2rem;
@@ -185,7 +191,7 @@ article {
         color:$color__link-hover;
         font-size: 0.7rem;
         @media screen and (min-width: $large_screen) {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
         }
 	}
 }
@@ -204,11 +210,16 @@ article {
     font-size: 0.9rem;  
 }
 
+.entry-content {
+    font-family: $font-headings;
+}
+
 .excerpt-meta,
 .entry-meta {
     padding: 0.5rem 0;
     font-family: $font-headings;
     font-size: 0.9rem;
+    font-weight: bold;
     @media screen and (min-width: $extra_large_screen) {
         font-size: 1em;
         padding: 0 0;
@@ -231,7 +242,6 @@ article {
 
 .edit-link {
     font-size: 0.8  rem;
-    margin-left: 2em;
     text-transform: uppercase;
 }
 
@@ -277,3 +287,19 @@ article {
     }   
 
 }
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    line-height: 1rem;
+    margin: 1.3rem;
+    .page-numbers {
+        display: block;
+        padding: 0.6rem;
+    } 
+    .current {
+        border: 1px solid #da1b5b;
+        color: #da1b5b;
+    }
+} 
+

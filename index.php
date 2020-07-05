@@ -35,9 +35,9 @@ get_header();
 				get_template_part( 'template-parts/excerpt', get_post_type() );
 			endwhile;
 			the_posts_pagination( array(
-				'mid_size'  => 3,
-				'prev_text' => __( 'Back', 'textdomain' ),
-				'next_text' => __( 'Onward', 'textdomain' ),
+				'mid_size'  => 1,
+				'prev_text' => __( '<', 'textdomain' ),
+				'next_text' => __( '>', 'textdomain' ),
 			) );
 		else :
 			get_template_part( 'template-parts/content', 'none' );

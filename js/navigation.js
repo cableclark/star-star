@@ -1,34 +1,3 @@
-/**
- *  A function that tackles class changes on click events;
- *
- */
-
-function toggleClass (item, searchElement, className) {
-    
-    item.addEventListener('click', function () {
-
-        searchElement.classList.toggle(className);
-        
-    });
-}
-
-const toggler = document.querySelector('.toggler');
-
-const menuElement = document.querySelector('.main-menu');
-
-const menuUL = document.querySelector('.menu');
-
-const menuHider = document.querySelector('.menu-hider');
-
-
-toggleClass(toggler, menuElement, 'menu-active');
-
-toggleClass(menuElement, menuElement, 'menu-active');
-
-toggleClass(toggler, menuUL, 'open-menu-items');
-
-toggleClass(toggler, menuHider, 'menu-hider-active');
-
 
 /**
  *  A function that tackles class changes on click events for search bar;
@@ -60,6 +29,40 @@ const inputField = document.querySelector('.search-field');
 
 toggleSearchBar(search, searchElement, 'search-active', 'search-active-scrolled', inputField);
 
+
+
+
+
+/**
+ *  A function that tackles class changes on click events;
+ *
+ */
+
+function toggleClass (item, searchElement, className) {
+    
+    item.addEventListener('click', function () {
+
+        searchElement.classList.toggle(className);
+        
+    });
+}
+
+const toggler = document.querySelector('.toggler');
+
+const menuElement = document.querySelector('.main-menu');
+
+const menuUL = document.querySelector('.menu');
+
+const menuHider = document.querySelector('.menu-hider');
+
+
+toggleClass(toggler, menuElement, 'menu-active');
+
+toggleClass(menuElement, menuElement, 'menu-active');
+
+toggleClass(toggler, menuUL, 'open-menu-items');
+
+toggleClass(toggler, menuHider, 'menu-hider-active');
 
 
 /**
@@ -102,6 +105,7 @@ function removeClass (item, targetElement, className) {
     item.addEventListener('click', function (event) {
 
             targetElement.classList.remove(className);
+            console.log(event.target)
     });
 }
 
@@ -114,6 +118,8 @@ removeClass(search, menuHiderActive, "menu-hider-active");
 removeClass(menuHiderActive, menuElement, "menu-active");
 
 removeClass(menuHiderActive, menuUL, 'open-menu-items');
+
+removeClass(menuElement, menuUL, 'open-menu-items');
 
 
 /**

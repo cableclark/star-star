@@ -16,13 +16,8 @@ get_header();
 				the_post();
 				get_template_part( 'template-parts/content', get_post_type() );
 				?>
-				<?php
-				the_post_navigation(
-					array(
-						'prev_text' => '<p class="nav-text"> ' . esc_html__( 'Претходно:', 'miss_albini' ) . '</p> <span class="nav-title">%title</span>',
-						'next_text' => '<p class="nav-text">'  . esc_html__( 'Следно:', 'miss_albini' ) . '</p> <span class="nav-title">%title</span>',
-					)
-				);
+			<?php
+				
 			endwhile; // End of the loop.
 			?>
 		</div>	

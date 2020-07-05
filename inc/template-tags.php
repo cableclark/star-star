@@ -76,7 +76,7 @@ function miss_albini_get_tags () {
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'miss-albini' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Тагови: %1$s', 'miss-albini' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			printf( '<span class="tags-links">' . esc_html__( 'Tags: %1$s', 'miss-albini' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 }
 
@@ -87,7 +87,7 @@ if ( ! function_exists( 'miss_albini_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function miss_albini_post_thumbnail() {
+	function miss_albini_post_thumbnail($size="large_medium") {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -96,15 +96,16 @@ if ( ! function_exists( 'miss_albini_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail("full"); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<div class="overlay-filter"></div>		
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
+						$size,
 						array(
 							'alt' => the_title_attribute(
 								array(

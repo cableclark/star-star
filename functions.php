@@ -116,7 +116,7 @@ function miss_albini_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'miss_albini_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'miss_albini_content_width', 740 );
 }
 add_action( 'after_setup_theme', 'miss_albini_content_width', 0 );
 
@@ -160,11 +160,9 @@ function miss_albini_scripts() {
 
 	//Enqueue Google fonts
 
-	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
-
 	wp_enqueue_style( 'miss_albini-fonts', 'ttps://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 	
-	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
 	
 	wp_enqueue_style( 'miss_albini-style', get_stylesheet_uri(), array(), _S_VERSION );
 

@@ -47,22 +47,24 @@ figure {
 }
 
 .read-more {
-	@media screen and (min-width: 558px) {
+
 		display: block;
-		@include background;
-		color: white;
+		color: #da1b5b;
+		background: white;
+		border: 1px solid #da1b5b;
 		height: 45px;
 		width: 200px;
 		cursor: pointer;
 		margin-top: 20px;
-		margin-bottom:30px;
+		box-shadow: none;
+		padding-bottom: 3px;
+		font-family: $font-headings;
 		transform: all 0.2s ease;
-	} 
+	
 	@media screen and (min-width: $extra_large_screen) {
 		margin-top: 50px;
 		height: 50px;
-	}
-	
+	}	
 }
 
 .read-more:active {
@@ -70,44 +72,13 @@ figure {
 }
 
 .read-more:hover {
-	position: relative;
-	color: #da1b5b;
-	background: white;
-}
-
-.read-more:before, .read-more:after {
-	content: '';
-	position: absolute;
-	left: -2px;
-	top: -2px;
-	opacity:0;
-	transform: all 0.2s ease;
-}
-
-.read-more:hover::before, .read-more:hover::after {
-	opacity:1;
-	background: linear-gradient(45deg,  #ff0000,#b92b62, #fb0094,  #ff0000,#ff0000);
-	background-size: 200%;
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	z-index: -1;
-	animation: steam 10s linear infinite;
-}
-
-@keyframes steam {
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 400% 0;
-	}
-	100% {
-		background-position: 0 0;
+	@media screen and (min-width: $large_screen) {
+		@include background;
+		color: white;
+		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.1);
 	}
 }
 
-.read-more:hover::after {
-	filter: blur(3px);
-}
+
 
 @import "tables";

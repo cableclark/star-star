@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Резултати:', 'star-star' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Results:', 'Miss Albini' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -21,7 +21,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'star-star' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'Miss Albini' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -34,7 +34,7 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Ништо не беше пронајдено.', 'star-star' ); ?></p>
+			<p><?php esc_html_e( 'Ups... noting matched your search term', 'Miss Albini' ); ?></p>
 		<?php
 
 		
