@@ -24,7 +24,8 @@
 }
 
 @mixin border {
-	border: 1px solid  -webkit-linear-gradient(to right, #bf1e2d,#E94057,  #da1b5b); 
+	border: 1px solid #da1b5b;
+	padding:0.2rem;
 }
 
 @mixin box-shadow-normal {

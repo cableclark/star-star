@@ -15,11 +15,12 @@ h1 {
 	@media screen and (min-width: $extra_large_screen) {
 		font-size: 3rem;
 	} 
-
 }
 
-h2 {
-	font-size: 2em;
+
+h2,
+.search-title {
+	font-size: 1.8em;
 }
 
 h3 {
@@ -36,16 +37,5 @@ h5 {
 	font-size:1.1em;
 }
 
-.widget-title {
-	background: unset;
-	-webkit-background-clip: unset;
-	-webkit-text-fill-color: unset;
-	color: whitesmoke;
-	font-size: 1.3rem;
-	font-weight: 400;
-}
 
-.search-title {
-	font-size: 1.2em;
-}
 

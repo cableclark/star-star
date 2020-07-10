@@ -149,6 +149,17 @@ function miss_albini_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'album-of-the-week', 'miss_albini' ),
+			'id'            => 'album-of-the-week',
+			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="album-of-the-week">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
@@ -231,7 +242,7 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 function wpforo_search_form( $html ) {
 
-	$html = str_replace( 'placeholder="Пребарувај', 'placeholder=""', $html );
+	$html = str_replace( 'placeholder="Search', 'placeholder=""', $html );
 
 
 	return $html;
@@ -247,8 +258,6 @@ require get_template_directory() . '/inc/svg-icons.php';
 
 function my_search_form_text($text) {
 
-	 $text = str_replace('value="Пребарувај"', 'value="Барај"', $text); //set as value the text you want
-	 
      return $text . close_icon_svg ();
 }
 

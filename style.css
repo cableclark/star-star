@@ -393,8 +393,9 @@ h1 {
 	}
 }
 
-h2 {
-	font-size: 2em;
+h2,
+.search-title {
+	font-size: 1.8em;
 }
 
 h3 {
@@ -407,19 +408,6 @@ h4 {
 
 h5 {
 	font-size: 1.1em;
-}
-
-.widget-title {
-	background: unset;
-	-webkit-background-clip: unset;
-	-webkit-text-fill-color: unset;
-	color: whitesmoke;
-	font-size: 1.3rem;
-	font-weight: 400;
-}
-
-.search-title {
-	font-size: 1.2em;
 }
 
 p {
@@ -752,34 +740,23 @@ table {
 	}
 }
 
-@media screen and (min-width: 425px) {
-	.site-title {
-		position: relative;
-	}
+.site-title {
+	margin: auto 1rem;
+	font-size: unset;
 }
 
 .site-title a {
+	font-size: unset;
 	font-family: "Montserrat", sans-serif;
-	font-weight: bold;
+	font-weight: 400;
 	color: black;
+	font-size: 0.9rem;
+	line-height: unset;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 576px) {
 	.site-title a {
-		font-size: 16px;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.site-title a {
-		display: block;
-		font-size: 1.3rem;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.site-title a {
-		transition: all 0.2s ease-out;
+		font-size: 1.2rem;
 	}
 }
 
@@ -1495,14 +1472,16 @@ article {
 	}
 }
 
-.post-thumbnail .overlay-filter {
-	background-color: #e41313;
-	opacity: 0.3;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-	transition: opacity 0.2s ease-in;
+@media screen and (min-width: 1024px) {
+	.post-thumbnail .overlay-filter {
+		background-color: #e41313;
+		opacity: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		transition: opacity 0.2s ease-in;
+	}
 }
 
 .post-thumbnail .overlay-filter:hover {
@@ -1685,7 +1664,6 @@ article {
 	.excerpt-meta,
 	.entry-meta {
 		font-size: 1em;
-		padding: 0 0;
 	}
 }
 
@@ -1775,6 +1753,16 @@ article {
 .nav-links .current {
 	border: 1px solid #da1b5b;
 	color: #da1b5b;
+}
+
+.no-results-container {
+	min-height: 400px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
 }
 
 /*--------------------------------------------------------------
@@ -1867,23 +1855,13 @@ article {
 	    justify-content: center;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	background: #8A2387;
-	/* fallback for old browsers */
-	background: #8A2387;
-	/* fallback for old browsers */
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #bf1e2d, #da1b5b);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-color: #f8f8f8;
 }
 
 @media screen and (min-width: 1024px) {
 	.widget-area {
 		-ms-flex-pack: space-evenly;
 		    justify-content: space-evenly;
-		background: #8A2387;
-		/* fallback for old browsers */
-		/* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to right, #bf1e2d, #da1b5b);
 	}
 }
 
@@ -1896,39 +1874,6 @@ article {
 	    flex-wrap: wrap;
 	-ms-flex-pack: center;
 	    justify-content: center;
-}
-
-.widget-area li {
-	list-style-type: none;
-	padding: 1rem;
-	background-color: #E94057;
-	width: 100%;
-	transition: all 0.1s ease-in;
-}
-
-@media screen and (min-width: 576px) {
-	.widget-area li {
-		margin: 1rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.widget-area li {
-		width: 400px;
-		margin: 2rem;
-		padding: 1rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.widget-area li:hover {
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
-	}
-}
-
-.widget-area a,
-.widget-area h2 {
-	color: #f8f8f8;
 }
 
 .widget {
@@ -1945,7 +1890,7 @@ article {
 
 @media screen and (min-width: 1024px) {
 	.widget {
-		padding: 3em 2em;
+		padding: 1em 2em;
 	}
 }
 
@@ -1956,7 +1901,6 @@ article {
 .widget_title_container {
 	display: -ms-flexbox;
 	display: flex;
-	margin: 2rem 0;
 	letter-spacing: 0.1rem;
 	word-break: break-all;
 }
@@ -1965,6 +1909,14 @@ article {
 	.widget_title_container {
 		margin: unset;
 	}
+}
+
+.widget-title {
+	background: unset;
+	-webkit-background-clip: unset;
+	-webkit-text-fill-color: unset;
+	font-size: 1.3rem;
+	font-weight: 400;
 }
 
 .widget_search {
@@ -1983,41 +1935,42 @@ article {
 .recent-post-image a {
 	display: block;
 	margin-right: 1rem;
-	width: 130px;
-	height: 130px;
+	width: 150px;
+	height: 150px;
 }
 
 .recent-post-image a img {
 	margin-top: 0;
-	filter: grayscale(80%);
 	object-fit: cover;
 	min-height: 100%;
 	min-width: 100%;
+}
+
+#widget_crp-3 > div > ul > li > a > img {
+	margin-top: 0;
+}
+
+.recent-posts,
+.crp_related_widget ul > li {
+	max-width: 180px;
+	margin: 1rem;
+	list-style-type: none;
+	padding: 1rem;
+	background-color: white;
 	transition: all 0.1s ease-in;
 }
 
-.recent-post-image a img:hover {
-	filter: grayscale(0%);
-}
-
 @media screen and (min-width: 1024px) {
-	.recent-post-image a {
-		width: 180px;
-		height: 180px;
+	.recent-posts,
+	.crp_related_widget ul > li {
+		margin: 1rem;
 	}
 }
 
-.recent-posts {
-	display: -ms-flexbox;
-	display: flex;
-	max-width: 360px;
-	margin-bottom: 1rem;
-}
-
 @media screen and (min-width: 1024px) {
-	.recent-posts {
-		max-width: unset;
-		margin-bottom: 2.5rem;
+	.recent-posts:hover,
+	.crp_related_widget ul > li:hover {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11), 0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11), 0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
 	}
 }
 
@@ -2026,20 +1979,62 @@ article {
 	display: flex;
 	-ms-flex-direction: column;
 	    flex-direction: column;
-	font-family: "Playfair Display", serif;
+	margin-top: 1rem;
+}
+
+.recent-posts__data span {
+	font-size: 12px;
+}
+
+.crp_date {
+	display: block;
+	font-size: 12px;
+}
+
+/** Album of the week widget 
+*/
+#custom_html-2 {
+	color: white;
+}
+
+#custom_html-2 .album-of-the-week {
+	font-weight: 400;
+	margin: 2rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+	#custom_html-2 .album-of-the-week {
+		margin: 1rem 0;
+		font-size: 1rem;
+	}
+}
+
+#custom_html-2 a {
+	margin: 0 auto;
+	margin-bottom: 0.5rem;
+	color: white;
 	font-size: 0.9rem;
 }
 
 @media screen and (min-width: 1024px) {
-	.recent-posts__data a {
-		font-size: 1.1rem;
+	#custom_html-2 {
+		min-width: unset;
+		width: 250px;
+		position: absolute;
+		right: -2px;
+		top: 100px;
+		margin: 0;
+		padding: 0 1rem;
+		background: #8A2387;
+		/* fallback for old browsers */
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #bf1e2d, #da1b5b);
 	}
 }
 
-.recent-posts__data span {
-	font-size: 0.8rem;
-}
-
+/*--------------------------------------------------------------
+# Similar
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/

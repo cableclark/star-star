@@ -41,5 +41,8 @@
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "node bin/bundle.js"
+  },
+  "dependencies": {
+    "gulp-v3": "^3.12.1"
   }
 }

@@ -11,10 +11,10 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Results:', 'Miss Albini' ); ?></h1>
+		<h1 class="search-title"><?php esc_html_e( 'Results:', 'Miss Albini' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content no-results-container">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -34,7 +34,7 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Ups... noting matched your search term', 'Miss Albini' ); ?></p>
+			<p><?php esc_html_e( 'Nothing to see here, sorry...', 'Miss Albini' ); ?></p>
 		<?php
 
 		

@@ -27,7 +27,7 @@ if ( ! function_exists( 'miss_albini_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x('%s', 'post date', 'miss-albini' ),
+			esc_html_x( ' %s', 'post date', 'miss-albini' ),
 			 $time_string 
 		);
 
@@ -43,7 +43,7 @@ if ( ! function_exists( 'miss_albini_posted_by' ) ) :
 	function miss_albini_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'од %s', 'post author', 'miss-albini' ),
+			esc_html_x( 'Author: %s', 'post author', 'miss-albini' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -132,3 +132,5 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+

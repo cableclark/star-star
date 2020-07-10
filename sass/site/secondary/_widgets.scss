@@ -1,50 +1,17 @@
 .widget-area {
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap;
-	background: #8A2387;  /* fallback for old browsers */
-	@include background; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	flex-wrap: wrap; 
+	background-color: $color__background-body;	
 	@media screen and(min-width: $large_screen)  {
 		justify-content: space-evenly;
-		@include background;
 	}
-	
 	ul {
 		margin: 0;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-	}
-	li {
-		list-style-type: none;
-		padding: 1rem;
-		background-color: $color__link-visited;
-		width: 100%;
-		transition: all 0.1s ease-in;
-		@media screen and(min-width: $small_screen)  {
-			margin: 1rem;
-		}
-		@media screen and(min-width: $large_screen)  {
-			width: 400px;
-			margin: 2rem;
-			padding: 1rem;	
-		}	
-	}
-	li:hover {
-		@media screen and(min-width: $large_screen)  {
-			box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-			0 2px 2px rgba(0,0,0,0.11), 
-			0 4px 4px rgba(0,0,0,0.11), 
-			0 8px 8px rgba(0,0,0,0.11), 
-			0 16px 16px rgba(0,0,0,0.11), 
-			0 32px 32px rgba(0,0,0,0.11); 
-		}	 
-	}
-	a,
-	h2 
-	{
-		color: $color__background-body;
 	}
       
 }
@@ -57,7 +24,7 @@
 	align-items: center;
 	margin-bottom: 2rem;
 	@media screen and(min-width: $large_screen)  {
-		padding: 3em 2em;
+		padding: 1em 2em;
 	}
 	// Make sure select elements fit in widgets.
 	select {
@@ -67,12 +34,20 @@
 
 .widget_title_container {
 	display: flex;
-	margin: 2rem 0;
 	letter-spacing: 0.1rem;
 	word-break: break-all;
 	@media screen and(min-width: $large_screen)  {
 		margin: unset;
 	}
+}
+
+.widget-title
+ {
+	background: unset;
+	-webkit-background-clip: unset;
+	-webkit-text-fill-color: unset;
+	font-size: 1.3rem;
+	font-weight: 400;
 }
 
 .widget_search {
@@ -86,54 +61,97 @@
 	margin-right: 1rem;
 }
 
-.recent-post-image {	
+.recent-post-image
+ {	
 	a {
 		display: block;
 	img {
 		margin-top: 0;
-		filter: grayscale(80%);
 		object-fit: cover;
 		min-height: 100%;
 		min-width:100%;
-		transition: all 0.1s ease-in;
-	}
-	img:hover {
-		filter: grayscale(0%);
-		
 	}
 	margin-right: 1rem;
-	width: 130px;
-	height: 130px;
-	@media screen and(min-width: $large_screen)  {
-		width: 180px;
-		height: 180px;
-		}
+	width: 150px;
+	height: 150px;
 	}
 }
 
-.recent-posts {
-	display: flex;
-	max-width: 360px;
-	margin-bottom: 1rem;	
-	@media screen and(min-width: $large_screen)  {
-		max-width: unset;
-		margin-bottom: 2.5rem;
-	}
+#widget_crp-3 > div > ul > li > a > img {
+		margin-top: 0;		
 }
 
-.recent-posts__data {
+.recent-posts,
+.crp_related_widget ul > li  {
+	max-width: 180px;
+	margin: 1rem;	
+	list-style-type: none;
+	padding: 1rem;
+	background-color: white;
+	transition: all 0.1s ease-in;
+
+	@media screen and(min-width: $large_screen)  {
+			margin: 1rem;	
+		}	
+}
+
+.recent-posts:hover,
+.crp_related_widget ul > li:hover  {
+	@media screen and(min-width: $large_screen)  {
+		box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+		0 2px 2px rgba(0,0,0,0.11), 
+		0 4px 4px rgba(0,0,0,0.11), 
+		0 8px 8px rgba(0,0,0,0.11), 
+		0 16px 16px rgba(0,0,0,0.11), 
+		0 32px 32px rgba(0,0,0,0.11); 
+	}	 
+}
+
+.recent-posts__data
+ {
 	display: flex;
 	flex-direction: column;
-	font-family: $font-headings;
-	font-size: 0.9rem;
-	a {
-		@media screen and(min-width: $large_screen)  {
-			font-size: 1.1rem;
-		}
-	}
-	span {
-		font-size: 0.8rem;
+	margin-top: 1rem;
+	span {		
+		font-size: 12px;
+	
 	}
 }
 
+.crp_date {
+	display: block;
+	font-size: 12px;
+}
+
+/** Album of the week widget 
+*/
+
+
+#custom_html-2 {
+	color: white;
+	.album-of-the-week {
+		font-weight: 400;
+		margin: 2rem 0;
+		@media screen and(min-width: $large_screen)  {
+			margin: 1rem 0;
+			font-size: 1rem;
+		}
+	}
+	a {
+		margin: 0 auto;
+		margin-bottom: 0.5rem;
+		color: white;
+		font-size: 0.9rem;
+	}
+	@media screen and(min-width: $large_screen)  {
+		min-width: unset;
+		width: 250px;
+		position: absolute;
+		right: -2px;
+		top: 100px;	
+		margin:0;
+		padding: 0 1rem;
+		@include background;
+	}
+}
 

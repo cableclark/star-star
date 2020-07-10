@@ -69,23 +69,18 @@
 }
 
 .site-title {
-    @media screen and(min-width: $smaller_screen) {
-        position:relative;
-    }
+    margin: auto 1rem;
+    font-size: unset;
     a {
+        font-size: unset;
         font-family: $font__main; 
-        font-weight: bold;
+        font-weight: 400;
         color:black;
-        @media screen and(max-width: $smaller_screen) {
-            font-size: 16px;
-        }
-        @media screen and (min-width: $large_screen) {
-            display: block;
-            font-size: 1.3rem;   
-        } 
-        @media screen and (min-width: $extra_large_screen) {
-            @include header-transition; 
-        } 
+        font-size: 0.9rem;
+        line-height: unset;
+        @media screen and (min-width: $small_screen) {
+          font-size: 1.2rem;   
+        }  
     }
 
     a:visited {

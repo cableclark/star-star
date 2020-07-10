@@ -26,6 +26,7 @@
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 		<div class="entry-content">
+		
 			<?php
 			the_content(
 				sprintf(
@@ -41,20 +42,13 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
-
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'miss-albini' ),
-					'after'  => '</div>',
-				)
-			);
+			?>
+			<p> <?php miss_albini_posted_by(); ?> </p>
+			<?php 
+			miss_albini_get_tags(); 
 			?>
 		</div><!-- .entry-content -->
 
-		<footer class="entry-footer">
-			<?php miss_albini_get_tags(); ?>		
-		
-		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 
 </div> <!-- Container ends -->
