@@ -12,12 +12,12 @@ html {
 }
 
 body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	background: $light_color; // Fallback for when there is no custom background color defined.
 	overflow-x: hidden;
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: $light_color;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -47,11 +47,10 @@ figure {
 }
 
 .read-more {
-
 		display: block;
-		color: #da1b5b;
-		background: white;
-		border: 1px solid #da1b5b;
+		color: $dark_orange;
+		background: $light_color;
+		border: 1px solid $dark_orange;
 		height: 45px;
 		width: 200px;
 		cursor: pointer;
@@ -73,12 +72,12 @@ figure {
 
 .read-more:hover {
 	@media screen and (min-width: $large_screen) {
-		@include background;
-		color: white;
+		@include background; 
+		color: $light_color;
+		border: none;
 		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.1);
 	}
 }
-
 
 
 @import "tables";

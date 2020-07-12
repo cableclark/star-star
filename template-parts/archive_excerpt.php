@@ -8,17 +8,21 @@
  */
 
 ?>
-<div id="app" class="container">
+<div id="app" class="archives">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
-			
-			<?php
+		<header class="entry-header ">
+			<?php 
+			the_post_thumbnail("large"); 
+			miss_albini_entry_footer(); 
+	
 			if ( is_singular() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title( '<h1 class="entry-title archive-h2">', '</h1>' );
 			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2 class="entry-title archive-h2"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
+			
 			?>
+
 			<div class="entry-meta">
 					<?php
 					miss_albini_posted_on();
@@ -45,12 +49,6 @@
 				)
 			);
 
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'miss_albini' ),
-					'after'  => '</div>',
-				)
-			);
 			?>
 		</div><!-- .entry-content -->
 
@@ -60,7 +58,7 @@
 			?>
 				
 			<?php endif; ?>
-			<?php miss_albini_entry_footer(); ?>
+		
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 

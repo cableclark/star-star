@@ -9,7 +9,11 @@
 
 get_header();
 ?>
-	<main id="primary" class="site-main site-container margin-top">
+	<main id="primary" class="site-main margin-top">
+		<div class="archive-title">
+			<h1><?php echo get_cat_name(get_queried_object_id());?></h1>
+		</div>
+		<div class="archives-container">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) :
@@ -29,18 +33,21 @@ get_header();
 				 */
 				get_template_part( 'template-parts/archive_excerpt', get_post_type() );
 			endwhile;
-			the_posts_pagination( array(
-				'mid_size'  => 3,
-				'prev_text' => __( 'Назад', 'Miss-Albini' ),
-				'next_text' => __( 'Напред', 'Miss-Albini' ),
-			) );
+			
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif;
 		?>
+	</div>	
+	<?php the_posts_pagination( array(
+				'mid_size'  => 1,
+				'prev_text' => __( '<', 'textdomain' ),
+				'next_text' => __( '>', 'textdomain' ),
+			) );
+	?>		
 	</main><!-- #main -->
 <?php
 	get_sidebar();
-	get_sidebar( 'singlebar' );
+	get_sidebar( 'latest' );
 	get_footer();
 ?>

@@ -11,7 +11,7 @@
     height: 60px;
     width: 100%;
     top:0;
-    background-color: $color__background-body;
+    background-color: $light_color;
     @include header-transition;
     position:fixed; 
     @media screen and (min-width: $large_screen) {
@@ -55,7 +55,7 @@
 .main-navigation
  {
     margin: auto 1rem;
-}
+ }
 
 .site-description {
     transition: all 0.2s ease-in;
@@ -72,30 +72,35 @@
     margin: auto 1rem;
     font-size: unset;
     a {
+        @media screen and (max-width: 335px) {
+            display: none;
+        }  
+        display: inline;
         font-size: unset;
-        font-family: $font__main; 
+        font-family:$font__main;
         font-weight: 400;
-        color:black;
-        font-size: 0.9rem;
+        text-transform: uppercase;
+        color:$black_color;
+        font-size: 0.8rem;
         line-height: unset;
         @media screen and (min-width: $small_screen) {
-          font-size: 1.2rem;   
+          font-size: 1.3rem;   
         }  
     }
 
     a:visited {
-        color:black;
+        color:$black_color;
     }
 
     a:hover {
-        color: #E94057;
+        color: $black_color;
     }
  }
 
  .smaller-navbar {
     @media screen and (min-width: $extra_large_screen) {
         a {    
-            font-size:1.2rem;
+            font-size:1.1rem;
         }         
     }
  }

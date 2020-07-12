@@ -4,7 +4,7 @@ input[type="reset"],
 input[type="submit"] {
 		border: none;
 		@include background;
-		color: $color__background-body;
+		color: $light_color;
 		height: 45px;
 		width: 200px;
 		cursor: pointer;
@@ -16,6 +16,6 @@ input[type="submit"] {
 	}
 	&:active,
 	&:focus {
-		border: 1px solid $color__link-visited;
+		border: 1px solid $darker_orange;
 	}
 }

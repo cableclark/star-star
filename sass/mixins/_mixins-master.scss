@@ -10,31 +10,37 @@
 }
 
 @mixin gradient {
-	background: #8A2387;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #F48668,   #da1b5b);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #F48668,  #da1b5b ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: $mid_orange;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right,  $mid_orange, $light_orange, $dark_orange
+	);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, $mid_orange, $light_orange, $dark_orange
+	);
+     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 @mixin background {
-	background: #8A2387;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #bf1e2d,  #da1b5b);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #bf1e2d, #da1b5b);
+	background: $mid_orange;
+	;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, $mid_orange, $light_orange, $dark_orange 
+	);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, $mid_orange, $light_orange,$dark_orange
+	);
 }
 
 @mixin border {
-	border: 1px solid #da1b5b;
+	border: 1px solid $mid_orange;
 	padding:0.2rem;
 }
 
 @mixin box-shadow-normal {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 
 @mixin box-shadow-hover {
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px $dark_color;
 }
 
 

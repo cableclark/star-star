@@ -8,7 +8,7 @@
  */
 get_header();
 ?>
-	<div class="thumb-container"><?php the_post_thumbnail();?></div>	
+	<div class="thumb-container"><?php the_post_thumbnail("full");?></div>	
 	<main id="primary" class="site-main white-bg">
 		<div class="site-container">
 			<?php
@@ -25,6 +25,5 @@ get_header();
 <?php
 
 get_sidebar();
-get_sidebar( 'singlebar' );
-
+get_sidebar( 'similar' );
 get_footer();

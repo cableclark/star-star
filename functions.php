@@ -140,8 +140,8 @@ function miss_albini_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar-2', 'miss_albini' ),
-			'id'            => 'sidebar-2',
+			'name'          => esc_html__( 'latest', 'miss_albini' ),
+			'id'            => 'latest',
 			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -160,6 +160,17 @@ function miss_albini_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'similar', 'miss_albini' ),
+			'id'            => 'similar',
+			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="album-of-the-week">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
@@ -171,17 +182,15 @@ function miss_albini_scripts() {
 
 	//Enqueue Google fonts
 
-	wp_enqueue_style( 'miss_albini-fonts', 'ttps://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
 	
-	wp_enqueue_style( 'miss_albini-fonts2', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
+	wp_enqueue_style( 'miss_albini-fonts-2', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
 	
 	wp_enqueue_style( 'miss_albini-style', get_stylesheet_uri(), array(), _S_VERSION );
 
 	wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	wp_enqueue_script( 'miss_albini-animations', get_template_directory_uri() . '/js/animations.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'miss_albini-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
 
@@ -262,6 +271,18 @@ function my_search_form_text($text) {
 }
 
 add_filter('get_search_form', 'my_search_form_text');
+
+/**
+ * Exclude albun-of-theweek tag
+ */
+
+function exclude_featured_tag( $query ) {
+    if ( !is_admin() && $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'tag__not_in', array(30) );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_featured_tag' );
+
 
 
 /**

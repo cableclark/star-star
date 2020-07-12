@@ -1,12 +1,12 @@
 .site-footer {
-    background-color: $color__text-screen;
+    background-color: $dark_color;
     height: 100px;
-    color: white;
+    color: $light_color;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     a {
-        color: white; 
+        color: $light_color; 
     }
 }

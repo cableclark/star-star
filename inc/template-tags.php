@@ -102,7 +102,7 @@ if ( ! function_exists( 'miss_albini_post_thumbnail' ) ) :
 		<?php else : ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<div class="overlay-filter"></div>		
+					
 				<?php
 					the_post_thumbnail(
 						$size,
