@@ -11,21 +11,19 @@
  *
  * @package Miss Albini
  */
-
 get_header();
 ?>
 	<main id="primary" class="site-main">
+		<div class="index-container">
 		<?php
-		if ( have_posts() ) :
-			if ( is_home() && ! is_front_page() ) :
-				?>
+			if ( have_posts() ) :
+				if ( is_home() && ! is_front_page() ) :?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-				<?php
-			endif;
+			<?php endif;
 			/* Start the Loop */
-			while ( have_posts() ) :
+			while (have_posts() ) :
 				the_post();
 				/*
 				 * Include the Post-Type-specific template for the content.
@@ -34,18 +32,19 @@ get_header();
 				 */
 				get_template_part( 'template-parts/excerpt', get_post_type() );
 			endwhile;
-			the_posts_pagination( array(
+			wp_reset_postdata();
+		else :
+			get_template_part( 'template-parts/content', 'none' );
+		endif;?>
+		</div>
+		<?php the_posts_pagination( array(
 				'mid_size'  => 1,
 				'prev_text' => __( '<', 'textdomain' ),
 				'next_text' => __( '>', 'textdomain' ),
 			) );
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
 		?>
-	</main><!-- #main -->
+	</main>
 <?php
-	dynamic_sidebar( 'album-of-the-week' );
-	get_sidebar();
-	get_footer();
-?>
+dynamic_sidebar( 'album-of-the-week' );
+get_sidebar();
+get_footer();

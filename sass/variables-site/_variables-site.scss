@@ -4,3 +4,12 @@
 @import "structure";
 @import "columns";
 @import "media";
+
+.white-link {
+	color:white;
+}
+
+.white-link:hover,
+.white-link:visited {
+	color:white;
+}

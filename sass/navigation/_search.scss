@@ -70,6 +70,13 @@
     @media screen and (min-width: $large_screen) {
         width: unset;
     }
+    label {
+        input[type="search"] {
+            @media screen and (min-width: $large_screen) {
+                width: 600px;
+            } 
+        }
+    }
 }		
 
 .search-field {
@@ -84,9 +91,7 @@
         height: 35px;
         width: 100%;
     }
-    @media screen and (min-width: $large_screen) {
-        width: 600px;
-    } 
+
 }
 
 .search-form  {

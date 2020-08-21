@@ -174,31 +174,89 @@ function miss_albini_widgets_init() {
 }
 add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
-
 /**
  * Enqueue scripts and styles.
  */
 function miss_albini_scripts() {
-
 	//Enqueue Google fonts
-
 	wp_enqueue_style( 'miss_albini-fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
-	
 	wp_enqueue_style( 'miss_albini-fonts-2', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
-	
-	wp_enqueue_style( 'miss_albini-style', get_stylesheet_uri(), array(), _S_VERSION );
-
-	wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	wp_enqueue_script( 'miss_albini-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_style( 'miss_albini-style', get_stylesheet_uri(), [], filemtime(get_template_directory( ). '/style.css'), "all");
+    wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
+    wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 }
+
 add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
+
+/**
+ * Disable RSS
+ */
+
+function itsme_disable_feed() {
+	wp_die( __( 'No feed available, please visit the <a href="'. esc_url( home_url( '/' ) ) .'">homepage</a>!' ) );
+   }
+   add_action('do_feed', 'itsme_disable_feed', 1);
+   add_action('do_feed_rdf', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss2', 'itsme_disable_feed', 1);
+   add_action('do_feed_atom', 'itsme_disable_feed', 1);
+   add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
+   add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
+   remove_action( 'wp_head', 'feed_links_extra', 3 );
+   remove_action( 'wp_head', 'feed_links', 2 );
+
+
+/**
+ * Remove Emojis
+ */
+
+   remove_action('wp_head', 'print_emoji_detection_script', 7);
+   remove_action('wp_print_styles', 'print_emoji_styles');
+   remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+   remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+/**
+ * Clean emnus from classes
+ */
+
+   add_filter('nav_menu_item_id', 'clear_nav_menu_item_id', 10, 3);
+   
+   function clear_nav_menu_item_id($id, $item, $args) {
+	   return "";
+   }
+   
+   add_filter('nav_menu_css_class', 'clear_nav_menu_item_class', 10, 3);
+   
+   function clear_nav_menu_item_class($classes, $item, $args) {
+	return array();
+	}
+
+/**
+ * Head Clean-up
+ */
+	remove_action ('wp_head', 'rsd_link');
+
+	function crunchify_remove_version() {
+		return '';
+	}
+
+	add_filter('the_generator', 'crunchify_remove_version');
+	remove_action( 'wp_head', 'wlwmanifest_link');
+	remove_action( 'wp_head', 'wp_shortlink_wp_head');
+	remove_action('wp_head', 'rest_output_link_wp_head', 10);
+	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+/**
+ * Stop loading contact form 7 scrips on every page
+ */	
+	add_filter( 'wpcf7_load_js', '__return_false' );
+    add_filter( 'wpcf7_load_css', '__return_false' );
+
+/**
+ * Remove previous/next
+ */
+
+   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
 /**
  * Force HTTPS for loading scripts
@@ -213,6 +271,7 @@ function wp_secure_page_force_ssl( $force_ssl, $post_id = 0 ) {
     return $force_ssl;
 }
 add_filter('force_ssl' , 'wp_secure_page_force_ssl', 1, 3);
+
 /**
  * Add preconnect for Google Fonts.
  *
@@ -234,7 +293,6 @@ function miss_albini_resource_hints( $urls, $relation_type ) {
 
 add_filter( 'wp_resource_hints', 'miss_albini_resource_hints', 10, 2 );
 
-
 /**
  * Filter the excerpt "read more" string.
  *
@@ -253,7 +311,6 @@ function wpforo_search_form( $html ) {
 
 	$html = str_replace( 'placeholder="Search', 'placeholder=""', $html );
 
-
 	return $html;
 }
 add_filter( 'get_search_form', 'wpforo_search_form' );
@@ -267,23 +324,22 @@ require get_template_directory() . '/inc/svg-icons.php';
 
 function my_search_form_text($text) {
 
-     return $text . close_icon_svg ();
+     return $text . close_icon_svg();
 }
 
 add_filter('get_search_form', 'my_search_form_text');
 
-/**
- * Exclude albun-of-theweek tag
- */
-
-function exclude_featured_tag( $query ) {
-    if ( !is_admin() && $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'tag__not_in', array(30) );
-    }
-}
-add_action( 'pre_get_posts', 'exclude_featured_tag' );
-
-
+/** 
+* This is a function which limits Number of Posts on Archive Pages
+*/
+function number_of_posts_on_archive($query){
+	if ($query->is_archive) {
+		$query->set('posts_per_page', 6);
+	}
+	return $query;
+	}
+	
+add_filter('pre_get_posts', 'number_of_posts_on_archive');
 
 /**
  * Custom template tags for this theme.
@@ -297,24 +353,8 @@ require get_template_directory() . '/inc/template-functions.php';
 
 
 /**
- * Loads a customized Archives widget
- */
-
-require get_template_directory() . '/classes/class-my-archives.php';
-
-
-function my_archives_widget_register() {
-    unregister_widget( 'WP_Widget_Archives' );
-    register_widget( 'My_Archives_Widget' );
-}
-
-add_action( 'widgets_init', 'my_archives_widget_register' );
-
-
-/**
  * Loads a customized Recent Posts widget
  */
-
 require get_template_directory() . '/classes/class-my-recent-posts.php';
 
 function my_recent_posts_widget_register() {

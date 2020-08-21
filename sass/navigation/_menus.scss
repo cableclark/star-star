@@ -7,7 +7,6 @@
 	display: flex;
 	flex-direction: column;
 	@media screen and (min-width: $extra_large_screen) {
-		display: flex;
 		flex-direction: row;
 		height: unset;
 		position:static;
@@ -23,10 +22,8 @@
 			@media screen and (min-width: $extra_large_screen) { 
 				border-bottom: 1px solid $mid_orange;
 				color: $mid_orange;
-				
 			}
 		}
-
 		a {
 			display: block;
 			color: $light_color;
@@ -44,7 +41,7 @@
 	}	
 }
 
-.main-menu{
+.main-menu {
 	position: absolute;
 	left: 0px;
 	top:0px; 
@@ -58,7 +55,6 @@
 	transform: translateX(-350px);
 	box-shadow: 0 1px 5px rgba(0,0,0,0.5);
 	transition: transform 0.2s ease-in;
-
 	@media screen and (min-width: $extra_large_screen) {
 		box-shadow: unset;
 		position: static;
@@ -73,7 +69,6 @@
     }    
 }
 
-
 .menu-active {
 	display: flex;
 	transform: translateX(0px);
@@ -82,12 +77,10 @@
     }    
 }
 
-.comment-navigation,
 .posts-navigation,
 .post-navigation {
 	max-width:900px; 
 	margin: 3em auto;
-
 	.nav-links {
 		display: flex;
 		margin: 0 auto;
@@ -98,18 +91,8 @@
 		@media screen and (min-width: $extra_large_screen) {  
 			font-size: 1.3rem;
 		}
-	}
-
-	.nav-previous {
-		flex: 1 0 50%;
-	}
-
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
 	}	
 }
-
 
 .toggler {
     padding:auto 10px;
@@ -143,17 +126,6 @@
  }
 
 
-#social-menu {
-	height: unset;
-	width: unset;
-	display: flex;
-	flex-direction: row;
-		li {
-			list-style-type: none;
-			margin: 1rem;
-		}
-} 
-
 .menu-hider {
 	z-index: -10000000000;
 	display: none;
@@ -169,8 +141,9 @@
 }
 
 
-//Menu stagered animnation 
-
+/**
+*Menu stagered animnation 
+*/
 .open-menu-items {
 	li {
 	animation: 0.4s ease pulse;

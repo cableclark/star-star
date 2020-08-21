@@ -8,16 +8,13 @@
  */
 
 ?>
-
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="search-title"><?php esc_html_e( 'Results:', 'Miss Albini' ); ?></h1>
+		<h1 class="search-title"><?php esc_html_e( 'No posts found:', 'Miss Albini' ); ?></h1>
 	</header><!-- .page-header -->
-
 	<div class="page-content no-results-container">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
-
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
@@ -36,9 +33,6 @@
 
 			<p><?php esc_html_e( 'Nothing to see here, sorry...', 'Miss Albini' ); ?></p>
 		<?php
-
-		
-
 		endif;
 		?>
 	</div><!-- .page-content -->

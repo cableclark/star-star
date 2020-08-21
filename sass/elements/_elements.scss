@@ -47,37 +47,46 @@ figure {
 }
 
 .read-more {
-		display: block;
-		color: $dark_orange;
-		background: $light_color;
-		border: 1px solid $dark_orange;
-		height: 45px;
-		width: 200px;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: none;
-		padding-bottom: 3px;
-		font-family: $font-headings;
-		transform: all 0.2s ease;
-	
-	@media screen and (min-width: $extra_large_screen) {
-		margin-top: 50px;
-		height: 50px;
-	}	
+	display: none;
 }
+.card:first-of-type {
+	.read-more {
+			display: block;
+			color: $dark_orange;
+			background: $light_color;
+			border: 1px solid $dark_orange;
+			height: 45px;
+			width: 200px;
+			cursor: pointer;
+			margin-top: 20px;
+			box-shadow: none;
+			padding-bottom: 3px;
+			font-family: $font-headings;
+			transform: all 0.2s ease;
+			margin-bottom: 1rem;
+		@media screen and (min-width: $extra_large_screen) {
+			margin-top: 50px;
+			height: 50px;
+		}	
+	}
 
-.read-more:active {
-	transform: scale(0.99);
-}
+	.read-more:active {
+		transform: scale(0.99);
+	}
 
-.read-more:hover {
-	@media screen and (min-width: $large_screen) {
-		@include background; 
-		color: $light_color;
-		border: none;
-		box-shadow: 0 5px 10px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.1);
+	.read-more:hover {
+		@media screen and (min-width: $large_screen) {
+			@include background; 
+			color: $light_color;
+			border: none;
+			box-shadow: unset;
+		}
 	}
 }
 
+.grecaptcha-badge {
+	opacity: 0;
+	visibility: hidden;
+ }
 
 @import "tables";

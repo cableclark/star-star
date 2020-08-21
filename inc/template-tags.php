@@ -16,7 +16,6 @@ if ( ! function_exists( 'miss_albini_posted_on' ) ) :
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
-
 		$time_string = sprintf(
 			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
@@ -24,13 +23,11 @@ if ( ! function_exists( 'miss_albini_posted_on' ) ) :
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date('j m, Y') )
 		);
-
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( ' %s', 'post date', 'miss-albini' ),
 			 $time_string 
 		);
-
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
@@ -46,7 +43,6 @@ if ( ! function_exists( 'miss_albini_posted_by' ) ) :
 			esc_html_x( 'Author: %s', 'post author', 'miss-albini' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
-
 		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
@@ -69,9 +65,7 @@ if ( ! function_exists( 'miss_albini_entry_footer' ) ) :
 	}
 endif;
 
-
 function miss_albini_get_tags () {
-
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'miss-albini' ) );
 		if ( $tags_list ) {
@@ -91,19 +85,13 @@ if ( ! function_exists( 'miss_albini_post_thumbnail' ) ) :
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
-
 		if ( is_singular() ) :
 			?>
-
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail("full"); ?>
-			</div><!-- .post-thumbnail -->
-
+			</div><!-- .post-thumbnail 1 -->
 		<?php else : ?>
-
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					
-				<?php
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1"><?php
 					the_post_thumbnail(
 						$size,
 						array(
@@ -114,9 +102,7 @@ if ( ! function_exists( 'miss_albini_post_thumbnail' ) ) :
 							),
 						)
 					);
-				?>
-			</a>
-
+				?></a>
 			<?php
 		endif; // End is_singular().
 	}
@@ -132,5 +118,34 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+/**
+ * Add a twitter card
+ */		
+
+function add_twitter_card ($post_id) {
+	if(is_single() || is_page()) {
+		$twitter_url    = get_permalink();
+		$twitter_title  = get_the_title();
+		$twitter_desc   = get_the_excerpt();
+		$twitter_thumbs = wp_get_attachment_image_src( get_post_thumbnail_id($post_id));
+		$twitter_thumb  = $twitter_thumbs[0];
+			if(!$twitter_thumb) {
+			$twitter_thumb = 'http://www.gravatar.com/avatar/8eb9ee80d39f13cbbad56da88ef3a6ee?rating=PG&size=75';
+		  }
+	   $twitter_name   = str_replace('@', '', get_the_author_meta('twitter'));
+	   $twiter_card = "<meta name='twitter:card' value='summary'/>";
+	   $twiter_card .= "<meta name='twitter:url' value='$twitter_url' />";
+	   $twiter_card .= "<meta name='twitter:title' value='$twitter_title'/>";
+	   $twiter_card .= "<meta name='twitter:description' value=' $twitter_desc;' />";
+	   $twiter_card .= "<meta name='twitter:image' value='$twitter_thumb' />";
+	   $twiter_card .= "<meta name='twitter:site' value='@inthelostandfound' />";
+		if($twitter_name) {
+			$twiter_card .= "<meta name='twitter:creator' value=.@ $twitter_name' />";
+		}
+		echo $twiter_card;
+	  }
+	
+}
 
 

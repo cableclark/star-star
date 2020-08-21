@@ -7,21 +7,16 @@
  * @package Miss Albini
  */
 ?>
-
-<article id="excerpt-<?php the_ID(); ?>" class="excerpt">
+<article id="excerpt-<?php the_ID(); ?>" class="excerpt card">
 	<?php miss_albini_post_thumbnail('large'); ?>
 	<div class="excerpt-text">
 		<header class="excerpt-header">
-			<?php
+		<?php
 			miss_albini_entry_footer(); 
-			if ( is_singular() ) :
-				the_title( '<h1 class="excerpt-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="excerpt-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
-			?>
-			<div class="excerpt-meta"><?php miss_albini_posted_on();?></div><!-- .entry-meta -->
-		</header><!-- .entry-header -->
+			the_title( '<h2 class="excerpt-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		?>
+			<div class="excerpt-meta"><?php miss_albini_posted_on();?></div>
+		</header>
 		<div class="excerpt-content">
 			<?php
 			the_excerpt(
@@ -38,18 +33,8 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Miss Albini' ),
-					'after'  => '</div>',
-				)
-			);
-			?>
-		
-			<a href="<?php esc_url( the_permalink()) ?>">
-			<button class="read-more"> Read more...</button></a>
-			
-		</div><!-- .entry-content -->
+	 ?>
+		<a href="<?php esc_url( the_permalink()) ?>"><button class="read-more"> Read more...</button></a>
+		</div>
 	</div>	
-	
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

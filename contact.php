@@ -1,7 +1,9 @@
 <?php
 /**
+ * Template Name: Contact
+ * 
  * The template for displaying all pages
- *
+ * 
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -11,9 +13,9 @@
  *
  * @package Miss Albini
  */
-get_header();
+get_header( 'custom' );
 ?>
-	<main id="primary" class="site-main site-container">
+	<main id="primary" class="site-main site-container margin-top">
 		<?php
 		while ( have_posts() ) :
 			the_post();

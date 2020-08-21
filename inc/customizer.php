@@ -1,6 +1,6 @@
 <?php
 /**
- * miss_albini Theme Customizer
+ * Miss albini Theme Customizer
  *
  * @package Miss Albini
  */

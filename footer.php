@@ -8,14 +8,12 @@
  *
  * @package Miss Albini
  */
-
 ?>
 	<footer id="colophon" class="site-footer">
-		
 		<div class="site-info">
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( '%1$s, %2$s.  by %3$s.', 'Miss Albini.' ), 'In the lost and found', date('Y'), '<a href="https://www.github.com/cableclark">Cableclark</a>' );
+				printf( esc_html__( '%1$s, %2$s. by %3$s.', 'Miss Albini.' ), 'In the lost and found', date('Y'), '<a href="https://www.github.com/cableclark">Cableclark</a>' );
 			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

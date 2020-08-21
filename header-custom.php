@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The custom header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -11,14 +11,17 @@
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="<?php bloginfo( 'charset' ); ?>"><?php  
+	  if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
+		wpcf7_enqueue_scripts();
+	  }
+	  if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+		wpcf7_enqueue_styles();
+	  }
+	?><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php 
 	wp_head(); 
-	if(is_single()) {
-		add_twitter_card(get_queried_object_id());
-		}
 	?>
 </head>
 <body>
@@ -37,10 +40,13 @@
 			endif;
 			$miss_albini_description = get_bloginfo( 'description', 'display' );
 			if ( $miss_albini_description || is_customize_preview() ) :
-				?><p class="site-description"><?php echo $miss_albini_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?></div>
+				?>
+				<p class="site-description"><?php echo $miss_albini_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
+		</div>
 		<nav id="site-navigation" class="main-navigation">
-			<div class="main-menu"><?php
+			<div class="main-menu">
+				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'menu-1',
@@ -53,8 +59,8 @@
 				echo search_icon_svg();
 			?></div>
 			<div class="toggler" aria-controls="primary-menu" aria-expanded="false"> 
-				<div></div>
-				<div></div>
+				<div></div> 
+				<div></div> 
 				<div></div>
 			</div>
 			<div class="menu-hider"></div>
