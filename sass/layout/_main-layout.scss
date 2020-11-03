@@ -32,6 +32,7 @@
             width:450px;
             height: 450px;
             margin-right: 4rem;
+            transition: all 0.3s ease-in;
         } 
         @media screen and (min-width: $extra_large_screen) {
             width:650px;
@@ -45,6 +46,8 @@
                 height: 100%;
                 margin:unset;
                 @include box-shadow-normal;
+                transition: all 0.3s ease-in;
+                
             } 
         }
         img:hover {
@@ -135,11 +138,11 @@
         margin-bottom: 1rem;
         font-size: 2rem;
     }
-    a {
+    a { 
         font-weight: bold;
         background:$darker_orange; 
         background: -webkit-linear-gradient(to right, $light_orange, $darker_orange);
-        background: linear-gradient(to right, $light_orange, $darker_orange);
+        background: linear-gradient(to right, $mid_orange, $darker_orange);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;  
         text-decoration: underline

@@ -188,6 +188,12 @@ function miss_albini_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
 
+
+/**
+ * Load recapcha scripts only when needed
+ */
+
+
 /**
  * Disable RSS
  */
@@ -340,6 +346,17 @@ function number_of_posts_on_archive($query){
 	}
 	
 add_filter('pre_get_posts', 'number_of_posts_on_archive');
+
+add_filter( 'acf/format_value', function ( $value ) {
+	if ( $value instanceof WP_Post ) {
+	  return [
+		'post_type' => $value->post_type,
+		'id'        => $value->ID,
+	  ];
+	}
+  
+	return $value;
+  }, 100 );
 
 /**
  * Custom template tags for this theme.

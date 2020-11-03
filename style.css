@@ -566,8 +566,7 @@ dd {
 }
 
 img {
-	height: auto;
-	max-width: 100%;
+	object-fit: cover;
 	margin-top: 1.2em;
 }
 
@@ -1474,6 +1473,7 @@ a:hover, a:active {
 		width: 450px;
 		height: 450px;
 		margin-right: 4rem;
+		transition: all 0.3s ease-in;
 	}
 }
 
@@ -1495,6 +1495,7 @@ a:hover, a:active {
 		height: 100%;
 		margin: unset;
 		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		transition: all 0.3s ease-in;
 	}
 }
 
@@ -1626,7 +1627,7 @@ a:hover, a:active {
 .entry-title a {
 	font-weight: bold;
 	background: #AC022C;
-	background: linear-gradient(to right, #7B6A7F, #AC022C);
+	background: linear-gradient(to right, #CC1F38, #AC022C);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-decoration: underline;
@@ -2056,15 +2057,6 @@ article {
 .of-the-week-link {
 	font-size: 1rem;
 	text-align: center;
-}
-
-.white-link {
-	color: white;
-}
-
-.white-link:hover,
-.white-link:hover {
-	color: white;
 }
 
 /*--------------------------------------------------------------
