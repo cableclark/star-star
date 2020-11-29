@@ -19,10 +19,8 @@
 				the_title( '<h2 class="content-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 			?>
-			<div class="entry-meta">
-					<?php
-					miss_albini_posted_on();
-					?>
+			<div class="entry-meta meta-on-page">
+				<?php miss_albini_posted_on(); miss_albini_posted_by(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 		<div class="entry-content">
@@ -42,10 +40,7 @@
 				)
 			);
 			?>
-			<p> <?php miss_albini_posted_by(); ?> </p>
-			<?php 
-			miss_albini_get_tags(); 
-			?>
+			<?php miss_albini_get_tags(); ?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 </div> <!-- Container ends -->

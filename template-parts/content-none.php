@@ -6,7 +6,6 @@
  *
  * @package Miss Ablini
  */
-
 ?>
 <section class="no-results not-found">
 	<header class="page-header">
@@ -27,10 +26,8 @@
 				) . '</p>',
 				esc_url( admin_url( 'post-new.php' ) )
 			);
-
 		elseif ( is_search() ) :
 			?>
-
 			<p><?php esc_html_e( 'Nothing to see here, sorry...', 'Miss Albini' ); ?></p>
 		<?php
 		endif;

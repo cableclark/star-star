@@ -185,13 +185,7 @@ function miss_albini_scripts() {
     wp_style_add_data( 'miss_albini-style', 'rtl', 'replace' );
     wp_enqueue_script( 'miss_albini-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 }
-
 add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
-
-
-/**
- * Load recapcha scripts only when needed
- */
 
 
 /**
@@ -215,7 +209,6 @@ function itsme_disable_feed() {
 /**
  * Remove Emojis
  */
-
    remove_action('wp_head', 'print_emoji_detection_script', 7);
    remove_action('wp_print_styles', 'print_emoji_styles');
    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -261,7 +254,6 @@ function itsme_disable_feed() {
 /**
  * Remove previous/next
  */
-
    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
 /**
@@ -310,7 +302,6 @@ function wpdocs_excerpt_more( $more ) {
 }
 
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
-
 
 
 function wpforo_search_form( $html ) {

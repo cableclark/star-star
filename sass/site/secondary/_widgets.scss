@@ -17,14 +17,10 @@
 }
 
 .widget {
-	padding: 0em 1em;
 	min-width: 300px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	@media screen and(min-width: $large_screen)  {
-		padding: 2em 2em;
-	}
 	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
@@ -46,14 +42,11 @@
 	background: unset;
 	-webkit-background-clip: unset;
 	-webkit-text-fill-color: unset;
-	font-size: 1.3rem;
 	font-weight: 400;
-	margin: 1rem;
-	margin-top: 0;
-}
+ 	margin: 2rem 1rem; 
+	font-weight: bold;
+	font-size: 1.4rem;
 
-.album-of-the-week {
-	margin-top:1rem;
 }
 
 .widget_search {
@@ -89,7 +82,7 @@
 
 .recent-posts,
 .crp_related_widget ul > li  {
-	max-width: 150px;
+	max-width: 187px;
 	margin: 0.5rem 0.2rem;	
 	list-style-type: none;
 	padding: 1rem;
@@ -141,7 +134,6 @@
 /** 
 * Album of the week widget 
 */
-
 #custom_html-2 {
 	margin-bottom: -1px;
 	background-color: $mid_orange;
@@ -157,13 +149,8 @@
 		}
 	}
 	.album-of-the-week {
-		font-weight: 400;
-		margin-top: 2rem;
-		margin-bottom:1rem;
-		font-size: 1.3rem;
-		@media screen and(min-width: $large_screen)  {
-			margin: 1rem;
-		}
+		font-weight: bold;
+		font-size: 1.4rem;
 	}
 }
 
@@ -176,3 +163,9 @@
 	text-align: center;
 }
 
+.textwidget {
+	p {
+		display: flex;
+    	justify-content: center;
+	}
+}

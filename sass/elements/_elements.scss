@@ -27,11 +27,14 @@ hr {
 
 img {
 	object-fit: cover;
-    margin-top: 1.2em; 
+	margin-top: 1.2em; 
+	max-height: 300px;
+	@media screen and(min-width: $large_screen)  {
+		max-height: 600px;
+	}
 }
 
 .wp-block-cover	 {
-
 	max-width:initial;
 	max-height: 300px;
 }

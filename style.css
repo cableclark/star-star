@@ -568,6 +568,13 @@ dd {
 img {
 	object-fit: cover;
 	margin-top: 1.2em;
+	max-height: 300px;
+}
+
+@media screen and (min-width: 1024px) {
+	img {
+		max-height: 600px;
+	}
 }
 
 .wp-block-cover {
@@ -927,6 +934,7 @@ a:hover, a:active {
 
 .tags-links {
 	font-size: 0.9rem;
+	font-family: "Montserrat", sans-serif;
 }
 
 .edit-link {
@@ -1659,7 +1667,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 1024px) {
 	.thumb-container {
-		height: 400px;
+		height: 660px;
 	}
 }
 
@@ -1676,7 +1684,7 @@ a:hover, a:active {
 	.thumb-container img {
 		filter: blur(1px);
 		margin: 0;
-		height: 500px;
+		height: 660px;
 		margin-top: 20px;
 		margin-bottom: 30px;
 	}
@@ -1782,6 +1790,12 @@ article {
 	    align-items: center;
 }
 
+@media screen and (min-width: 1024px) {
+	.page-meta {
+		margin-bottom: 1rem;
+	}
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1881,7 +1895,6 @@ article {
 }
 
 .widget {
-	padding: 0em 1em;
 	min-width: 300px;
 	display: -ms-flexbox;
 	display: flex;
@@ -1889,12 +1902,6 @@ article {
 	    flex-direction: column;
 	-ms-flex-align: center;
 	    align-items: center;
-}
-
-@media screen and (min-width: 1024px) {
-	.widget {
-		padding: 2em 2em;
-	}
 }
 
 .widget select {
@@ -1919,14 +1926,10 @@ article {
 	background: unset;
 	-webkit-background-clip: unset;
 	-webkit-text-fill-color: unset;
-	font-size: 1.3rem;
 	font-weight: 400;
-	margin: 1rem;
-	margin-top: 0;
-}
-
-.album-of-the-week {
-	margin-top: 1rem;
+	margin: 2rem 1rem;
+	font-weight: bold;
+	font-size: 1.4rem;
 }
 
 .widget_search {
@@ -1962,7 +1965,7 @@ article {
 
 .recent-posts,
 .crp_related_widget ul > li {
-	max-width: 150px;
+	max-width: 187px;
 	margin: 0.5rem 0.2rem;
 	list-style-type: none;
 	padding: 1rem;
@@ -2038,16 +2041,8 @@ article {
 }
 
 #custom_html-2 .album-of-the-week {
-	font-weight: 400;
-	margin-top: 2rem;
-	margin-bottom: 1rem;
-	font-size: 1.3rem;
-}
-
-@media screen and (min-width: 1024px) {
-	#custom_html-2 .album-of-the-week {
-		margin: 1rem;
-	}
+	font-weight: bold;
+	font-size: 1.4rem;
 }
 
 .crp_thumb {
@@ -2057,6 +2052,13 @@ article {
 .of-the-week-link {
 	font-size: 1rem;
 	text-align: center;
+}
+
+.textwidget p {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	    justify-content: center;
 }
 
 /*--------------------------------------------------------------
