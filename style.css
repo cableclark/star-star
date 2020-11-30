@@ -901,7 +901,7 @@ a:hover, a:active {
 
 .nav-links .page-numbers {
 	display: block;
-	padding: 0.6rem;
+	padding: 0.5rem 0.8rem;
 }
 
 .nav-links .current {
@@ -2026,6 +2026,7 @@ article {
 }
 
 #custom_html-2 .textwidget {
+	margin: 1rem;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
@@ -2244,7 +2245,7 @@ figcaption .wp-caption-text {
 }
 
 .archive-title h1 {
-	font-weight: 400;
+	font-weight: bold;
 	font-size: 1.3rem;
 	margin-top: 1rem;
 	text-transform: uppercase;

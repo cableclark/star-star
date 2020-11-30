@@ -2,27 +2,22 @@ a {
 	color: $mid_orange;
 	text-decoration: none;
 	transition: all 0.2s ease-out;
-	
 	&:visited {
 		color: $dark_orange;
 	}
-
 	&:hover,
 	&:focus,
 	&:active {
 		color: $dark_orange;
 	}
-
 	&:focus {
 		outline: thin dotted;
 	}
-
 	&:hover,
 	&:active {
 		outline: 0;
 	}
 }
-
 .nav-previous,
 .nav-next {
     p {
@@ -33,8 +28,6 @@ a {
 .nav-title {
     font-family: $font-headings;
 }
-
-
 .nav-links {
     display: flex;
     justify-content: center;
@@ -42,14 +35,13 @@ a {
     margin: 1.3rem;
     .page-numbers {
         display: block;
-        padding: 0.6rem;
+        padding: 0.5rem 0.8rem ;
     } 
     .current {
         border: 1px solid $mid_orange;
         color: $mid_orange;
     }
 } 
-
 .cat-links {
 	a {
         text-transform: uppercase;
