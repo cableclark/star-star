@@ -591,19 +591,25 @@ figure {
 }
 
 .card:first-of-type .read-more {
-	display: block;
-	color: #CC1F38;
-	background: #F7F7F8;
-	border: 1px solid #CC1F38;
-	height: 45px;
-	width: 200px;
-	cursor: pointer;
-	margin-top: 20px;
-	box-shadow: none;
-	padding-bottom: 3px;
-	font-family: "Playfair Display", serif;
-	transform: all 0.2s ease;
-	margin-bottom: 1rem;
+	display: none;
+}
+
+@media screen and (min-width: 1024px) {
+	.card:first-of-type .read-more {
+		display: block;
+		color: #CC1F38;
+		background: #F7F7F8;
+		border: 1px solid #CC1F38;
+		height: 45px;
+		width: 200px;
+		cursor: pointer;
+		margin-top: 20px;
+		box-shadow: none;
+		padding-bottom: 3px;
+		font-family: "Playfair Display", serif;
+		transform: all 0.2s ease;
+		margin-bottom: 1rem;
+	}
 }
 
 @media screen and (min-width: 1600px) {
@@ -850,6 +856,7 @@ select {
 
 textarea {
 	width: 100%;
+	padding: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -1796,6 +1803,10 @@ article {
 	}
 }
 
+.full-width {
+	min-height: 90vh;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1928,6 +1939,7 @@ article {
 	-webkit-text-fill-color: unset;
 	font-weight: 400;
 	margin: 2rem 1rem;
+	margin-bottom: 0.5rem;
 	font-weight: bold;
 	font-size: 1.4rem;
 }
@@ -1965,19 +1977,25 @@ article {
 
 .recent-posts,
 .crp_related_widget ul > li {
-	max-width: 187px;
+	max-width: 150px;
 	margin: 0.5rem 0.2rem;
 	list-style-type: none;
-	padding: 1rem;
 	background-color: #F7F7F8;
 	transition: all 0.1s ease-in;
-	line-height: 1.4;
+}
+
+@media screen and (min-width: 576px) {
+	.recent-posts,
+	.crp_related_widget ul > li {
+		margin: 0.8rem 0.4rem;
+	}
 }
 
 @media screen and (min-width: 1024px) {
 	.recent-posts,
 	.crp_related_widget ul > li {
 		margin: 1rem;
+		padding: 1rem;
 		max-width: 180px;
 		line-height: 1.5;
 	}
@@ -2048,6 +2066,8 @@ article {
 
 .crp_thumb {
 	margin-top: 0;
+	width: 150px;
+	height: 150px;
 }
 
 .of-the-week-link {

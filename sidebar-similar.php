@@ -6,7 +6,6 @@
  *
  * @package Miss Albini
  */
-
 ?>
 <aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar( 'similar' ); ?>

@@ -8,7 +8,7 @@
  */
 get_header();
 ?>
-	<main id="primary" class="site-main site-container">
+	<main id="primary" class="site-main site-container full-width">
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header">
 				<h1 class="search-title ">
