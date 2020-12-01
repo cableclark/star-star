@@ -208,9 +208,8 @@ add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
    add_filter('nav_menu_css_class', 'clear_nav_menu_item_class', 10, 3);
    
    function clear_nav_menu_item_class($classes, $item, $args) {
-	return array();
+		return array();
 	}
-
 /**
  * Head Clean-up
  */
@@ -219,42 +218,36 @@ add_action( 'wp_enqueue_scripts', 'miss_albini_scripts' );
 	function crunchify_remove_version() {
 		return '';
 	}
-
 	add_filter('the_generator', 'crunchify_remove_version');
 	remove_action( 'wp_head', 'wlwmanifest_link');
 	remove_action( 'wp_head', 'wp_shortlink_wp_head');
 	remove_action('wp_head', 'rest_output_link_wp_head', 10);
 	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
-/**
+
+	/**
  * Stop loading contact form 7 scrips on every page
  */	
 	add_filter( 'wpcf7_load_js', '__return_false' );
     add_filter( 'wpcf7_load_css', '__return_false' );
-
 /**
  * Remove previous/next
  */
    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-
 /**
  * Force HTTPS for loading scripts
  */
 function wp_secure_page_force_ssl( $force_ssl, $post_id = 0 ) {
     $force_ssl_on_these_posts = array(4729, 5547, 2493, 4679, 5454, 4192, 4750, 5473, 5344, 5183, 4222, 5135, 5492);
-
     if(in_array($post_id, $force_ssl_on_these_posts )) {
         return true;
     }
-
     return $force_ssl;
 }
 add_filter('force_ssl' , 'wp_secure_page_force_ssl', 1, 3);
 
 /**
  * Add preconnect for Google Fonts.
- *
- *
  * @param array  $urls           URLs to print for resource hints.
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
@@ -266,10 +259,8 @@ function miss_albini_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
-
 	return $urls;
 }
-
 add_filter( 'wp_resource_hints', 'miss_albini_resource_hints', 10, 2 );
 
 /**
@@ -281,9 +272,7 @@ add_filter( 'wp_resource_hints', 'miss_albini_resource_hints', 10, 2 );
 function wpdocs_excerpt_more( $more ) {
     return '...';
 }
-
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
-
 
 function wpforo_search_form( $html ) {
 
@@ -292,21 +281,15 @@ function wpforo_search_form( $html ) {
 	return $html;
 }
 add_filter( 'get_search_form', 'wpforo_search_form' );
-
-
 /**
  * Load svg icons variables
  */
 require get_template_directory() . '/inc/svg-icons.php';
-
-
 function my_search_form_text($text) {
 
      return $text . close_icon_svg();
 }
-
 add_filter('get_search_form', 'my_search_form_text');
-
 /** 
 * This is a function which limits Number of Posts on Archive Pages
 */
@@ -315,10 +298,8 @@ function number_of_posts_on_archive($query){
 		$query->set('posts_per_page', 6);
 	}
 	return $query;
-	}
-	
+}
 add_filter('pre_get_posts', 'number_of_posts_on_archive');
-
 add_filter( 'acf/format_value', function ( $value ) {
 	if ( $value instanceof WP_Post ) {
 	  return [
@@ -326,42 +307,32 @@ add_filter( 'acf/format_value', function ( $value ) {
 		'id'        => $value->ID,
 	  ];
 	}
-  
 	return $value;
   }, 100 );
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-
 /**
  * Loads a customized Recent Posts widget
  */
 require get_template_directory() . '/classes/class-my-recent-posts.php';
-
 function my_recent_posts_widget_register() {
     unregister_widget( 'WP_Widget_Recent_Posts' );
     register_widget( 'My_Custom_Recent_Posts_Widget' );
 }
-
 add_action( 'widgets_init', 'my_recent_posts_widget_register' );
-
 /**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
