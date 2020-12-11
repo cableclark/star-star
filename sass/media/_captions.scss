@@ -1,6 +1,6 @@
 .wp-caption, 
 figcaption {
-	margin-bottom: 1.5em;
+	margin: 1rem 0;
 	max-width: 100%;
 	font-size: 0.8em;
 	font-weight: lighter;
@@ -18,8 +18,9 @@ figcaption {
 }
 
 .aligncenter {  
+	margin-bottom: 0;
 	figcaption {
-		margin-bottom: 0;
+		margin: 1rem 0;
 	}
  }
 .wp-caption-text {

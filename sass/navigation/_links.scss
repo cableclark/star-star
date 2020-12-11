@@ -1,9 +1,9 @@
 a {
 	color: $mid_orange;
 	text-decoration: none;
-	transition: all 0.2s ease-out;
+	transition: all 0.3s ease-out;
 	&:visited {
-		color: $dark_orange;
+		color: $mid_orange;
 	}
 	&:hover,
 	&:focus,
@@ -71,4 +71,7 @@ a {
 .edit-link {
     font-size: 0.8  rem;
     text-transform: uppercase;
+}
+.pagination {
+    margin: 3rem;
 }

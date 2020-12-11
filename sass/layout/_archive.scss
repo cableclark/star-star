@@ -6,21 +6,17 @@
         max-width: 1300px; 
         margin: 0 auto; 
     }
-
     @media screen and(min-width: $extra_large_screen)  {
         max-width: 1500px;
     }
 }
-
 .card {
     @media screen and(min-width: $large_screen)  {
         max-width: 280px;
     }
-
     @media screen and(min-width: $extra_large_screen)  {
         max-width: 420px;
     }
-
     img {
         width: 100%;
         height: 100%;
@@ -32,15 +28,20 @@
         }
         @media screen and(min-width: $large_screen)  {
             height: 280px;  
+            filter: grayscale(0.7);
+            transition: all 0.3s ease-out;
         }
 
         @media screen and(min-width: $extra_large_screen)  {
             height: 420px;  
         }
-        
+    } 
+    img:hover {
+        @media screen and(min-width: $large_screen)  {
+            filter: grayscale(0);
+        }
     } 
 }
-
 .archive-title {
     display: flex;
     justify-content: center;
@@ -53,7 +54,6 @@
         text-transform: uppercase;
     }
 }
-
 .archive-h2 {
     @media screen and(min-width: $large_screen)  {
         font-size: 2rem;

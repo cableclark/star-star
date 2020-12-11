@@ -119,33 +119,33 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-/**
- * Add a twitter card
- */		
+// /**
+//  * Add a twitter card
+//  */		
 
-function add_twitter_card ($post_id) {
-	if(is_single() || is_page()) {
-		$twitter_url    = get_permalink();
-		$twitter_title  = get_the_title();
-		$twitter_desc   = get_the_excerpt();
-		$twitter_thumbs = wp_get_attachment_image_src( get_post_thumbnail_id($post_id));
-		$twitter_thumb  = $twitter_thumbs[0];
-			if(!$twitter_thumb) {
-			$twitter_thumb = 'http://www.gravatar.com/avatar/8eb9ee80d39f13cbbad56da88ef3a6ee?rating=PG&size=75';
-		  }
-	   $twitter_name   = str_replace('@', '', get_the_author_meta('twitter'));
-	   $twiter_card = "<meta name='twitter:card' value='summary'/>";
-	   $twiter_card .= "<meta name='twitter:url' value='$twitter_url' />";
-	   $twiter_card .= "<meta name='twitter:title' value='$twitter_title'/>";
-	   $twiter_card .= "<meta name='twitter:description' value=' $twitter_desc;' />";
-	   $twiter_card .= "<meta name='twitter:image' value='$twitter_thumb' />";
-	   $twiter_card .= "<meta name='twitter:site' value='@inthelostandfound' />";
-		if($twitter_name) {
-			$twiter_card .= "<meta name='twitter:creator' value=.@ $twitter_name' />";
-		}
-		echo $twiter_card;
-	  }
+// function add_twitter_card ($post_id) {
+// 	if(is_single() || is_page()) {
+// 		$twitter_url    = get_permalink();
+// 		$twitter_title  = get_the_title();
+// 		$twitter_desc   = get_the_excerpt();
+// 		$twitter_thumbs = wp_get_attachment_image_src( get_post_thumbnail_id($post_id));
+// 		$twitter_thumb  = $twitter_thumbs[0];
+// 			if(!$twitter_thumb) {
+// 			$twitter_thumb = 'http://www.gravatar.com/avatar/8eb9ee80d39f13cbbad56da88ef3a6ee?rating=PG&size=75';
+// 		  }
+// 	   $twitter_name   = str_replace('@', '', get_the_author_meta('twitter'));
+// 	   $twiter_card = "<meta name='twitter:card' value='summary'/>";
+// 	   $twiter_card .= "<meta name='twitter:url' value='$twitter_url' />";
+// 	   $twiter_card .= "<meta name='twitter:title' value='$twitter_title'/>";
+// 	   $twiter_card .= "<meta name='twitter:description' value=' $twitter_desc;' />";
+// 	   $twiter_card .= "<meta name='twitter:image' value='$twitter_thumb' />";
+// 	   $twiter_card .= "<meta name='twitter:site' value='@inthelostandfound' />";
+// 		if($twitter_name) {
+// 			$twiter_card .= "<meta name='twitter:creator' value=.@ $twitter_name' />";
+// 		}
+// 		echo $twiter_card;
+// 	  }
 	
-}
+// }
 
 

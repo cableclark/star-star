@@ -1,8 +1,6 @@
 @mixin header-transition {
     transition:all 0.2s ease-out;
   }
-
-
 .site-header {
     z-index: 10000000;
     display:flex;
@@ -43,20 +41,17 @@
         height: 50px;
     }   
 }
-
 .site-branding {
     display:flex;
     align-content:center;   
     flex-wrap: wrap;
 }
-
 .site-description,
 .site-title,
 .main-navigation
  {
     margin: auto 1rem;
  }
-
 .site-description {
     transition: all 0.2s ease-in;
     @media screen and(max-width: 558px) {
@@ -67,7 +62,6 @@
         font-size: 0.9rem;
     }
 }
-
 .site-title {
     margin: auto 1rem;
     font-size: unset;
@@ -87,16 +81,13 @@
           font-size: 1.2rem;   
         }  
     }
-
     a:visited {
         color:$black_color;
     }
-
     a:hover {
         color: $black_color;
     }
  }
-
  .smaller-navbar {
     @media screen and (min-width: $extra_large_screen) {
         a {    
@@ -104,6 +95,3 @@
         }         
     }
  }
-
-
-

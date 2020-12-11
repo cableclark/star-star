@@ -8,7 +8,6 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
-
 @mixin gradient {
 	background: $mid_orange;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right,  $mid_orange, $dark_orange
@@ -19,7 +18,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 @mixin background {
 	background: $mid_orange;
 	;  /* fallback for old browsers */
@@ -28,17 +26,13 @@
 	background: linear-gradient(to right, $mid_orange, $dark_orange
 	);
 }
-
 @mixin border {
 	border: 1px solid $mid_orange;
 	padding:0.2rem;
 }
-
 @mixin box-shadow-normal {
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
-
-
 @mixin box-shadow-hover {
 	box-shadow: 0 2px 4px $dark_color;
 }

@@ -8,11 +8,14 @@ input[type="submit"] {
 		height: 45px;
 		width: 200px;
 		cursor: pointer;
-		@include box-shadow-normal;
-		transition: all 0.2s ease-in;
 		font-size: 1rem;
+		@media screen and(min-width: $large_screen)  {
+			@include box-shadow-normal;
+			transition: all 0.2s ease-in;
+		}	
 	&:hover {
-		@include box-shadow-hover;
+		@media screen and(min-width: $large_screen)  {
+			@include box-shadow-hover;
+		}
 	}
-	
 }

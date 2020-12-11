@@ -4,7 +4,6 @@
     padding: 1rem 1rem ;
     max-width: 800px; 
 }
-
 .container {
     padding: 0 1rem;
      @media screen and (min-width: $large_screen) {
@@ -29,7 +28,6 @@
         justify-content: center;
         grid-gap: 2rem;   
     } 
-
     @media screen and (min-width: $extra_large_screen) { 
         grid-template-columns: 450px 450px 450px;
         grid-gap: 3rem;

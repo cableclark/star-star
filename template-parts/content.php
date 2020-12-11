@@ -2,11 +2,9 @@
 /**
  * Template part for displaying posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Miss Albini
  */
-
 ?>
 <div id="app" class="container">
 	<article id="post-<?php the_ID(); ?>">

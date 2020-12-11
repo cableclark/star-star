@@ -1,14 +1,13 @@
 p {
 	margin-bottom: 1rem;
 	font-family: $font-headings;
-	font-size: 1rem; 
+	font-size: 1.3rem; 
 	@media screen and (min-width: $large_screen) {  
-		font-size: 1rem;
+		font-size: 1.4rem;
 	}
 	@media screen and (min-width: $extra_large_screen) {  
-		font-size: 1.1rem;
+		font-size: 1.5rem;
 	}
-	
 }
 
 dfn,

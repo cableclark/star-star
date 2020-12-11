@@ -17,9 +17,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<?php 
 	wp_head(); 
-	if(is_single()) {
-		add_twitter_card(get_queried_object_id());
-		}
 	?>
 </head>
 <body>

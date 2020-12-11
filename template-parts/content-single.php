@@ -1,9 +1,6 @@
 <?php
 /**
  * Template part for displaying single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package Miss Albini
  */
 ?>
@@ -13,9 +10,7 @@
 			<div class="p-1">
 				<?php miss_albini_entry_footer(); ?>
 			</div>
-			<?php
-				the_title( '<h1 class="content-title">', '</h1>' );
-			?>
+			<?php the_title( '<h1 class="content-title">', '</h1>' );?>
 			<div class="entry-meta page-meta">
 					<?php
 					miss_albini_posted_on();
@@ -39,8 +34,7 @@
 					wp_kses_post( get_the_title() )
 				)
 			);
-			?>
-			<?php miss_albini_get_tags(); ?>
+			 miss_albini_get_tags(); ?>
 		</div><!-- .entry-content -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 </div> <!-- Container ends -->
