@@ -1,7 +1,15 @@
 .site-footer {
-    height: 150px;
+    height: 110px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 40px;
+    background-color: $light_color;
+}
+.social-media {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    width: 100px;
 }

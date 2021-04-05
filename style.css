@@ -393,12 +393,12 @@ h6 {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 1.6rem;
 }
 
 @media screen and (min-width: 1600px) {
 	h1 {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 }
 
@@ -427,21 +427,10 @@ h5 {
 }
 
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 1.8rem;
 	font-family: "Crimson Text", serif;
-	font-size: 1.3rem;
-}
-
-@media screen and (min-width: 1024px) {
-	p {
-		font-size: 1.4rem;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	p {
-		font-size: 1.5rem;
-	}
+	font-size: 1.2rem;
+	margin: 1rem 0;
 }
 
 dfn,
@@ -591,15 +580,22 @@ figure {
 	margin-bottom: 1rem;
 	border: unset;
 	box-shadow: unset;
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 	padding: 0;
 	transition: unset;
+	font-family: "Crimson Text", serif;
 }
 
 @media screen and (min-width: 1024px) {
 	.read-more {
-		display: none;
+		margin-top: 1rem;
+		font-size: 1.4rem;
 	}
+}
+
+.read-more:hover,
+.read-more:active {
+	box-shadow: unset;
 }
 
 @media screen and (min-width: 1024px) {
@@ -961,6 +957,9 @@ a:hover, a:active {
 .tags-links {
 	font-size: 0.9rem;
 	font-family: "Montserrat", sans-serif;
+	display: block;
+	margin: auto;
+	text-align: center;
 }
 
 .edit-link {
@@ -1226,11 +1225,10 @@ a:hover, a:active {
 	margin: 0;
 	padding-left: 0;
 	background-color: #F7F7F8;
-	transform: translateY(-200px);
 	opacity: 0;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease-in;
 	z-index: -150000;
+	transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 	transform: translateY(0px);
@@ -1502,7 +1500,7 @@ a:hover, a:active {
 @media screen and (min-width: 1600px) {
 	.excerpt:first-of-type .excerpt-title {
 		line-height: 3.4rem;
-		font-size: 2.7rem;
+		font-size: 2.5rem;
 	}
 }
 
@@ -1531,37 +1529,17 @@ a:hover, a:active {
 		width: 100%;
 		height: 100%;
 		margin: unset;
-		filter: grayscale(0.7);
-		transition: all 0.3s ease-out;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.excerpt:first-of-type .post-thumbnail img:hover {
-		filter: grayscale(0);
 	}
 }
 
 .excerpt {
 	margin: 0 1rem;
+	margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 1024px) {
 	.excerpt {
 		margin: 0rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.excerpt img {
-		filter: grayscale(0.7);
-		transition: all 0.3s ease-in;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.excerpt img:hover {
-		filter: grayscale(0);
 	}
 }
 
@@ -1653,16 +1631,23 @@ a:hover, a:active {
 
 .excerpt-title,
 .entry-title {
+	margin: unset;
 	margin-right: 1rem;
+	font-size: 1.4rem;
 }
 
 @media screen and (min-width: 1024px) {
 	.excerpt-title,
 	.entry-title {
-		line-height: 2.4rem;
-		margin: unset;
-		margin-bottom: 1rem;
-		font-size: 1.8rem;
+		line-height: 2rem;
+		font-size: 1.4rem;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.excerpt-title,
+	.entry-title {
+		margin-bottom: 0.8rem;
 	}
 }
 
@@ -1674,7 +1659,7 @@ a:hover, a:active {
 
 .entry-content {
 	font-family: "Crimson Text", serif;
-	font-size: 1.3rem;
+	margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1721,12 +1706,10 @@ a:hover, a:active {
 	z-index: -10000;
 	height: 350px;
 	width: 100vw;
-	filter: grayscale(0.7);
 }
 
 @media screen and (min-width: 1024px) {
 	.thumb-container img {
-		filter: blur(1px);
 		margin: 0;
 		height: 660px;
 		margin-top: 20px;
@@ -1941,14 +1924,6 @@ article {
 	color: #181518;
 }
 
-@media screen and (min-width: 1024px) {
-	.widget-area,
-	.crp_related {
-		-ms-flex-pack: space-evenly;
-		    justify-content: space-evenly;
-	}
-}
-
 .widget-area ul,
 .crp_related ul {
 	margin: 0;
@@ -1959,6 +1934,13 @@ article {
 	    flex-wrap: wrap;
 	-ms-flex-pack: space-evenly;
 	    justify-content: space-evenly;
+}
+
+@media screen and (min-width: 1024px) {
+	.crp_related ul {
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+	}
 }
 
 .widget {
@@ -1994,10 +1976,19 @@ article {
 	-webkit-background-clip: unset;
 	-webkit-text-fill-color: unset;
 	font-weight: 400;
-	margin: 2rem 1rem;
+	margin: 0rem 1rem;
+	margin-top: 3rem;
 	font-weight: bold;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+	.widget-title,
+	.album-of-the-week {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
 }
 
 .widget_search {
@@ -2029,8 +2020,8 @@ article {
 
 @media screen and (min-width: 1024px) {
 	.recent-post-image a img {
-		width: 220px;
-		height: 220px;
+		width: 170px;
+		height: 170px;
 	}
 }
 
@@ -2047,18 +2038,6 @@ article {
 	margin: 0.5rem 0.2rem;
 	list-style-type: none;
 	background-color: #F7F7F8;
-	transition: all 0.1s ease-in;
-	border-radius: 3px;
-	font-size: 1.1rem;
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-}
-
-@media screen and (min-width: 1024px) {
-	.recent-posts,
-	.crp_related_widget ul > li,
-	.crp_related ul > li {
-		bfont-size: 1.3rem;
-	}
 }
 
 @media screen and (min-width: 576px) {
@@ -2075,15 +2054,31 @@ article {
 	.crp_related ul > li {
 		margin: 0.5rem;
 		padding: 1rem;
-		max-width: 240px;
-		line-height: 1.3;
-		background: #ffffff;
-		transition: background 0.3s ease;
+		max-width: 200px;
+		line-height: 1.5;
+		margin-bottom: 2rem;
 	}
 }
 
+.recent-post-image,
+.crp_related ul > li > a {
+	transition: background 0.3s ease;
+}
+
+.recent-post-image:hover,
+.crp_related ul > li > a:hover {
+	opacity: 0.7;
+}
+
+.crp_related {
+	margin-bottom: 1rem;
+}
+
 .crp_related h3 {
-	margin: 2rem 1rem;
+	margin: 1rem 1rem;
+	font-size: 2rem;
+	margin: 1rem auto;
+	margin-top: 3rem;
 }
 
 .recent-posts__data {
@@ -2122,7 +2117,10 @@ article {
 */
 #custom_html-2 {
 	margin-bottom: -1px;
-	background-color: #CC1F38;
+	background: #CC1F38;
+	/* fallback for old browsers */
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #CC1F38, #AC022C);
 	color: #F7F7F8;
 }
 
@@ -2155,13 +2153,45 @@ article {
 
 @media screen and (min-width: 1024px) {
 	.crp_thumb {
-		width: 220px;
-		height: 220px;
+		width: 170px;
+		height: 170px;
 	}
 }
 
 .of-the-week-link {
 	text-align: center;
+	border: 1px solid #AC022C;
+	width: 200px;
+	cursor: pointer;
+	margin-top: 20px;
+	box-shadow: none;
+	padding: 5px;
+}
+
+#custom_html-2 > div > p > .of-the-week-link {
+	border: 1px solid white;
+}
+
+.of-the-week-link:active {
+	transform: scale(0.99);
+}
+
+@media screen and (min-width: 1024px) {
+	.of-the-week-link:hover {
+		background: #CC1F38;
+		/* fallback for old browsers */
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #CC1F38, #AC022C);
+		color: #F7F7F8;
+		border: 1px solid white;
+		box-shadow: unset;
+	}
+}
+
+#custom_html-2 > div > p > .of-the-week-link:hover {
+	border: 1px solid #AC022C;
+	background: white;
+	color: #AC022C;
 }
 
 .textwidget {
@@ -2173,12 +2203,21 @@ article {
 	display: flex;
 	-ms-flex-pack: center;
 	    justify-content: center;
+	font-size: 1.2rem;
 }
 
-#widget_crp-4,
-#recent-posts-3 {
+#widget_crp-4 {
 	margin-bottom: 2rem;
 	max-width: 800px;
+}
+
+#recent-posts-3 {
+	margin-bottom: 2rem;
+	max-width: 1440px;
+}
+
+.ssba img {
+	margin-top: 0;
 }
 
 /*--------------------------------------------------------------
@@ -2272,7 +2311,7 @@ figcaption .wp-caption-text {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-	height: 150px;
+	height: 110px;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
@@ -2281,6 +2320,17 @@ figcaption .wp-caption-text {
 	    justify-content: center;
 	-ms-flex-align: center;
 	    align-items: center;
+	padding-bottom: 40px;
+	background-color: #F7F7F8;
+}
+
+.social-media {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	margin: 15px;
+	width: 100px;
 }
 
 /*--------------------------------------------------------------
@@ -2333,22 +2383,13 @@ figcaption .wp-caption-text {
 
 @media screen and (min-width: 1024px) {
 	.card img {
+		transition: opacity 0.2s ease-out;
 		height: 280px;
-		filter: grayscale(0.7);
-		transition: all 0.3s ease-out;
 	}
 }
 
-@media screen and (min-width: 1600px) {
-	.card img {
-		height: 420px;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.card img:hover {
-		filter: grayscale(0);
-	}
+.card img:hover {
+	opacity: 0.7;
 }
 
 .archive-title {
@@ -2369,7 +2410,6 @@ figcaption .wp-caption-text {
 
 @media screen and (min-width: 1024px) {
 	.archive-h2 {
-		font-size: 2rem;
 		line-height: 2.3rem;
 	}
 }

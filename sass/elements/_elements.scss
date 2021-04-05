@@ -52,12 +52,18 @@ figure {
 		margin-bottom: 1rem;
 		border: unset;
 		box-shadow: unset;
-		font-size: 0.9rem;	
+		font-size: 1.1rem;	
 		padding: 0;
 		transition: unset;
+		font-family: $font-headings;
 	@media screen and (min-width: $large_screen) {
-		display: none;
+		margin-top: 1rem;
+		font-size: 1.4rem;
 	}
+}
+.read-more:hover,
+.read-more:active {
+	box-shadow: unset;
 }
 .card:first-of-type {
 	.read-more {

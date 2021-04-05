@@ -56,18 +56,18 @@ a {
         text-decoration: underline;
     }
 }
-
 .page-links {
 	clear: both;
     margin: 0 0 1.5em;
     padding: 1rem;
 }
-
 .tags-links {
     font-size: 0.9rem;  
-    font-family: $font__main;
+    font-family:$font__main;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
-
 .edit-link {
     font-size: 0.8  rem;
     text-transform: uppercase;

@@ -8,11 +8,10 @@
     margin: 0;
     padding-left: 0;
     background-color: $light_color;
-    transform: translateY(-200px);
     opacity:0;
     box-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    transition: all 0.3s ease-in;
     z-index: -150000;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     flex-wrap: wrap;
     transform: translateY(0px);
     align-content: center;
