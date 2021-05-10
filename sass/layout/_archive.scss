@@ -12,7 +12,7 @@
 }
 .card {
     @media screen and(min-width: $large_screen)  {
-        max-width: 280px;
+        max-width: 330px;
     }
     @media screen and(min-width: $extra_large_screen)  {
         max-width: 420px;

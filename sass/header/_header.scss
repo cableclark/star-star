@@ -25,7 +25,11 @@
         height: 40px;
     }
     @media screen and (min-width: $small_screen) {
-        height: 50px;
+        height: 60px;
+        img {
+            width: 50px;
+            height: 50px;
+        }
     }
     @media screen and (min-width: $large_screen) {
         height: 80px;

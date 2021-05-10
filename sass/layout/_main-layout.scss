@@ -223,7 +223,7 @@ article {
     width: 50px;
     margin-top: 0.5em;
     margin-left: 10px;
-    transition: all 0.2s ease-out;
+    transition: height 0.2s ease-out, width 0.2s ease-out;
     @media screen and (min-width: $large_screen) {
         height: 80px;
         width: 80px;

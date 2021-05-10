@@ -48,6 +48,7 @@
 				if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					return;
 				}
+				
 				echo search_icon_svg();
 			?></div>
 			<div class="toggler" aria-controls="primary-menu" aria-expanded="false"> 

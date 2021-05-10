@@ -1,7 +1,9 @@
 a {
 	color: $mid_orange;
 	text-decoration: none;
-	transition: all 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
+	transition: color 0.3s ease-out;
 	&:visited {
 		color: $mid_orange;
 	}
@@ -67,6 +69,7 @@ a {
     display: block;
     margin: auto;
     text-align: center;
+    margin-top:50px;
 }
 .edit-link {
     font-size: 0.8  rem;

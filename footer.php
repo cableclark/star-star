@@ -18,8 +18,9 @@
 		</div>
 		<div >
 		<div class="social-media">
-			<div class="social-icon"> <a href="https://twitter.com/lostandfoundmkd" target="_blank"> <?php echo twitter_icon(); ?> </a> </div>
-			<div class="social-icon"> <a href="https://www.instagram.com/inthelostandfoundmusic/" target="_blank"><?php echo instagram_icon(); ?> </a></div>
+			<div class="social-icon-t"> <a href="https://twitter.com/lostandfoundmkd" target="_blank"> Twitter  </a>
+			 </div> 
+			<div class="social-icon"> <a href="https://www.instagram.com/inthelostandfoundmusic/" target="_blank"> Instagram </a></div>
 			</div>
 		</div>	
 		<!-- .site-info -->
