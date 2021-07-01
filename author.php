@@ -5,7 +5,8 @@ get_header();
 		<div class="archive-title">
 			<h1>
 				<?php 
-				echo get_cat_name(get_queried_object_id());
+				$curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+				echo $curauth->display_name;
 				?>
 			</h1>
 		</div>

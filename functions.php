@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Miss Albini
+ * @package LostAndFound
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -21,14 +21,6 @@ if ( ! function_exists( 'miss_albini_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function miss_albini_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on miss_albini, use a find and replace
-		 * to change 'Miss-Albini' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'miss_albini', get_template_directory() . '/languages' );
-
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -323,6 +315,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Loads a customized Recent Posts widget
  */
 require get_template_directory() . '/classes/class-my-recent-posts.php';
+
 function my_recent_posts_widget_register() {
     unregister_widget( 'WP_Widget_Recent_Posts' );
     register_widget( 'My_Custom_Recent_Posts_Widget' );
@@ -332,9 +325,3 @@ add_action( 'widgets_init', 'my_recent_posts_widget_register' );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}

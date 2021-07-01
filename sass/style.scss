@@ -1,12 +1,12 @@
 /*!
-Theme Name: miss-albini
+Theme Name: LostAndFound
 Theme URI: http://underscores.me/
 Author: Igor Stojanovski
 Author URI: https://www.github.com/cableclark
 Description: A theme made for a macedonian music blogger
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: Miss-Albini
+Text Domain: LostAndFound
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -89,6 +89,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Layout
 --------------------------------------------------------------*/
 @import "layout/main-layout";
+
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+@import "layout/helper";
 
 /*--------------------------------------------------------------
 # Accessibility

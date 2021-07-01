@@ -102,7 +102,8 @@
 	cursor: pointer;
     @media screen and (min-width: $extra_large_screen) {
         display: none;
-    }    
+    } 
+
     div {
 		@media screen and (max-width: $small_screen) {
 			width: 23px;
@@ -113,6 +114,7 @@
         margin: 4px 0;
         background-color: $black_color;
     }  
+	
 }  
 
 .nav-menu
@@ -120,11 +122,9 @@
     display:flex; 
  }
 
-
 .sub-menu {
     display:none;
  }
-
 
 .menu-hider {
 	z-index: -10000000000;
@@ -169,6 +169,6 @@
 	}
 	
 	100% {
-	  ttransform: translateX(0px);
+	  transform: translateX(0px);
 	}
   }

@@ -2,7 +2,8 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package Miss Albini
+ * @package LostAndFound
+*/
 
 /**
  * Adds custom classes to the array of body classes.

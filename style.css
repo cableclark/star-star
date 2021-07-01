@@ -1,12 +1,12 @@
 /*!
-Theme Name: miss-albini
+Theme Name: LostAndFound
 Theme URI: http://underscores.me/
 Author: Igor Stojanovski
 Author URI: https://www.github.com/cableclark
 Description: A theme made for a macedonian music blogger
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: Miss-Albini
+Text Domain: LostAndFound
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
@@ -387,7 +387,7 @@ h5,
 h6 {
 	clear: both;
 	font-family: "Montserrat", sans-serif;
-	line-height: 1.3em;
+	line-height: 1.6em;
 	margin: unset;
 }
 
@@ -402,15 +402,15 @@ h1 {
 }
 
 h2 {
-	font-size: 1.1em;
+	font-size: 1.1rem;
 }
 
 h3 {
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 h4 {
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 h5 {
@@ -432,15 +432,9 @@ p {
 	margin: 1rem 0;
 }
 
-@media screen and (min-width: 1280px) {
-	p {
-		font-size: 1.2rem;
-	}
-}
-
 @media screen and (min-width: 1600px) {
 	p {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -581,87 +575,6 @@ img {
 
 figure {
 	margin: 1em 0;
-}
-
-.read-more {
-	background: unset;
-	color: #CC1F38;
-	height: unset;
-	width: unset;
-	margin-bottom: 1rem;
-	border: unset;
-	box-shadow: unset;
-	font-size: 1rem;
-	padding: 0;
-	transition: unset;
-	font-family: "Crimson Text", serif;
-}
-
-@media screen and (min-width: 1280px) {
-	.read-more {
-		margin-top: 1rem;
-		font-size: 1.2rem;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.read-more {
-		font-size: 1.3rem;
-	}
-}
-
-.read-more:hover,
-.read-more:active {
-	box-shadow: unset;
-}
-
-@media screen and (min-width: 1024px) {
-	.card:first-of-type .read-more {
-		display: block;
-		color: #AC022C;
-		background: #F7F7F8;
-		border: 1px solid #AC022C;
-		height: 45px;
-		width: 200px;
-		cursor: pointer;
-		margin-top: 20px;
-		box-shadow: none;
-		padding-bottom: 3px;
-		font-family: "Crimson Text", serif;
-		transition: all 0.2s ease;
-		margin-bottom: 1rem;
-	}
-}
-
-@media screen and (min-width: 1280px) {
-	.card:first-of-type .read-more {
-		margin-top: 1rem;
-		font-size: 1.2rem;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.card:first-of-type .read-more {
-		margin-top: 50px;
-		height: 50px;
-		font-size: 1.3rem;
-	}
-}
-
-.card:first-of-type .read-more:active {
-	transform: scale(0.99);
-}
-
-@media screen and (min-width: 1024px) {
-	.card:first-of-type .read-more:hover {
-		background: #CC1F38;
-		/* fallback for old browsers */
-		/* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to right, #CC1F38, #AC022C);
-		color: #F7F7F8;
-		border: none;
-		box-shadow: unset;
-	}
 }
 
 .grecaptcha-badge {
@@ -848,6 +761,83 @@ input[type="submit"] {
 	input[type="reset"]:hover,
 	input[type="submit"]:hover {
 		box-shadow: 0 2px 4px #07080a;
+	}
+}
+
+.read-more {
+	background: unset;
+	color: #CC1F38;
+	height: unset;
+	width: unset;
+	margin-bottom: 1rem;
+	border: unset;
+	box-shadow: unset;
+	font-size: 1rem;
+	padding: 0;
+	transition: unset;
+	font-family: "Crimson Text", serif;
+}
+
+@media screen and (min-width: 1280px) {
+	.read-more {
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.read-more {
+		font-size: 1.2rem;
+	}
+}
+
+.read-more:hover,
+.read-more:active {
+	box-shadow: unset;
+}
+
+@media screen and (min-width: 1024px) {
+	.card:first-of-type .read-more {
+		display: block;
+		color: #AC022C;
+		background: #F7F7F8;
+		border: 1px solid #AC022C;
+		height: 45px;
+		width: 200px;
+		cursor: pointer;
+		margin-top: 20px;
+		box-shadow: none;
+		padding-bottom: 3px;
+		font-family: "Crimson Text", serif;
+		transition: all 0.2s ease;
+		margin-bottom: 1rem;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.card:first-of-type .read-more {
+		margin-top: 1rem;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.card:first-of-type .read-more {
+		height: 50px;
+	}
+}
+
+.card:first-of-type .read-more:active {
+	transform: scale(0.99);
+}
+
+@media screen and (min-width: 1024px) {
+	.card:first-of-type .read-more:hover {
+		background: #CC1F38;
+		/* fallback for old browsers */
+		/* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to right, #CC1F38, #AC022C);
+		color: #F7F7F8;
+		border: none;
+		box-shadow: unset;
 	}
 }
 
@@ -1239,7 +1229,7 @@ a:hover, a:active {
 		transform: translateX(-75px);
 	}
 	100% {
-		ttransform: translateX(0px);
+		transform: translateX(0px);
 	}
 }
 
@@ -1449,7 +1439,7 @@ a:hover, a:active {
 .site-container {
 	margin: 0 auto;
 	padding: 1rem 1rem;
-	max-width: 740px;
+	max-width: 640px;
 }
 
 .container {
@@ -1518,7 +1508,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 1024px) {
 	.excerpt:first-of-type .excerpt-text {
-		width: 450px;
+		width: 500px;
 	}
 }
 
@@ -1537,8 +1527,8 @@ a:hover, a:active {
 
 @media screen and (min-width: 1024px) {
 	.excerpt:first-of-type .post-thumbnail {
-		width: 450px;
-		height: 450px;
+		width: 500px;
+		height: 500px;
 		margin-right: 4rem;
 		transition: all 0.3s ease-in;
 	}
@@ -1693,18 +1683,6 @@ a:hover, a:active {
 	margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 1024px) {
-	.entry-content {
-		font-size: 1.4rem;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.entry-content {
-		font-size: 1.5rem;
-	}
-}
-
 .excerpt-meta,
 .entry-meta {
 	color: #4c464d;
@@ -1791,34 +1769,6 @@ article {
 	font-size: 0.9rem;
 }
 
-.margin-top {
-	margin-top: 50px;
-}
-
-@media screen and (min-width: 1024px) {
-	.margin-top {
-		margin-top: 120px;
-	}
-}
-
-.margin-2 {
-	margin: 0 1rem;
-}
-
-@media screen and (min-width: 1024px) {
-	.margin-2 {
-		margin: 0 2rem;
-	}
-}
-
-.p-1 {
-	padding-top: 1rem;
-}
-
-.white-bg {
-	background-color: #F7F7F8;
-}
-
 .cat-title {
 	font-size: 1.6em;
 }
@@ -1872,6 +1822,37 @@ article {
 
 .no-results-container {
 	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+.margin-top {
+	margin-top: 50px;
+}
+
+@media screen and (min-width: 1024px) {
+	.margin-top {
+		margin-top: 120px;
+	}
+}
+
+.margin-2 {
+	margin: 0 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+	.margin-2 {
+		margin: 0 2rem;
+	}
+}
+
+.p-1 {
+	padding-top: 1rem;
+}
+
+.white-bg {
+	background-color: #F7F7F8;
 }
 
 /*--------------------------------------------------------------
@@ -2196,7 +2177,7 @@ article {
 	cursor: pointer;
 	margin-top: 20px;
 	box-shadow: none;
-	padding: 5px;
+	padding: 15px;
 }
 
 #custom_html-2 > div > p > .of-the-week-link {
@@ -2249,6 +2230,10 @@ article {
 
 .ssba img {
 	margin-top: 0;
+}
+
+.ssbp-wrap {
+	display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -2308,7 +2293,7 @@ iframe {
 figcaption {
 	margin: 1rem 0;
 	max-width: 100%;
-	font-size: 0.8em;
+	font-size: 0.8rem;
 	font-weight: lighter;
 	font-style: italic;
 	text-align: center;
@@ -2365,7 +2350,7 @@ figcaption .wp-caption-text {
 	font-size: 14px;
 }
 
-.social-icon-t {
+.social-icon {
 	margin-right: 20px;
 }
 

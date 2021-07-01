@@ -13,7 +13,7 @@
         flex-direction: column;
         justify-content: center; 
         @media screen and (min-width: $large_screen) {
-            width:450px;
+            width:500px;
         }
         @media screen and (min-width: $extra_large_screen) { 
             width:600px;
@@ -27,8 +27,8 @@
     }
     .post-thumbnail { 
         @media screen and (min-width: $large_screen) {
-            width:450px;
-            height: 450px;
+            width:500px;
+            height: 500px;
             margin-right: 4rem;
             transition: all 0.3s ease-in;
         } 
@@ -130,10 +130,10 @@
     font-family: $font-headings;
     margin-bottom: 2rem;
 	@media screen and (min-width: $large_screen) {  
-		font-size: 1.4rem;
+		// font-size: 1.4rem;
 	}
 	@media screen and (min-width: $extra_large_screen) {  
-		font-size: 1.5rem;
+		// font-size: 1.5rem;
 	}
 }
 .excerpt-meta,
@@ -197,24 +197,7 @@ article {
 .site-info {
     font-size: 0.9rem;
 }
-.margin-top {
-    margin-top: 50px; 
-    @media screen and (min-width: $large_screen) {
-        margin-top: 120px;
-    }   
-}
-.margin-2 {
-    margin: 0 1rem;
-    @media screen and (min-width: $large_screen) {
-        margin: 0 2rem;
-    } 
-}
-.p-1 {
-    padding-top:1rem;
-}
-.white-bg {
-    background-color: $light_color;
-}
+
 .cat-title {
     font-size: 1.6em;
 }

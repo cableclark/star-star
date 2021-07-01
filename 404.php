@@ -1,11 +1,4 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package Miss Albini
- */
 get_header();?>
 <main id="primary" class="site-main site-container full-width">
 	<div class="no-results-container">
@@ -15,6 +8,4 @@ get_header();?>
 	</div>	
 </main><!-- #main -->
 <?php
-get_sidebar();
-get_sidebar( 'singlebar' );
 get_footer();

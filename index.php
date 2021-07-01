@@ -1,8 +1,4 @@
 <?php
-/**
- * The main template file
- * @package Miss Albini
- */
 get_header();
 ?>
 	<main id="primary" class="site-main">
@@ -41,16 +37,13 @@ $args = array(
     'posts_per_page' => 1, // we need only the latest post, so get that post only
     'cat' => '573', // Use the category id, can also replace with category_name which uses category slug
 );
-
 $q = new WP_Query( $args);
-
 if ( $q->have_posts() ) {
     while ( $q->have_posts() ) {
     $q->the_post();        
         //Your template tags and markup like:
 		the_title();
-		the_content();
-		
+		the_content();		
     }
     wp_reset_postdata();
 }
