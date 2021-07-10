@@ -387,12 +387,11 @@ h5,
 h6 {
 	clear: both;
 	font-family: "Montserrat", sans-serif;
-	line-height: 1.6em;
 	margin: unset;
 }
 
 h1 {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 }
 
 @media screen and (min-width: 1600px) {
@@ -503,7 +502,7 @@ html {
 }
 
 body {
-	background: #F7F7F8;
+	background: white;
 	overflow-x: hidden;
 }
 
@@ -601,7 +600,7 @@ table {
 	height: 60px;
 	width: 100%;
 	top: 0;
-	background-color: #F7F7F8;
+	background-color: white;
 	transition: all 0.2s ease-out;
 	position: fixed;
 }
@@ -726,6 +725,21 @@ table {
 	}
 }
 
+.custom-logo {
+	height: 50px;
+	width: 50px;
+	margin-top: 0.5em;
+	margin-left: 10px;
+	transition: height 0.2s ease-out, width 0.2s ease-out;
+}
+
+@media screen and (min-width: 1024px) {
+	.custom-logo {
+		height: 70px;
+		width: 70px;
+	}
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -739,10 +753,10 @@ input[type="submit"] {
 	/* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #CC1F38, #AC022C);
 	color: #F7F7F8;
-	height: 45px;
-	width: 200px;
 	cursor: pointer;
 	font-size: 1rem;
+	border-radius: 30px;
+	padding: 12px 30px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -773,14 +787,20 @@ input[type="submit"] {
 	border: unset;
 	box-shadow: unset;
 	font-size: 1rem;
-	padding: 0;
 	transition: unset;
+	padding: unset;
 	font-family: "Crimson Text", serif;
 }
 
 @media screen and (min-width: 1280px) {
 	.read-more {
 		margin-top: 1rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.read-more {
+		border-radius: 30px;
 	}
 }
 
@@ -801,15 +821,13 @@ input[type="submit"] {
 		color: #AC022C;
 		background: #F7F7F8;
 		border: 1px solid #AC022C;
-		height: 45px;
-		width: 200px;
 		cursor: pointer;
-		margin-top: 20px;
+		margin-top: 1rem;
 		box-shadow: none;
-		padding-bottom: 3px;
 		font-family: "Crimson Text", serif;
 		transition: all 0.2s ease;
 		margin-bottom: 1rem;
+		padding: 12px 30px;
 	}
 }
 
@@ -819,9 +837,9 @@ input[type="submit"] {
 	}
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1024px) {
 	.card:first-of-type .read-more {
-		height: 50px;
+		padding-left: 30px;
 	}
 }
 
@@ -836,7 +854,6 @@ input[type="submit"] {
 		/* Chrome 10-25, Safari 5.1-6 */
 		background: linear-gradient(to right, #CC1F38, #AC022C);
 		color: #F7F7F8;
-		border: none;
 		box-shadow: unset;
 	}
 }
@@ -938,7 +955,6 @@ a:hover, a:active {
 	-ms-flex-pack: center;
 	    justify-content: center;
 	line-height: 1rem;
-	margin: 1.3rem;
 }
 
 .nav-links .page-numbers {
@@ -949,12 +965,14 @@ a:hover, a:active {
 .nav-links .current {
 	border: 1px solid #CC1F38;
 	color: #CC1F38;
+	border-radius: 5px;
 }
 
 .cat-links a {
 	text-transform: uppercase;
 	color: #7B6A7F;
 	font-size: 0.7rem;
+	line-height: 1;
 }
 
 @media screen and (min-width: 1024px) {
@@ -989,7 +1007,7 @@ a:hover, a:active {
 }
 
 .pagination {
-	margin: 3rem;
+	padding: 2rem;
 }
 
 /*--------------------------------------------------------------
@@ -1043,11 +1061,11 @@ a:hover, a:active {
 	.menu li a {
 		color: #181518;
 		box-sizing: border-box;
-		border-bottom: 1px solid #F7F7F8;
+		border-bottom: 1px solid white;
 		border-width: 1;
 		padding: 0.4em 1em;
 		border-width: 1px;
-		transition: all 0.3s ease-in;
+		transition: border 0.3s ease-in;
 	}
 }
 
@@ -1133,6 +1151,8 @@ a:hover, a:active {
 	display: flex;
 	-ms-flex-direction: column;
 	    flex-direction: column;
+	-ms-flex-align: end;
+	    align-items: flex-end;
 	margin: 5px 5px;
 	cursor: pointer;
 }
@@ -1150,11 +1170,19 @@ a:hover, a:active {
 	background-color: #181518;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1024px) {
 	.toggler div {
 		width: 23px;
 		margin: 3px 0;
 	}
+}
+
+.toggler div:nth-of-type(2) {
+	width: 15px;
+}
+
+.toggler div:nth-of-type(3) {
+	width: 10px;
 }
 
 .nav-menu {
@@ -1403,6 +1431,7 @@ a:hover, a:active {
 	margin-top: 15px;
 	border: 1px solid #F7F7F8;
 	padding: 10px;
+	border-radius: 5px;
 }
 
 @media screen and (min-width: 1600px) {
@@ -1440,6 +1469,7 @@ a:hover, a:active {
 	margin: 0 auto;
 	padding: 1rem 1rem;
 	max-width: 640px;
+	background: unset;
 }
 
 .container {
@@ -1453,6 +1483,11 @@ a:hover, a:active {
 	}
 }
 
+.site-main {
+	background: white;
+	background: linear-gradient(187deg, white 24%, #edecf2 92%);
+}
+
 .index-container {
 	margin-top: 60px;
 	margin-bottom: 3rem;
@@ -1463,8 +1498,8 @@ a:hover, a:active {
 		margin-top: 100px;
 		display: -ms-grid;
 		display: grid;
-		-ms-grid-columns: 350px 350px 350px;
-		    grid-template-columns: 350px 350px 350px;
+		-ms-grid-columns: 310px 310px 310px;
+		    grid-template-columns: 310px 310px 310px;
 		-ms-grid-rows: auto;
 		    grid-template-rows: auto;
 		grid-template-areas: "main main main" "article1 article2 article3" "article4 article5 article6";
@@ -1493,7 +1528,9 @@ a:hover, a:active {
 		max-width: unset;
 		max-width: unset;
 		min-width: unset;
-		margin: 6rem 0;
+		margin: 4rem 0;
+		-ms-flex-pack: center;
+		    justify-content: center;
 	}
 }
 
@@ -1528,7 +1565,7 @@ a:hover, a:active {
 @media screen and (min-width: 1024px) {
 	.excerpt:first-of-type .post-thumbnail {
 		width: 500px;
-		height: 500px;
+		height: 460px;
 		margin-right: 4rem;
 		transition: all 0.3s ease-in;
 	}
@@ -1773,21 +1810,6 @@ article {
 	font-size: 1.6em;
 }
 
-.custom-logo {
-	height: 50px;
-	width: 50px;
-	margin-top: 0.5em;
-	margin-left: 10px;
-	transition: height 0.2s ease-out, width 0.2s ease-out;
-}
-
-@media screen and (min-width: 1024px) {
-	.custom-logo {
-		height: 80px;
-		width: 80px;
-	}
-}
-
 .no-results-container {
 	min-height: 400px;
 	display: -ms-flexbox;
@@ -1825,6 +1847,54 @@ article {
 }
 
 /*--------------------------------------------------------------
+# card
+--------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+	.card {
+		max-width: 330px;
+	}
+}
+
+@media screen and (min-width: 1600px) {
+	.card {
+		max-width: 420px;
+	}
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	height: 300px;
+	margin: unset;
+	border-radius: 5px;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (min-width: 576px) {
+	.card img {
+		height: 500px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.card img {
+		transition: opacity 0.2s ease-out;
+		height: 280px;
+	}
+}
+
+.card img:hover {
+	opacity: 0.7;
+}
+
+.svg-icon {
+	margin-right: 4px;
+	transform: translateY(3px);
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
 .margin-top {
@@ -1853,6 +1923,10 @@ article {
 
 .white-bg {
 	background-color: #F7F7F8;
+}
+
+.background-unset {
+	background: unset;
 }
 
 /*--------------------------------------------------------------
@@ -1932,7 +2006,7 @@ article {
 	    justify-content: center;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	background-color: #F7F7F8;
+	background-color: white;
 	color: #181518;
 }
 
@@ -2003,6 +2077,12 @@ article {
 	}
 }
 
+.widget-title {
+	color: #AC022C;
+	margin-top: unset;
+	margin-bottom: 1rem;
+}
+
 .widget_search {
 	padding: 0 0;
 	-ms-flex-direction: row;
@@ -2028,6 +2108,9 @@ article {
 	object-fit: cover;
 	min-height: 100%;
 	min-width: 100%;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 1024px) {
@@ -2049,7 +2132,6 @@ article {
 	max-width: 150px;
 	margin: 0.5rem 0.2rem;
 	list-style-type: none;
-	background-color: #F7F7F8;
 }
 
 @media screen and (min-width: 576px) {
@@ -2072,25 +2154,12 @@ article {
 	}
 }
 
-.recent-post-image,
-.crp_related ul > li > a {
+.recent-post-image {
 	transition: background 0.3s ease;
 }
 
-.recent-post-image:hover,
-.crp_related ul > li > a:hover {
+.recent-post-image:hover {
 	opacity: 0.7;
-}
-
-.crp_related {
-	margin-bottom: 1rem;
-}
-
-.crp_related h3 {
-	margin: 1rem 1rem;
-	font-size: 2rem;
-	margin: 1rem auto;
-	margin-top: 3rem;
 }
 
 .recent-posts__data {
@@ -2106,7 +2175,8 @@ article {
 
 .recent-posts__data a,
 .recent-posts__data a:visited {
-	font-weight: regular;
+	line-height: 1.2;
+	font-family: auto;
 }
 
 .recent-posts__data a:hover {
@@ -2121,7 +2191,7 @@ article {
 
 .post-date {
 	font-weight: 300;
-	font-size: 13px;
+	font-size: 12px;
 }
 
 /** 
@@ -2138,6 +2208,10 @@ article {
 
 #custom_html-2 .textwidget {
 	max-width: 400px;
+}
+
+#custom_html-3 {
+	color: #AC022C;
 }
 
 @media screen and (min-width: 1600px) {
@@ -2173,11 +2247,11 @@ article {
 .of-the-week-link {
 	text-align: center;
 	border: 1px solid #AC022C;
-	width: 200px;
 	cursor: pointer;
 	margin-top: 20px;
 	box-shadow: none;
-	padding: 15px;
+	border-radius: 30px;
+	padding: 12px 30px;
 }
 
 #custom_html-2 > div > p > .of-the-week-link {
@@ -2215,7 +2289,6 @@ article {
 	display: flex;
 	-ms-flex-pack: center;
 	    justify-content: center;
-	font-size: 1.2rem;
 }
 
 #widget_crp-4 {
@@ -2224,8 +2297,9 @@ article {
 }
 
 #recent-posts-3 {
-	margin-bottom: 2rem;
+	padding: 2rem 0;
 	max-width: 1440px;
+	background: white;
 }
 
 .ssba img {
@@ -2327,7 +2401,6 @@ figcaption .wp-caption-text {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-	height: 110px;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
@@ -2336,8 +2409,9 @@ figcaption .wp-caption-text {
 	    justify-content: center;
 	-ms-flex-align: center;
 	    align-items: center;
-	padding-bottom: 40px;
-	background-color: #F7F7F8;
+	padding: 2rem 0;
+	background-color: #101010;
+	color: white;
 }
 
 .social-media {
@@ -2374,43 +2448,6 @@ figcaption .wp-caption-text {
 	.archives-container {
 		max-width: 1500px;
 	}
-}
-
-@media screen and (min-width: 1024px) {
-	.card {
-		max-width: 330px;
-	}
-}
-
-@media screen and (min-width: 1600px) {
-	.card {
-		max-width: 420px;
-	}
-}
-
-.card img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	height: 300px;
-	margin: unset;
-}
-
-@media screen and (min-width: 576px) {
-	.card img {
-		height: 500px;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.card img {
-		transition: opacity 0.2s ease-out;
-		height: 280px;
-	}
-}
-
-.card img:hover {
-	opacity: 0.7;
 }
 
 .archive-title {

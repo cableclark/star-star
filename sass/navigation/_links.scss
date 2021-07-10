@@ -34,7 +34,6 @@ a {
     display: flex;
     justify-content: center;
     line-height: 1rem;
-    margin: 1.3rem;
     .page-numbers {
         display: block;
         padding: 0.5rem 0.8rem ;
@@ -42,6 +41,7 @@ a {
     .current {
         border: 1px solid $mid_orange;
         color: $mid_orange;
+        border-radius:5px;
     }
 } 
 .cat-links {
@@ -49,6 +49,7 @@ a {
         text-transform: uppercase;
         color:$light_orange;
         font-size: 0.7rem;
+        line-height: 1;
         @media screen and (min-width: $large_screen) {
             font-size: 0.9rem;
         }
@@ -76,5 +77,5 @@ a {
     text-transform: uppercase;
 }
 .pagination {
-    margin: 3rem;
+    padding: 2rem;
 }

@@ -6,7 +6,8 @@
         max-width: unset;
         max-width: unset;
         min-width: unset;
-        margin: 6rem 0;  
+        margin: 4rem 0;  
+        justify-content: center;
     }
     .excerpt-text {
         display: flex;
@@ -28,7 +29,7 @@
     .post-thumbnail { 
         @media screen and (min-width: $large_screen) {
             width:500px;
-            height: 500px;
+            height: 460px;
             margin-right: 4rem;
             transition: all 0.3s ease-in;
         } 
@@ -129,12 +130,6 @@
 .entry-content {
     font-family: $font-headings;
     margin-bottom: 2rem;
-	@media screen and (min-width: $large_screen) {  
-		// font-size: 1.4rem;
-	}
-	@media screen and (min-width: $extra_large_screen) {  
-		// font-size: 1.5rem;
-	}
 }
 .excerpt-meta,
 .entry-meta {
@@ -201,17 +196,7 @@ article {
 .cat-title {
     font-size: 1.6em;
 }
-.custom-logo {
-    height: 50px;
-    width: 50px;
-    margin-top: 0.5em;
-    margin-left: 10px;
-    transition: height 0.2s ease-out, width 0.2s ease-out;
-    @media screen and (min-width: $large_screen) {
-        height: 80px;
-        width: 80px;
-    }   
-}
+
 .no-results-container {
     min-height: 400px;
     display: flex;

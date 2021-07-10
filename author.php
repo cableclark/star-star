@@ -3,7 +3,7 @@ get_header();
 ?>
 	<main id="primary" class="site-main margin-top">
 		<div class="archive-title">
-			<h1>
+			<h1 class="author-name">
 				<?php 
 				$curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
 				echo $curauth->display_name;

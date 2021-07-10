@@ -1,6 +1,6 @@
 <?php
 get_header();
-?><div class="thumb-container"><?php the_post_thumbnail();?></div>	
+?><div class="thumb-container"><?php the_post_thumbnail('medium_large');?></div>	
 	<main id="primary" class="site-main white-bg ">
 		<div class="site-container">
 			<?php

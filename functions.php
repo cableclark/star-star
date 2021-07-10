@@ -265,6 +265,14 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
+
+function my_excerpt_length($length){
+	return 40;
+	}
+
+add_filter(‘excerpt_length’, ‘my_excerpt_length’, 999);
+
+
 function wpforo_search_form( $html ) {
 
 	$html = str_replace( 'placeholder="Search', 'placeholder=""', $html );

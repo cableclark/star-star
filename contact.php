@@ -1,7 +1,11 @@
 <?php
+/**
+ * Template Name: Contact
+ * 
+ * */
 get_header( 'custom' );
 ?>
-	<main id="primary" class="site-main site-container margin-top">
+	<main id="primary" class="site-main site-container margin-top background-unset">
 		<?php
 		while ( have_posts() ) :
 			the_post();

@@ -6,12 +6,11 @@ h5,
 h6 {
 	clear: both;
 	font-family: $font__main;
-	line-height: 1.6em;	
 	margin: unset;
 }
 
 h1 {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 	@media screen and (min-width: $extra_large_screen) {
 		font-size: 2rem;
 	} 
