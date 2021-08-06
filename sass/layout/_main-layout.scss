@@ -6,8 +6,7 @@
         max-width: unset;
         max-width: unset;
         min-width: unset;
-        margin: 4rem 0;  
-        justify-content: center;
+        margin: 6rem 0;  
     }
     .excerpt-text {
         display: flex;
@@ -17,7 +16,7 @@
             width:500px;
         }
         @media screen and (min-width: $extra_large_screen) { 
-            width:600px;
+            width:670px;
         }  
     } 
     .excerpt-title {

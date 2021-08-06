@@ -118,6 +118,7 @@ add_action( 'after_setup_theme', 'miss_albini_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function miss_albini_widgets_init() {
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'miss_albini' ),
@@ -152,17 +153,7 @@ function miss_albini_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'similar', 'miss_albini' ),
-			'id'            => 'similar',
-			'description'   => esc_html__( 'Add widgets here.', 'miss_albini' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="album-of-the-week">',
-			'after_title'   => '</h3>',
-		)
-	);
+	
 }
 add_action( 'widgets_init', 'miss_albini_widgets_init' );
 
@@ -270,7 +261,7 @@ function my_excerpt_length($length){
 	return 40;
 	}
 
-add_filter(‘excerpt_length’, ‘my_excerpt_length’, 999);
+add_filter('excerpt_length', 'my_excerpt_length', 999);
 
 
 function wpforo_search_form( $html ) {

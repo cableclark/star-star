@@ -1,10 +1,11 @@
 .archives-container {
     @media screen and(min-width: $large_screen)  {
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         flex-wrap: wrap;
         max-width: 1300px; 
         margin: 0 auto; 
+        justify-content: center;
     }
     @media screen and(min-width: $extra_large_screen)  {
         max-width: 1500px;
@@ -18,9 +19,12 @@
     max-width: 400px;
     h1 {
         font-weight: bold;
-        font-size: 1.3rem;
         margin-top: 1rem;
         text-transform: uppercase;
+        @media screen and(min-width: $large_screen)  {
+            font-size: 2rem;
+        }
+
     }
 }
 .archive-h2 {
